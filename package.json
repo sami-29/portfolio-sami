@@ -11,6 +11,7 @@
   "devDependencies": {
     "autoprefixer": "^10.4.9",
     "postcss": "^8.4.16",
+    "tailwind-scrollbar": "^2.0.1",
     "tailwindcss": "^3.1.8",
     "vite": "^3.1.0",
     "wrangler": "^2.1.1"
