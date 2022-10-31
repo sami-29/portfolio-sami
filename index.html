@@ -6,26 +6,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/style.css">
-    <link rel="shortcut icon" href="./logo.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./favicon.ico" sizes="32x32" type="image/x-icon">
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script type="module" src="./theme.js" defer></script>
     <title>Portfolio-Bentaleb Sami</title>
 </head>
 
-<body class="bg-gray-900  scrollbar-thumb-gray-800 scrollbar-thin scrollbar-track-gray-500 overflow-hidden">
-    <header class="select-none">
-        <nav class="px-2 sm:px-4 py-2.5  bg-gray-900 border-b-2 border-gray-800">
+<body
+    class="bg-white dark:bg-gray-900  scrollbar-thumb-gray-800 scrollbar-thin scrollbar-track-gray-500 overflow-hidden">
+    <header class="select-none ">
+        <nav class="px-2 sm:px-4 py-2.5  dark:bg-gray-900 border-b-2 border-gray-800">
             <div class="container flex flex-wrap justify-between items-center mx-auto">
                 <a href="../" class="flex items-center">
 
-                    <span class="self-center text-xl font-semibold whitespace-nowrap text-white">Sami</span>
+                    <span
+                        class="self-center text-xl font-semibold whitespace-nowrap text-black dark:text-white">Sami</span>
                 </a>
                 <button data-collapse-toggle="navbar-default" type="button"
-                    class="inline-flex items-center p-2 ml-3 text-sm rounded-lg md:hidden  focus:outline-none focus:ring-2  text-gray-400 hover:bg-gray-700 focus:ring-gray-600"
+                    class="inline-flex items-center p-2 ml-3 text-sm rounded-lg md:hidden  focus:outline-none focus:ring-2  text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
                     aria-controls="navbar-default" aria-expanded="false">
                     <span class="sr-only">Open main menu</span>
-                    <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg">
+                    <svg class="w-6 h-6 fill-black dark:fill-gray-400" aria-hidden="true" fill="currentColor"
+                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd"
                             d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
                             clip-rule="evenodd"></path>
@@ -33,7 +36,7 @@
                 </button>
                 <div class="hidden w-full md:block md:w-auto" id="navbar-default">
                     <ul
-                        class="flex flex-col p-4 mt-4  rounded-lg border  md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0  bg-gray-800 md:bg-gray-900 border-gray-700">
+                        class="flex flex-col p-4 mt-4  rounded-lg border  md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 dark:bg-gray-900 border-gray-200 dark:border-gray-700">
                         <li>
                             <a href="./"
                                 class="block py-2 pr-4 pl-3 font-bold  bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 text-white"
@@ -41,30 +44,39 @@
                         </li>
                         <li>
                             <a href="about/" class=" block py-2 pr-4 pl-3  rounded 
-                                 md:border-0 md:hover:text-blue-700 md:p-0 text-gray-400
+                                 md:border-0 md:hover:text-blue-700 md:p-0 text-black dark:text-gray-400
                             hover:bg-gray-700 hover:text-white
                                 md:hover:bg-transparent">About</a>
                         </li>
                         <li>
+                            <a href="services/" class=" block py-2 pr-4 pl-3  rounded 
+                                                         md:border-0 md:hover:text-blue-700 md:p-0 text-black dark:text-gray-400
+                                                    hover:bg-gray-700 hover:text-white
+                                                        md:hover:bg-transparent">Services</a>
+                        </li>
+                        <li>
                             <a href="projects/"
-                                class="block py-2 pr-4 pl-3  rounded   md:border-0 md:hover:text-blue-700 md:p-0 text-gray-400 hover:bg-gray-700 hover:text-white md:hover:bg-transparent">Projects</a>
+                                class="block py-2 pr-4 pl-3  rounded   md:border-0 md:hover:text-blue-700 md:p-0 text-black dark:text-gray-400 hover:bg-gray-700 hover:text-white md:hover:bg-transparent">Projects</a>
                         </li>
 
                     </ul>
                 </div>
             </div>
-        </nav>
 
+
+        </nav>
+        <img aria-hidden="true" id="theme-toggle"
+            class="invert right-8 translate-y-4 absolute  text-white cursor-pointer " src="" alt="">
     </header>
     <main class="mb-10">
         <div class="font-mono ml-auto mr-auto mt-24 w-10/12 sm:w-3/4 xl:w-1/2">
-            <h1 class="select-none text-4xl sm:text-5xl md:text-5xl lg:text-6xl text-white ">Frontend
+            <h1 class="select-none text-4xl sm:text-5xl md:text-5xl lg:text-6xl dark:text-white ">Frontend
                 developer
                 creating pixel
                 perfect and
                 interactive
                 websites</h1>
-            <p class="text-base md:text-xl text-gray-400 my-20">I'm
+            <p class="text-base md:text-xl  dark:text-gray-400 my-20">I'm
                 Bentaleb Sami, a 20 year old
                 algerian
                 computer
@@ -76,15 +88,15 @@
                 some learning projects</p>
 
             <div class="flex content-center space-x-6 w-2/6">
-                <a href="https://www.github.com/sami-29" target="_blank"><button class="  text-white">
+                <a href="https://www.github.com/sami-29" target="_blank"><button class=" text-gray-800 dark:text-white">
                         <ion-icon class="text-4xl" name="logo-github"></ion-icon>
                     </button></a>
                 <a href="https://www.linkedin.com/in/sami-bentaleb-a96293221/" target="_blank"><button
-                        class=" text-white">
+                        class="text-gray-800 dark:text-white">
                         <ion-icon class="text-4xl" name="logo-linkedin"></ion-icon>
                     </button></a>
                 <button
-                    class="px-10  md:px-6 md:py-2 bg-gray-800 hover:bg-gray-700 hover:border-gray-500 rounded-3xl border border-gray-500 text-gray-100">
+                    class="-translate-y-1 px-10  md:px-6 md:py-2 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 hover:border-gray-500 rounded-3xl border border-gray-500 dark:text-gray-100">
                     <a href="mailto:sami.bentaleb.dev@gmail.com" target="_blank">Email me</a>
                 </button>
             </div>
