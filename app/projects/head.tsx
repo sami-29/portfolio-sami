@@ -1,7 +1,7 @@
 export default function Head() {
   return (
     <>
-      <title>Portfolio | Bentaleb Sami</title>
+      <title>Projects | Bentaleb Sami</title>
     </>
   );
 }
