@@ -4,8 +4,25 @@ import linus1 from "../../public/assets/projects/linus1.webp";
 import rps1 from "../../public/assets/projects/rps1.webp";
 import shadow_foundry from "../../public/assets/projects/shadow_foundry.webp";
 import todo1 from "../../public/assets/projects/todo1.webp";
+import CDLA from "../../public/assets/projects/CDLA.webp";
+import MARE from "../../public/assets/projects/MARE.webp";
 
 const projectsData = [
+  {
+    img: CDLA,
+    title: "Calendrier de l'avent",
+    description:
+      "I made the video Carousel for the website in Elementor/wordpress using custom javascript using the Swiper library and Jquery.",
+    siteUrl: "https://calendrierdelavent.com",
+    githubUrl: "",
+  },
+  {
+    img: MARE,
+    title: "NULL",
+    description: "Built using Mapbox, Turf, vanilla JavaScript and Wordpress.",
+    siteUrl: "",
+    githubUrl: "",
+  },
   {
     img: huddle1,
     title: "Huddle Landing Page",
