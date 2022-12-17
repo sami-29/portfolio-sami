@@ -9,10 +9,11 @@ export default function Services() {
           The services i offer :
         </p>
         <ol className='text-lg dark:text-gray-400 my-8'>
-          <li>Static Websites</li>
+          <li>Static/Dynamic Websites</li>
           <li>Animations and 3D</li>
           <li>Revisiting and debugging code</li>
-          <li>Websites using any framework</li>
+          <li>Fullstack websites (beginner)</li>
+          <li>Headless Ecommerce for highly performant frontend (beginner)</li>
         </ol>
       </div>
     </main>
