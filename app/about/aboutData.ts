@@ -16,6 +16,9 @@ import typescript from "../../public/assets/about/typescript.webp";
 import react from "../../public/assets/about/react.webp";
 import mongodb from "../../public/assets/about/mongodb.webp";
 import mysql from "../../public/assets/about/mysql.webp";
+import tRPC from "../../public/assets/about/tRPC.webp";
+import NUXT from "../../public/assets/about/NUXT.webp";
+import Vue from "../../public/assets/about/Vue.webp";
 
 const cards = [
   {
@@ -111,6 +114,23 @@ const cards = [
     description:
       "MongoDB is a source-available cross-platform document-oriented database program",
     src: mongodb,
+  },
+  {
+    title: "tRPC",
+    description:
+      "tRPC allows you to easily build & consume fully typesafe APIs without schemas or code generation",
+    src: tRPC,
+  },
+  {
+    title: "Vue",
+    description: "Progressive JavaScript framework",
+    src: Vue,
+  },
+  {
+    title: "Nuxt",
+    description:
+      "Nuxt is an SSR framework built on Vue. It abstracts away most of the complex configuration",
+    src: NUXT,
   },
 ];
 

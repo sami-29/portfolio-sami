@@ -9,7 +9,7 @@ export default function Projects() {
           Projects
         </h1>
         <p className='text-lg dark:text-gray-400 my-10'>
-          Here&aposs a small selection of some of my recent projects and
+          Here&apos;s a small selection of some of my recent projects and
           experiences.
         </p>
         {projectsData.map((project, index) => {
