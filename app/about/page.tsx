@@ -9,18 +9,28 @@ export default function About() {
           About me
         </h1>
         <p className='text-lg dark:text-gray-400 my-10'>
-          I am Bentaleb Sami, a 20 year old algerian computer science student at
-          the university of Badji Moukhtar Annaba i am currently third year
-          which means i&apos;ll get my license diploma this year. <br /> I am
-          also mostly a self taught web developer with 3 years of experience
-          programming i started out with python, just solving leet code and
-          project euler problems and fun projects, then i wanted to specialize
-          in web development and i found the easier way is to start with
-          frontend so i did just that.
-          <br />I have made multiple projects which some of them are listed in
-          this website some others are in my github and others are retired
-          because i have made them in the start of my learning journey so they
-          don&apos;t show the best version of my code.
+          Welcome to my portfolio! My name is Bentaleb Sami, a full-stack web
+          developer with a passion for creating visually appealing and
+          user-friendly websites. With 3 years of experience in both building
+          projects and freelancing, I am a dedicated and skilled developer who
+          is always looking for new challenges. As a computer science student at
+          the University of Badji Moukhtar Annaba, I am constantly expanding my
+          knowledge and experience in the field.
+          <br /> I specialize in creating interactive and responsive websites
+          that are not only visually stunning, but also easy to navigate and
+          use. I have a strong understanding of web development technologies
+          such as HTML, CSS, JavaScript, and various frameworks and libraries. I
+          also have experience working with various back-end technologies such
+          as Node.js and PHP, ensuring that your website not only looks great
+          but also functions smoothly. <br /> I take pride in my attention to
+          detail and strive to deliver high-quality work. I am a strong
+          collaborator and communicator, and I enjoy working with clients to
+          understand their needs and bring their vision to life.
+          <br />
+          Take a look at my portfolio to see some of my previous work and
+          don&apos;t hesitate to contact me if you have any questions or are
+          interested in working together. Let&apos;s bring your next project to
+          life!
         </p>
         <h2 className='text-3xl sm:text-4xl lg:text-5xl  dark:text-white '>
           Tools
