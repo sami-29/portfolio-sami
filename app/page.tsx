@@ -11,10 +11,13 @@ export default function Home() {
           Fullstack web developer creating interactive and responsive websites.
         </h1>
         <p className='text-base md:text-xl  dark:text-gray-400 my-20'>
-          I am Bentaleb Sami, a 20 year old algerian computer science student at
-          the university of Badji Moukhtar Annaba. I am also mostly a self
-          taught web developer with 3 years of experience building projects and
-          freelancing
+          Welcome to my portfolio! I am Bentaleb Sami, a full-stack web
+          developer with a passion for creating interactive and responsive
+          websites. With 3 years of experience in both building projects and
+          freelancing, I am a dedicated and skilled developer. As a computer
+          science student at the University of Badji Moukhtar Annaba, I am
+          constantly expanding my knowledge and experience in the field.
+          Let&apos;s work together to bring your next project to life!
         </p>
 
         <div className='flex content-center space-x-6 w-5/6'>
