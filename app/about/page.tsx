@@ -1,112 +1,5 @@
 import AboutCard from "../../components/AboutCard";
-
-import css from "../../public/assets/about/css.webp";
-import git from "../../public/assets/about/git.webp";
-import gsap from "../../public/assets/about/gsap.webp";
-import html from "../../public/assets/about/html.webp";
-import js from "../../public/assets/about/js.webp";
-import NextJs from "../../public/assets/about/NextJs.webp";
-import PocketBase from "../../public/assets/about/PocketBase.webp";
-import php from "../../public/assets/about/php.webp";
-import node from "../../public/assets/about/node.webp";
-import tailwind from "../../public/assets/about/tailwind.webp";
-import python from "../../public/assets/about/python.webp";
-import vite from "../../public/assets/about/vite.webp";
-import sass from "../../public/assets/about/sass.webp";
-import threejs from "../../public/assets/about/three.js.webp";
-import typescript from "../../public/assets/about/typescript.webp";
-import react from "../../public/assets/about/react.webp";
-
-const cards = [
-  {
-    title: "HTML5",
-    description: "Basic HTML (Hyper Text Markup Language)",
-    src: html,
-  },
-  {
-    title: "CSS3",
-    description: "Basic CSS (cascade style sheet)",
-    src: css,
-  },
-  {
-    title: "JavaScript",
-    description: "I have good knowledge of Javascript es6+",
-    src: js,
-  },
-  {
-    title: "React",
-    description: "I use React for single page and highly interactive web apps",
-    src: react,
-  },
-  {
-    title: "TypeScript",
-    description: "I use TypeScript for medium to larger scale web applications",
-    src: typescript,
-  },
-  {
-    title: "Git",
-    description:
-      "I use git to maintain and push my projects to my repositories",
-    src: html,
-  },
-  {
-    title: "SCSS",
-    description: "I use SCSS over CSS because of its extra features",
-    src: sass,
-  },
-  {
-    title: "Tailwind CSS",
-    description:
-      "I use Tailwind if i don't need very fancy css and wanna keep it minimalistic",
-    src: tailwind,
-  },
-  {
-    title: "Node.js",
-    description: "Node.js is my go to JavaScript runtime",
-    src: node,
-  },
-  {
-    title: "PHP",
-    description:
-      "I don't use php in my projects but i have enough knowledge about it",
-    src: php,
-  },
-  {
-    title: "Python",
-    description:
-      "I started programming with python and i am comfortable working with it",
-    src: python,
-  },
-  {
-    title: "Vite",
-    description: "I use vite as my bundler for high performance websites",
-    src: vite,
-  },
-  {
-    title: "Three.js",
-    description:
-      "Three.js is a JavaScript library used to create and display animated 3D computer graphics in the web",
-    src: threejs,
-  },
-  {
-    title: "Gsap",
-    description:
-      "I use Gsap for complex animations and better control over them",
-    src: gsap,
-  },
-  {
-    title: "Next Js",
-    description:
-      "I use Next js for static websites or as my fullstack framework",
-    src: NextJs,
-  },
-  {
-    title: "PocketBase",
-    description:
-      "Open Source backend in 1 file with realtime database, authentication, file storage and admin dashboard",
-    src: PocketBase,
-  },
-];
+import cards from "./aboutData";
 
 export default function About() {
   return (
@@ -116,18 +9,28 @@ export default function About() {
           About me
         </h1>
         <p className='text-lg dark:text-gray-400 my-10'>
-          I am Bentaleb Sami, a 20 year old algerian computer science student at
-          the university of Badji Moukhtar Annaba i am currently third year
-          which means i&aposll get my license diploma this year. <br /> I am
-          also mostly a self taught web developer with 3 years of experience
-          programming i started out with python, just solving leet code and
-          project euler problems and fun projects, then i wanted to specialize
-          in web development and i found the easier way is to start with
-          frontend so i did just that.
-          <br />I have made multiple projects which some of them are listed in
-          this website some others are in my github and others are retired
-          because i have made them in the start of my learning journey so they
-          don&apost show the best version of my code.
+          Welcome to my portfolio! My name is Bentaleb Sami, a full-stack web
+          developer with a passion for creating visually appealing and
+          user-friendly websites. With 3 years of experience in both building
+          projects and freelancing, I am a dedicated and skilled developer who
+          is always looking for new challenges. As a computer science student at
+          the University of Badji Moukhtar Annaba, I am constantly expanding my
+          knowledge and experience in the field.
+          <br /> I specialize in creating interactive and responsive websites
+          that are not only visually stunning, but also easy to navigate and
+          use. I have a strong understanding of web development technologies
+          such as HTML, CSS, JavaScript, and various frameworks and libraries. I
+          also have experience working with various back-end technologies such
+          as Node.js and PHP, ensuring that your website not only looks great
+          but also functions smoothly. <br /> I take pride in my attention to
+          detail and strive to deliver high-quality work. I am a strong
+          collaborator and communicator, and I enjoy working with clients to
+          understand their needs and bring their vision to life.
+          <br />
+          Take a look at my portfolio to see some of my previous work and
+          don&apos;t hesitate to contact me if you have any questions or are
+          interested in working together. Let&apos;s bring your next project to
+          life!
         </p>
         <h2 className='text-3xl sm:text-4xl lg:text-5xl  dark:text-white '>
           Tools

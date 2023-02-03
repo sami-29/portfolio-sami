@@ -8,13 +8,16 @@ export default function Home() {
     <main className='mb-10'>
       <div className='font-mono ml-auto mr-auto mt-24 w-10/12 sm:w-3/4 xl:w-1/2'>
         <h1 className='select-none text-4xl sm:text-5xl md:text-5xl lg:text-6xl dark:text-white '>
-          Frontend developer creating pixel perfect and interactive websites
+          Fullstack web developer creating interactive and responsive websites.
         </h1>
         <p className='text-base md:text-xl  dark:text-gray-400 my-20'>
-          I am Bentaleb Sami, a 20 year old algerian computer science student at
-          the university of Badji Moukhtar Annaba. I am also mostly a self
-          taught web developer with 3 years of experience programming and
-          building some learning projects
+          Welcome to my portfolio! I am Bentaleb Sami, a full-stack web
+          developer with a passion for creating interactive and responsive
+          websites. With 3 years of experience in both building projects and
+          freelancing, I am a dedicated and skilled developer. As a computer
+          science student at the University of Badji Moukhtar Annaba, I am
+          constantly expanding my knowledge and experience in the field.
+          Let&apos;s work together to bring your next project to life!
         </p>
 
         <div className='flex content-center space-x-6 w-5/6'>
