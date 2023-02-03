@@ -100,7 +100,7 @@ export default function Navbar() {
             </li>
             <li>
               <Link
-                href='services/'
+                href='blog/'
                 onClick={() =>
                   setTimeout(() => {
                     setCurrentPage(
@@ -109,9 +109,9 @@ export default function Navbar() {
                   }, 100)
                 }
                 className={
-                  currpage === "/services" ? currpageStyle : otherpageStyle
+                  currpage === "/blog" ? currpageStyle : otherpageStyle
                 }>
-                Services
+                Blog
               </Link>
             </li>
             <li>

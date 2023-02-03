@@ -1,7 +1,7 @@
 export default function Head() {
   return (
     <>
-      <title>Services | Bentaleb Sami</title>
+      <title>Blog | Bentaleb Sami</title>
     </>
   );
 }
