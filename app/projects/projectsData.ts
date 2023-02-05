@@ -1,5 +1,5 @@
 import huddle1 from "../../public/assets/projects/huddle1.webp";
-import fb1 from "../../public/assets/projects/fb1.webp";
+import portal2d from "../../public/assets/projects/portal2d.png";
 import linus1 from "../../public/assets/projects/linus1.webp";
 import rps1 from "../../public/assets/projects/rps1.webp";
 import shadow_foundry from "../../public/assets/projects/shadow_foundry.webp";
@@ -8,6 +8,14 @@ import CDLA from "../../public/assets/projects/CDLA.webp";
 import MARE from "../../public/assets/projects/MARE.webp";
 
 const projectsData = [
+  {
+    img: portal2d,
+    title: "2D portal effect",
+    description:
+      'Made using Vanilla JS, vite and Three.js. This effect will zoom into the Picture frame until you "enter the 3D world and gain control" and when pressing the esc key it will play an animation and go back to normal',
+    siteUrl: "https://2d-portal.vercel.app",
+    githubUrl: "https://github.com/sami-29/2d-portal",
+  },
   {
     img: CDLA,
     title: "Calendrier de l'avent",

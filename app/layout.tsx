@@ -16,7 +16,7 @@ export default function RootLayout({
 
         <link
           rel='shortcut icon'
-          href='./favicon.ico'
+          href='../public/favicon.ico'
           sizes='32x32'
           type='image/x-icon'
         />
