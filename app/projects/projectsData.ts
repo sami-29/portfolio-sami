@@ -22,14 +22,14 @@ const projectsData = [
     description:
       "I made the video Carousel for the website in Elementor/wordpress using custom javascript using the Swiper library and Jquery.",
     siteUrl: "https://calendrierdelavent.com",
-    githubUrl: "",
+    githubUrl: null,
   },
   {
     img: MARE,
     title: "NULL",
     description: "Built using Mapbox, Turf, vanilla JavaScript and Wordpress.",
-    siteUrl: "",
-    githubUrl: "",
+    siteUrl: null,
+    githubUrl: null,
   },
   {
     img: huddle1,
@@ -68,7 +68,7 @@ const projectsData = [
     title: "Linus tech tips",
     description:
       "LTT is a university project to build a shopping page with a cart and details page and some filtering functionality, The name Linus Tech Tips is from a Canadian tech Youtuber, this website was built using PHP and MYSQL database, and plain CSS3.",
-    siteUrl: "/",
+    siteUrl: null,
     githubUrl: "https://github.com/sami-29/linus_tech_tips",
   },
 ];

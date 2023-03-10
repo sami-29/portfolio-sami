@@ -4,8 +4,45 @@ interface props {
   img: StaticImageData;
   title: string;
   description: string;
-  siteUrl: string;
-  githubUrl: string;
+  siteUrl: string | null;
+  githubUrl: string | null;
+}
+
+function ProjectLink({ link }: { link: string | null }) {
+  if (link === null) {
+    return (
+      <a>
+        <button className='px-4 py-2  dark:bg-gray-400 bg-gray-400 text-gray-700 rounded-3xl border border-gray-500 dark:text-gray-100 cursor-no-drop'>
+          Live Site
+        </button>
+      </a>
+    );
+  }
+  return (
+    <a href={link} target='_blank' rel='noreferrer'>
+      <button className='px-4 py-2  dark:bg-gray-800 dark:hover:bg-gray-700 rounded-3xl border border-gray-500 dark:text-gray-100'>
+        Live Site
+      </button>
+    </a>
+  );
+}
+function GithubLink({ link }: { link: string | null }) {
+  if (link === null) {
+    return (
+      <a>
+        <button className='px-4 py-2 ml-4 dark:bg-gray-400 bg-gray-400 text-gray-700 rounded-3xl border border-gray-500 dark:text-gray-100 cursor-no-drop'>
+          Github repo
+        </button>
+      </a>
+    );
+  }
+  return (
+    <a href={link} target='_blank' rel='noreferrer'>
+      <button className='px-4 py-2 ml-4 dark:bg-gray-800 dark:hover:bg-gray-700 rounded-3xl border border-gray-500 dark:text-gray-100'>
+        Github repo
+      </button>
+    </a>
+  );
 }
 
 export default function Project({
@@ -17,7 +54,7 @@ export default function Project({
 }: props) {
   return (
     <div>
-      <div className='rounded-xl md:border-t-24 md:border-x-24 border-gray-300 dark:border-purple-300'>
+      <div className='rounded-xl md:border-t-24 md:border-x-24 border-purple-200 dark:border-purple-300'>
         <Image src={img} alt={`${title} image`} />
       </div>
 
@@ -29,16 +66,8 @@ export default function Project({
           {description}
         </p>
         <div className='flex'>
-          <a href={siteUrl} target='_blank' rel='noreferrer'>
-            <button className='px-4 py-2  dark:bg-gray-800 dark:hover:bg-gray-700 rounded-3xl border border-gray-500 dark:text-gray-100'>
-              Live Site
-            </button>
-          </a>
-          <a href={githubUrl} target='_blank' rel='noreferrer'>
-            <button className='px-4 py-2 ml-4 dark:bg-gray-800 dark:hover:bg-gray-700 rounded-3xl border border-gray-500 dark:text-gray-100'>
-              Github repo
-            </button>
-          </a>
+          <ProjectLink link={siteUrl} />
+          <GithubLink link={githubUrl}></GithubLink>
         </div>
       </div>
     </div>
