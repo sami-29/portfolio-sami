@@ -4,14 +4,14 @@ import cards from "./aboutData";
 export default function About() {
   return (
     <main className='mb-10'>
-      <div className='flex flex-col font-mono ml-auto mr-auto mt-24 px-4 sm:px:0 sm:w-3/4 xl:w-1/2'>
+      <div className='flex flex-col px-4 mt-24 ml-auto mr-auto font-mono sm:px:0 sm:w-3/4 xl:w-1/2'>
         <h1 className='text-4xl sm:text-5xl lg:text-6xl dark:text-white '>
           About me
         </h1>
-        <p className='text-lg dark:text-gray-400 my-10'>
+        <p className='my-10 text-lg dark:text-gray-400'>
           Welcome to my portfolio! My name is Bentaleb Sami, a full-stack web
           developer with a passion for creating visually appealing and
-          user-friendly websites. With 3 years of experience in both building
+          user-friendly websites. With 4 years of experience in both building
           projects and freelancing, I am a dedicated and skilled developer who
           is always looking for new challenges. As a computer science student at
           the University of Badji Moukhtar Annaba, I am constantly expanding my
@@ -32,14 +32,14 @@ export default function About() {
           interested in working together. Let&apos;s bring your next project to
           life!
         </p>
-        <h2 className='text-3xl sm:text-4xl lg:text-5xl  dark:text-white '>
+        <h2 className='text-3xl sm:text-4xl lg:text-5xl dark:text-white '>
           Tools
         </h2>
-        <p className='text-base dark:text-white my-10'>
+        <p className='my-10 text-base dark:text-white'>
           The tools I use while developing.
         </p>
       </div>
-      <div className='select-none px-4 sm:px:0 sm:w-3/4 m-auto grid md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-10 '>
+      <div className='grid px-4 m-auto select-none sm:px:0 sm:w-3/4 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-10 '>
         {cards.map((card, index) => {
           return (
             <AboutCard

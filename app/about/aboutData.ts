@@ -4,7 +4,7 @@ import gsap from "../../public/assets/about/gsap.webp";
 import html from "../../public/assets/about/html.webp";
 import js from "../../public/assets/about/js.webp";
 import NextJs from "../../public/assets/about/NextJs.webp";
-import PocketBase from "../../public/assets/about/PocketBase.webp";
+import prisma from "../../public/assets/about/Prisma.png";
 import php from "../../public/assets/about/php.webp";
 import node from "../../public/assets/about/node.webp";
 import tailwind from "../../public/assets/about/tailwind.webp";
@@ -15,7 +15,7 @@ import threejs from "../../public/assets/about/three.js.webp";
 import typescript from "../../public/assets/about/typescript.webp";
 import react from "../../public/assets/about/react.webp";
 import mongodb from "../../public/assets/about/mongodb.webp";
-import mysql from "../../public/assets/about/mysql.webp";
+import mysql from "../../public/assets/about/mysql.png";
 import tRPC from "../../public/assets/about/tRPC.webp";
 import NUXT from "../../public/assets/about/NUXT.webp";
 import Vue from "../../public/assets/about/Vue.webp";
@@ -104,16 +104,22 @@ const cards = [
     src: NextJs,
   },
   {
-    title: "PocketBase",
+    title: "My SQL",
     description:
-      "Open Source backend in 1 file with realtime database, authentication, file storage and admin dashboard",
-    src: PocketBase,
+      "MySQL is an open-source relational database management system.",
+    src: mysql,
   },
   {
     title: "mongodb",
     description:
       "MongoDB is a source-available cross-platform document-oriented database program",
     src: mongodb,
+  },
+  {
+    title: "Prisma",
+    description:
+      "Prisma is a next-generation Node.js and TypeScript ORM for PostgreSQL, MySQL, SQL Server, SQLite, MongoDB etc...",
+    src: prisma,
   },
   {
     title: "tRPC",
