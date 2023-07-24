@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 export default function ThemeToggle() {
   const themeToggle = useRef() as React.MutableRefObject<HTMLImageElement>;
 
@@ -34,13 +35,13 @@ export default function ThemeToggle() {
   }, []);
 
   return (
-    <img
+    <Image
       onClick={toggle}
       ref={themeToggle}
       aria-hidden='true'
       id='theme-toggle'
-      className='invert right-8 translate-y-4 absolute  text-white cursor-pointer '
+      className='absolute text-white translate-y-4 cursor-pointer invert right-8 '
       src=''
-      alt=''></img>
+      alt=''></Image>
   );
 }

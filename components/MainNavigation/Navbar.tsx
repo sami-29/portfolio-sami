@@ -1,9 +1,10 @@
 "use client";
-import { MutableRefObject, useEffect, useRef, useState } from "react";
+import { MutableRefObject, useRef } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
-  const [currpage, setCurrentPage] = useState("/");
+  const asPath = usePathname();
   const hamburgerRef = useRef() as MutableRefObject<HTMLButtonElement>;
   const menu = useRef() as MutableRefObject<HTMLDivElement>;
   const toggleMenu = () => {
@@ -14,30 +15,16 @@ export default function Navbar() {
     }
   };
 
-  useEffect(() => {
-    setCurrentPage(window.location.href.replace(window.location.origin, ""));
-  }, []);
-
-  const currpageStyle =
-    "block py-2 pr-4 pl-3 font-bold  bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 text-white";
-
-  const otherpageStyle =
-    " block py-2 pr-4 pl-3  rounded md:border-0 md:hover:text-blue-700 md:p-0 text-black dark:text-gray-400 hover:bg-gray-700 hover:text-white md:hover:bg-transparent";
+  const linkClasses = (path: string) =>
+    asPath === path
+      ? "block py-2 pr-4 pl-3 font-bold  bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 text-white"
+      : "block py-2 pr-4 pl-3  rounded md:border-0 md:hover:text-blue-700 md:p-0 text-black dark:text-gray-400 hover:bg-gray-700 hover:text-white md:hover:bg-transparent";
 
   return (
     <nav className='px-2 sm:px-4 py-2.5  dark:bg-gray-900 border-b-2 border-gray-800'>
-      <div className='container flex flex-wrap justify-between items-center mx-auto'>
-        <Link
-          href='../'
-          onClick={() =>
-            setTimeout(() => {
-              setCurrentPage(
-                window.location.href.replace(window.location.origin, "")
-              );
-            }, 100)
-          }
-          className='flex items-center'>
-          <span className='self-center text-xl font-semibold whitespace-nowrap text-black dark:text-white'>
+      <div className='container flex flex-wrap items-center justify-between mx-auto'>
+        <Link href='/' className='flex items-center'>
+          <span className='self-center text-xl font-semibold text-black whitespace-nowrap dark:text-white'>
             Sami
           </span>
         </Link>
@@ -46,7 +33,7 @@ export default function Navbar() {
           ref={hamburgerRef}
           data-collapse-toggle='navbar-default'
           type='button'
-          className='inline-flex items-center p-2 ml-3 text-sm rounded-lg md:hidden  focus:outline-none focus:ring-2  text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600'
+          className='inline-flex items-center p-2 ml-3 text-sm text-gray-400 rounded-lg md:hidden focus:outline-none focus:ring-2 dark:hover:bg-gray-700 dark:focus:ring-gray-600'
           aria-controls='navbar-default'
           aria-expanded='false'>
           <span className='sr-only'>Open main menu</span>
@@ -66,67 +53,24 @@ export default function Navbar() {
           ref={menu}
           className='hidden w-full md:block md:w-auto'
           id='navbar-default'>
-          <ul className='flex flex-col p-4 mt-4  rounded-lg border  md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 dark:bg-gray-900 border-gray-200 dark:border-gray-700'>
+          <ul className='flex flex-col p-4 mt-4 border border-gray-200 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 dark:bg-gray-900 dark:border-gray-700'>
             <li>
-              <Link
-                href='./'
-                onClick={() =>
-                  setTimeout(() => {
-                    setCurrentPage(
-                      window.location.href.replace(window.location.origin, "")
-                    );
-                  }, 100)
-                }
-                className={currpage === "/" ? currpageStyle : otherpageStyle}
-                aria-current='page'>
+              <Link href='/' className={linkClasses("/")}>
                 Home
               </Link>
             </li>
             <li>
-              <Link
-                href='about/'
-                onClick={() =>
-                  setTimeout(() => {
-                    setCurrentPage(
-                      window.location.href.replace(window.location.origin, "")
-                    );
-                  }, 100)
-                }
-                className={
-                  currpage === "/about" ? currpageStyle : otherpageStyle
-                }>
+              <Link href='/about' className={linkClasses("/about")}>
                 About
               </Link>
             </li>
             <li>
-              <Link
-                href='blog/'
-                onClick={() =>
-                  setTimeout(() => {
-                    setCurrentPage(
-                      window.location.href.replace(window.location.origin, "")
-                    );
-                  }, 100)
-                }
-                className={
-                  currpage === "/blog" ? currpageStyle : otherpageStyle
-                }>
+              <Link href='/blog' className={linkClasses("/blog")}>
                 Blog
               </Link>
             </li>
             <li>
-              <Link
-                href='projects/'
-                onClick={() =>
-                  setTimeout(() => {
-                    setCurrentPage(
-                      window.location.href.replace(window.location.origin, "")
-                    );
-                  }, 100)
-                }
-                className={
-                  currpage === "/projects" ? currpageStyle : otherpageStyle
-                }>
+              <Link href='/projects' className={linkClasses("/projects")}>
                 Projects
               </Link>
             </li>
