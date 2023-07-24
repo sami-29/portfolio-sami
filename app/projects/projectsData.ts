@@ -8,6 +8,7 @@ import CDLA from "../../public/assets/projects/CDLA.webp";
 import MARE from "../../public/assets/projects/MARE.webp";
 import RateMyApp from "../../public/assets/projects/RateMyApp.png";
 import eTasc from "../../public/assets/projects/eTasc.png";
+import Restaurant_template from "../../public/assets/projects/Restaurant_template.png";
 
 const projectsData = [
   {
@@ -33,6 +34,14 @@ const projectsData = [
       "This is an annotation and text analysis platform. Due to privacy concerns, I am unable to provide more information about this project.",
     siteUrl: null,
     githubUrl: null,
+  },
+  {
+    img: Restaurant_template,
+    title: "Restaurant Template",
+    description:
+      "A customizable restaurant website template built using Next.js. It's designed with user experience and ease of use in mind. Technologies used include Next.js 13, Tailwind, FramerFramer Motion, Leaflet,react-hook-form with Yup.",
+    siteUrl: "https://restaurant-template-one.vercel.app",
+    githubUrl: "https://github.com/sami-29/restaurant-template",
   },
   {
     img: CDLA,

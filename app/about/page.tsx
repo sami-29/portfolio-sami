@@ -2,6 +2,9 @@ import AboutCard from "../../components/AboutCard";
 import cards from "./aboutData";
 
 export default function About() {
+  const mostlyUsed = cards.filter((card) => card.MostlyUsed === true);
+  const otherTechnologies = cards.filter((card) => card.MostlyUsed === false);
+
   return (
     <main className='mb-10'>
       <div className='flex flex-col px-4 mt-24 ml-auto mr-auto font-mono sm:px:0 sm:w-3/4 xl:w-1/2'>
@@ -33,14 +36,36 @@ export default function About() {
           life!
         </p>
         <h2 className='text-3xl sm:text-4xl lg:text-5xl dark:text-white '>
-          Tools
+          Mostly Used Tools
         </h2>
         <p className='my-10 text-base dark:text-white'>
-          The tools I use while developing.
+          The tools I most frequently use while developing.
         </p>
       </div>
       <div className='grid px-4 m-auto select-none sm:px:0 sm:w-3/4 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-10 '>
-        {cards.map((card, index) => {
+        {mostlyUsed.map((card, index) => {
+          return (
+            <AboutCard
+              key={index}
+              src={card.src}
+              title={card.title}
+              description={card.description}
+            />
+          );
+        })}
+      </div>
+
+      <div className='flex flex-col px-4 mt-24 ml-auto mr-auto font-mono sm:px:0 sm:w-3/4 xl:w-1/2'>
+        <h2 className='text-3xl sm:text-4xl lg:text-5xl dark:text-white '>
+          Other Technologies I Work With/Learning
+        </h2>
+        <p className='my-10 text-base dark:text-white'>
+          Other tools and technologies that I am capable of working with or
+          currently learning.
+        </p>
+      </div>
+      <div className='grid px-4 m-auto select-none sm:px:0 sm:w-3/4 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-10 '>
+        {otherTechnologies.map((card, index) => {
           return (
             <AboutCard
               key={index}

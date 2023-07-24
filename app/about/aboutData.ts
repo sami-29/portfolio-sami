@@ -15,128 +15,158 @@ import threejs from "../../public/assets/about/three.js.webp";
 import typescript from "../../public/assets/about/typescript.webp";
 import react from "../../public/assets/about/react.webp";
 import mongodb from "../../public/assets/about/mongodb.webp";
-import mysql from "../../public/assets/about/mysql.png";
+import Sql from "../../public/assets/about/Sql.png";
 import tRPC from "../../public/assets/about/tRPC.webp";
 import NUXT from "../../public/assets/about/NUXT.webp";
 import Vue from "../../public/assets/about/Vue.webp";
+import ruby from "../../public/assets/about/ruby.png";
+import linux from "../../public/assets/about/linux.png";
+import rails from "../../public/assets/about/rails.png";
 
 const cards = [
   {
     title: "HTML5",
-    description: "Basic HTML (Hyper Text Markup Language)",
+    description: "Provides structure to web content",
     src: html,
+    MostlyUsed: true,
   },
   {
     title: "CSS3",
-    description: "Basic CSS (cascade style sheet)",
+    description: "Styles and formats HTML documents",
     src: css,
+    MostlyUsed: true,
   },
   {
     title: "JavaScript",
-    description: "I have good knowledge of Javascript es6+",
+    description: "Powers web interactivity",
     src: js,
+    MostlyUsed: true,
   },
   {
     title: "React",
-    description: "I use React for single page and highly interactive web apps",
+    description: "UI library for single-page apps",
     src: react,
+    MostlyUsed: true,
   },
   {
     title: "TypeScript",
-    description: "I use TypeScript for medium to larger scale web applications",
+    description: "Static type definitions for JS",
     src: typescript,
+    MostlyUsed: true,
   },
   {
     title: "Git",
-    description:
-      "I use git to maintain and push my projects to my repositories",
+    description: "Tracks source code changes",
     src: git,
+    MostlyUsed: true,
   },
   {
     title: "SCSS",
-    description: "I use SCSS over CSS because of its extra features",
+    description: "Enhanced CSS with variables, nesting",
     src: sass,
+    MostlyUsed: false,
   },
   {
     title: "Tailwind CSS",
-    description:
-      "I use Tailwind if i don't need very fancy css and wanna keep it minimalistic",
+    description: "Utility-first CSS framework",
     src: tailwind,
+    MostlyUsed: true,
   },
   {
     title: "Node.js",
-    description: "Node.js is my go to JavaScript runtime",
+    description: "Runs JS outside a web browser",
     src: node,
+    MostlyUsed: true,
   },
   {
     title: "PHP",
-    description:
-      "I don't use php in my projects but i have enough knowledge about it",
+    description: "Server-side scripting language",
     src: php,
+    MostlyUsed: true,
   },
   {
     title: "Python",
-    description:
-      "I started programming with python and i am comfortable working with it",
+    description: "General-purpose programming language",
     src: python,
+    MostlyUsed: false,
   },
   {
     title: "Vite",
-    description: "I use vite as my bundler for high performance websites",
+    description: "Next-gen front-end build tool",
     src: vite,
+    MostlyUsed: false,
   },
   {
     title: "Three.js",
-    description:
-      "Three.js is a JavaScript library used to create and display animated 3D computer graphics in the web",
+    description: "Creates 3D graphics in web",
     src: threejs,
+    MostlyUsed: false,
   },
   {
     title: "Gsap",
-    description:
-      "I use Gsap for complex animations and better control over them",
+    description: "Advanced JS animation library",
     src: gsap,
+    MostlyUsed: false,
   },
   {
     title: "Next Js",
-    description:
-      "I use Next js for static websites or as my fullstack framework",
+    description: "Production React framework",
     src: NextJs,
+    MostlyUsed: true,
   },
   {
-    title: "My SQL",
-    description:
-      "MySQL is an open-source relational database management system.",
-    src: mysql,
+    title: "SQL",
+    description: "Manages large data sets",
+    src: Sql,
+    MostlyUsed: false,
   },
   {
     title: "mongodb",
-    description:
-      "MongoDB is a source-available cross-platform document-oriented database program",
+    description: "Flexible, JSON-like database",
     src: mongodb,
+    MostlyUsed: false,
   },
   {
     title: "Prisma",
-    description:
-      "Prisma is a next-generation Node.js and TypeScript ORM for PostgreSQL, MySQL, SQL Server, SQLite, MongoDB etc...",
+    description: "Next-gen ORM for Node.js and TypeScript",
     src: prisma,
+    MostlyUsed: true,
   },
   {
     title: "tRPC",
-    description:
-      "tRPC allows you to easily build & consume fully typesafe APIs without schemas or code generation",
+    description: "End-to-end typesafe API toolkit",
     src: tRPC,
+    MostlyUsed: false,
   },
   {
     title: "Vue",
-    description: "Progressive JavaScript framework",
+    description: "Progressive UI framework",
     src: Vue,
+    MostlyUsed: false,
   },
   {
     title: "Nuxt",
-    description:
-      "Nuxt is an SSR framework built on Vue. It abstracts away most of the complex configuration",
+    description: "High-level Vue.js framework",
     src: NUXT,
+    MostlyUsed: false,
+  },
+  {
+    title: "Ruby",
+    description: "High-level, interpreted language",
+    src: ruby,
+    MostlyUsed: false,
+  },
+  {
+    title: "Rails",
+    description: "Web app framework in Ruby",
+    src: rails,
+    MostlyUsed: false,
+  },
+  {
+    title: "Linux",
+    description: "Open-source Unix-like OS",
+    src: linux,
+    MostlyUsed: true,
   },
 ];
 
