@@ -9,6 +9,7 @@ import MARE from "../../public/assets/projects/MARE.webp";
 import RateMyApp from "../../public/assets/projects/RateMyApp.png";
 import eTasc from "../../public/assets/projects/eTasc.png";
 import Restaurant_template from "../../public/assets/projects/Restaurant_template.png";
+import Tetris_logo from "../../public/assets/projects/Tetris_logo.png";
 
 const projectsData = [
   {
@@ -36,6 +37,14 @@ const projectsData = [
     githubUrl: null,
   },
   {
+    img: Tetris_logo,
+    title: "Tetris solver",
+    description:
+      "A python program that solves a large number of Tetris games using Heuristics, The games are usually in this format: Given a sequence of X pieces, and an initial board state clear Y lines. It can also be used to create solvable games with their X pieces and Y lines to clear.",
+    siteUrl: null,
+    githubUrl: null,
+  },
+  {
     img: Restaurant_template,
     title: "Restaurant Template",
     description:
@@ -51,14 +60,7 @@ const projectsData = [
     siteUrl: "https://calendrierdelavent.com",
     githubUrl: null,
   },
-  {
-    img: huddle1,
-    title: "Huddle Landing Page",
-    description:
-      "The Huddle Landing Page is a mockup website from FrontendMentor.io. It was built using HTML and CSS, with the primary challenge being SVG alignment for optimal compatibility with all screen sizes.",
-    siteUrl: "https://sami-29.github.io/huddle-landing-page/",
-    githubUrl: "https://github.com/sami-29/huddle-landing-page",
-  },
+
   {
     img: shadow_foundry,
     title: "Shadow Foundry.ai",
@@ -98,6 +100,14 @@ const projectsData = [
       "This todo website was built using React and CSS3. It offers functionalities like adding and removing tasks, marking tasks as done, and switching between a dark and light theme with different backgrounds.",
     siteUrl: "https://todo-list-react.pages.dev/",
     githubUrl: "https://github.com/sami-29/todo-list-react",
+  },
+  {
+    img: huddle1,
+    title: "Huddle Landing Page",
+    description:
+      "The Huddle Landing Page is a mockup website from FrontendMentor.io. It was built using HTML and CSS, with the primary challenge being SVG alignment for optimal compatibility with all screen sizes.",
+    siteUrl: "https://sami-29.github.io/huddle-landing-page/",
+    githubUrl: "https://github.com/sami-29/huddle-landing-page",
   },
 ];
 
