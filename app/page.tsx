@@ -1,57 +1,44 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+import type { Metadata } from "next";
+import { buildMetadata } from "../utils/buildMetadata";
+import HomeContent from "./HomeContent";
+import JsonLd from "../components/JsonLd";
+import { portfolioConfig } from "../utils/config";
+import { SOCIAL_LINKS } from "../utils/constants";
+
+export const metadata: Metadata = buildMetadata({
+  title: "Home",
+  description:
+    "Full-stack engineer for website development, website building, dashboard development, and web app development. I build React, Next.js, and TypeScript products for businesses that need clean UX and solid architecture.",
+  path: "/",
+  keywords: [
+    "website development",
+    "website building",
+    "web development",
+    "web app development",
+    "dashboard development",
+    "full-stack engineer",
+    "React developer",
+    "Next.js developer",
+    "TypeScript developer",
+  ],
+});
 
 export default function Home() {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: portfolioConfig.seo.authorName,
+    url: portfolioConfig.seo.baseUrl,
+    jobTitle: "Full-Stack Engineer",
+    description: portfolioConfig.seo.siteDescription,
+    sameAs: [SOCIAL_LINKS.linkedin, SOCIAL_LINKS.github],
+    knowsAbout: portfolioConfig.seo.keywords,
+  };
+
   return (
-    <div className={styles.container}>
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js 13!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://beta.nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js 13</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className={styles.card}
-          >
-            <h2>Examples &rarr;</h2>
-            <p>Explore the Next.js 13 playground.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/templates/next.js/app-directory?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.card}
-          >
-            <h2>Deploy &rarr;</h2>
-            <p>Deploy your Next.js site to a public URL with Vercel.</p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
-    </div>
-  )
+    <>
+      <JsonLd data={structuredData} />
+      <HomeContent />
+    </>
+  );
 }

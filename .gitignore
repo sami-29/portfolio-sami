@@ -34,3 +34,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+.aider*
+
+# other
+repo_context.txt
+repo_context2.txt
+repo_context_2scl.txt
