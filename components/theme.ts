@@ -1,9 +1,9 @@
-import { extendTheme, type ThemeConfig } from "@chakra-ui/react"
+import { extendTheme, type ThemeConfig } from "@chakra-ui/react";
 
 const config: ThemeConfig = {
   initialColorMode: "light",
   useSystemColorMode: true,
-}
+};
 
 const colors = {
   brand: {
@@ -18,13 +18,13 @@ const colors = {
     800: "#234E52",
     900: "#1D4044",
   },
-}
+};
 
-const theme = extendTheme({ 
+const theme = extendTheme({
   config,
   colors,
   styles: {
-    global: (props) => ({
+    global: (props: { colorMode: string }) => ({
       body: {
         bg: props.colorMode === "dark" ? "gray.800" : "white",
         color: props.colorMode === "dark" ? "white" : "gray.800",
@@ -39,14 +39,14 @@ const theme = extendTheme({
         borderRadius: "full",
       },
       variants: {
-        solid: (props) => ({
+        solid: (props: { colorMode: string }) => ({
           bg: props.colorMode === "dark" ? "brand.200" : "brand.500",
           color: props.colorMode === "dark" ? "gray.800" : "white",
           _hover: {
             bg: props.colorMode === "dark" ? "brand.300" : "brand.600",
           },
         }),
-        outline: (props) => ({
+        outline: (props: { colorMode: string }) => ({
           borderColor: props.colorMode === "dark" ? "brand.200" : "brand.500",
           color: props.colorMode === "dark" ? "brand.200" : "brand.500",
           _hover: {
@@ -57,7 +57,7 @@ const theme = extendTheme({
       },
     },
     Link: {
-      baseStyle: (props) => ({
+      baseStyle: (props: { colorMode: string }) => ({
         color: props.colorMode === "dark" ? "brand.200" : "brand.500",
         _hover: {
           textDecoration: "none",
@@ -66,6 +66,6 @@ const theme = extendTheme({
       }),
     },
   },
-})
+});
 
-export default theme
+export default theme;

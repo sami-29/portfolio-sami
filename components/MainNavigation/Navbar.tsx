@@ -87,10 +87,6 @@ const DesktopNav = ({ currentPath }: { currentPath: string }) => {
           fontWeight={600}
           color={currentPath === navItem.href ? activeColor : linkColor}
           position='relative'
-          _hover={{
-            textDecoration: "none",
-            color: linkHoverColor,
-          }}
           _after={{
             content: "''",
             position: "absolute",
@@ -104,6 +100,8 @@ const DesktopNav = ({ currentPath }: { currentPath: string }) => {
             transition: "transform 0.3s ease-out",
           }}
           _hover={{
+            textDecoration: "none",
+            color: linkHoverColor,
             _after: {
               transform: "scaleX(1)",
               transformOrigin: "bottom left",

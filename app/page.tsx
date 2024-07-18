@@ -7,7 +7,6 @@ import {
   Button,
   VStack,
   HStack,
-  Image,
   useColorModeValue,
 } from "@chakra-ui/react";
 import { Link } from "@chakra-ui/next-js";
@@ -20,11 +19,11 @@ export default function Home() {
 
   return (
     <>
-      <SEO 
-        title="Home"
-        description="Fullstack web developer creating interactive and responsive websites."
-        canonical="https://www.samibentaleb.com"
-        ogImage="https://www.samibentaleb.com/og-image.jpg"
+      <SEO
+        title='Home'
+        description='Fullstack web developer creating interactive and responsive websites.'
+        canonical='https://www.samibentaleb.com'
+        ogImage='https://www.samibentaleb.com/og-image.jpg'
       />
       <Box as='main' mb={10}>
         <VStack

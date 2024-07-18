@@ -17,37 +17,38 @@ export default function Projects() {
 
   return (
     <>
-      <SEO 
-        title="Projects"
-        description="Explore a selection of recent projects and experiences by Sami Bentaleb, a fullstack web developer."
-        canonical="https://www.samibentaleb.com/projects"
-        ogImage="https://www.samibentaleb.com/projects-og-image.jpg"
+      <SEO
+        title='Projects'
+        description='Explore a selection of recent projects and experiences by Sami Bentaleb, a fullstack web developer.'
+        canonical='https://www.samibentaleb.com/projects'
+        ogImage='https://www.samibentaleb.com/projects-og-image.jpg'
       />
-    <Box as='main'>
-      <VStack
-        spacing={8}
-        align='start'
-        w={["90%", "75%", "50%"]}
-        mx='auto'
-        mt={24}>
-        <Heading as='h1' fontSize={["4xl", "5xl", "6xl"]} color={textColor}>
-          Projects
-        </Heading>
-        <Text fontSize='lg' color={subTextColor}>
-          Here&apos;s a small selection of some of my recent projects and
-          experiences.
-        </Text>
-        {projectsData.map((project, index) => (
-          <Project
-            key={index}
-            img={project.img}
-            title={project.title}
-            description={project.description}
-            siteUrl={project.siteUrl}
-            githubUrl={project.githubUrl}
-          />
-        ))}
-      </VStack>
-    </Box>
+      <Box as='main'>
+        <VStack
+          spacing={8}
+          align='start'
+          w={["90%", "75%", "50%"]}
+          mx='auto'
+          mt={24}>
+          <Heading as='h1' fontSize={["4xl", "5xl", "6xl"]} color={textColor}>
+            Projects
+          </Heading>
+          <Text fontSize='lg' color={subTextColor}>
+            Here&apos;s a small selection of some of my recent projects and
+            experiences.
+          </Text>
+          {projectsData.map((project, index) => (
+            <Project
+              key={index}
+              img={project.img}
+              title={project.title}
+              description={project.description}
+              siteUrl={project.siteUrl}
+              githubUrl={project.githubUrl}
+            />
+          ))}
+        </VStack>
+      </Box>
+    </>
   );
 }

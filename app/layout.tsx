@@ -9,16 +9,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang='en'>
       <body>
         <Providers>
-          <Box minHeight="100vh" p={8}>
-            <header>
-              <Navbar />
+          <Box minHeight='100vh'>
+            <Navbar />
+            <Box position={"relative"} pt={16}>
               <ThemeToggle />
-            </header>
-            {children}
-            <footer></footer>
+              {children}
+            </Box>
           </Box>
         </Providers>
       </body>
