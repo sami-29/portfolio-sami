@@ -28,6 +28,7 @@ const theme = extendTheme({
       body: {
         bg: props.colorMode === "dark" ? "gray.800" : "white",
         color: props.colorMode === "dark" ? "white" : "gray.800",
+        overflowY: "scroll",
       },
     }),
   },

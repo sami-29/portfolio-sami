@@ -1,5 +1,4 @@
 "use client";
-import NextLink from "next/link";
 import { usePathname } from "next/navigation";
 import {
   Box,
@@ -8,9 +7,9 @@ import {
   Stack,
   IconButton,
   Collapse,
-  Link,
   useDisclosure,
 } from "@chakra-ui/react";
+import { Link } from "@chakra-ui/next-js";
 import { useColorModeValue } from "@chakra-ui/system";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 
@@ -39,13 +38,15 @@ export default function Navbar() {
         align={"center"}
         justify={"space-between"}>
         <Flex align={"center"}>
-          <Text
-            fontFamily={"heading"}
-            color={useColorModeValue("gray.800", "white")}
-            fontWeight='bold'
-            fontSize='xl'>
-            Sami
-          </Text>
+          <Link href='/' _hover={{ textDecoration: "none" }}>
+            <Text
+              fontFamily={"heading"}
+              color={useColorModeValue("gray.800", "white")}
+              fontWeight='bold'
+              fontSize='xl'>
+              Sami
+            </Text>
+          </Link>
         </Flex>
 
         <Flex display={{ base: "none", md: "flex" }}>
@@ -79,7 +80,6 @@ const DesktopNav = ({ currentPath }: { currentPath: string }) => {
     <Stack direction={"row"} spacing={8}>
       {NAV_ITEMS.map((navItem) => (
         <Link
-          as={NextLink}
           key={navItem.label}
           href={navItem.href}
           p={2}
@@ -147,7 +147,7 @@ const MobileNavItem = ({
 
   return (
     <Stack spacing={4}>
-      <NextLink href={href} passHref>
+      <Link href={href}>
         <Flex
           py={2}
           justify={"space-between"}
@@ -174,7 +174,7 @@ const MobileNavItem = ({
             {label}
           </Text>
         </Flex>
-      </NextLink>
+      </Link>
     </Stack>
   );
 };

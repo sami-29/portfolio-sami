@@ -1,15 +1,41 @@
-import Link from "next/link";
+import {
+  Box,
+  VStack,
+  Heading,
+  Text,
+  useColorModeValue,
+} from "@chakra-ui/react";
+import { Link } from "@chakra-ui/next-js";
 import { PostMetadata } from "../utils/GetPostMetadata";
 
 const PostPreview = (props: PostMetadata) => {
+  const borderColor = useColorModeValue("gray.200", "gray.600");
+  const hoverBorderColor = useColorModeValue("gray.400", "gray.400");
+  const titleColor = useColorModeValue("gray.800", "white");
+  const subtitleColor = useColorModeValue("gray.600", "gray.300");
+  const dateColor = useColorModeValue("gray.500", "gray.400");
+
   return (
-    <div className="p-4 border border-gray-200 rounded-lg hover:border-gray-400 transition-colors duration-200">
-      <Link href={`/blog/${props.slug}`} className="block">
-        <h2 className="text-xl font-bold mb-2">{props.title}</h2>
-        <p className="text-gray-600">{props.subtitle}</p>
-        <p className="text-sm text-gray-500 mt-2">{props.date.toDateString()}</p>
+    <Box
+      p={4}
+      borderWidth={1}
+      borderColor={borderColor}
+      borderRadius='lg'
+      transition='all 0.2s'
+      _hover={{ borderColor: hoverBorderColor }}
+      w='full'>
+      <Link href={`/blog/${props.slug}`} _hover={{ textDecoration: "none" }}>
+        <VStack align='start' spacing={2}>
+          <Heading as='h2' fontSize='xl' fontWeight='bold' color={titleColor}>
+            {props.title}
+          </Heading>
+          <Text color={subtitleColor}>{props.subtitle}</Text>
+          <Text fontSize='sm' color={dateColor} mt={2}>
+            {new Date(props.date).toDateString()}
+          </Text>
+        </VStack>
       </Link>
-    </div>
+    </Box>
   );
 };
 
