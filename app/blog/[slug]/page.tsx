@@ -14,12 +14,16 @@ export default function Post(props: urlParamType) {
   const slug = props.params.slug;
   const post = getPostContent(slug);
 
+  if (!post) {
+    return <div>Post not found</div>;
+  }
+
   return (
     <BlogPost
-      title={post.data.title}
-      subtitle={post.data.subtitle}
-      date={post.data.date}
-      content={post.content}
+      title={post.data.title || ""}
+      subtitle={post.data.subtitle || ""}
+      date={post.data.date || ""}
+      content={post.content || ""}
     />
   );
 }

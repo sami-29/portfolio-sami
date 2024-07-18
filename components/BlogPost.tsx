@@ -1,8 +1,14 @@
 "use client";
 
-import { Box, VStack, Heading, Text, useColorModeValue } from "@chakra-ui/react";
+import {
+  Box,
+  VStack,
+  Heading,
+  Text,
+  useColorModeValue,
+  Code,
+} from "@chakra-ui/react";
 import Markdown from "markdown-to-jsx";
-import { Code } from "@chakra-ui/react";
 
 interface BlogPostProps {
   title: string;
@@ -11,7 +17,12 @@ interface BlogPostProps {
   content: string;
 }
 
-export default function BlogPost({ title, subtitle, date, content }: BlogPostProps) {
+export default function BlogPost({
+  title,
+  subtitle,
+  date,
+  content,
+}: BlogPostProps) {
   const textColor = useColorModeValue("gray.800", "gray.200");
   const subtitleColor = useColorModeValue("gray.600", "gray.400");
 
