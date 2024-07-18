@@ -9,8 +9,7 @@ import getPostContent from "../../../utils/GetPostContent";
 import Markdown from "markdown-to-jsx";
 import getPostMetadata from "../../../utils/GetPostMetadata";
 import { urlParamType } from "./UrlType";
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import { atomOneDark } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
+import { Code } from '@chakra-ui/react';
 
 export const generateStaticParams = async () => {
   const posts = getPostMetadata();
@@ -52,9 +51,9 @@ export default function Post(props: urlParamType) {
               overrides: {
                 code: ({ children }) => {
                   return (
-                    <SyntaxHighlighter language="javascript" style={atomOneDark}>
+                    <Code colorScheme="gray" p={2} borderRadius="md" whiteSpace="pre-wrap">
                       {children}
-                    </SyntaxHighlighter>
+                    </Code>
                   );
                 },
               },
