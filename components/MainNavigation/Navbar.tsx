@@ -1,5 +1,4 @@
 "use client";
-import { useState } from "react";
 import NextLink from "next/link";
 import { usePathname } from "next/navigation";
 import {
@@ -11,10 +10,10 @@ import {
   Button,
   Collapse,
   Link,
-  useColorModeValue,
   useBreakpointValue,
   useDisclosure,
 } from "@chakra-ui/react";
+import { useColorModeValue } from "@chakra-ui/system";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 
 const NAV_ITEMS = [
@@ -29,43 +28,41 @@ export default function Navbar() {
   const currentPath = usePathname();
 
   return (
-    <Box>
+    <Box position='fixed' top={0} left={0} right={0} zIndex={1000}>
       <Flex
         bg={useColorModeValue("white", "gray.800")}
         color={useColorModeValue("gray.600", "white")}
         minH={"60px"}
         py={{ base: 2 }}
-        px={{ base: 4 }}
+        px={{ base: 4, md: 8 }}
         borderBottom={1}
         borderStyle={"solid"}
         borderColor={useColorModeValue("gray.200", "gray.900")}
-        align={"center"}>
-        <Flex
-          flex={{ base: 1, md: "auto" }}
-          ml={{ base: -2 }}
-          display={{ base: "flex", md: "none" }}>
-          <IconButton
-            onClick={onToggle}
-            icon={
-              isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />
-            }
-            variant={"ghost"}
-            aria-label={"Toggle Navigation"}
-          />
-        </Flex>
-        <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
+        align={"center"}
+        justify={"space-between"}>
+        <Flex align={"center"}>
           <Text
-            textAlign={useBreakpointValue({ base: "center", md: "left" })}
             fontFamily={"heading"}
             color={useColorModeValue("gray.800", "white")}
-            fontWeight='bold'>
+            fontWeight='bold'
+            fontSize='xl'>
             Sami
           </Text>
-
-          <Flex display={{ base: "none", md: "flex" }} ml={10}>
-            <DesktopNav currentPath={currentPath} />
-          </Flex>
         </Flex>
+
+        <Flex display={{ base: "none", md: "flex" }}>
+          <DesktopNav currentPath={currentPath} />
+        </Flex>
+
+        <IconButton
+          display={{ base: "flex", md: "none" }}
+          onClick={onToggle}
+          icon={
+            isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />
+          }
+          variant={"ghost"}
+          aria-label={"Toggle Navigation"}
+        />
       </Flex>
 
       <Collapse in={isOpen} animateOpacity>
@@ -81,19 +78,37 @@ const DesktopNav = ({ currentPath }: { currentPath: string }) => {
   const activeColor = useColorModeValue("brand.500", "brand.200");
 
   return (
-    <Stack direction={"row"} spacing={4}>
+    <Stack direction={"row"} spacing={8}>
       {NAV_ITEMS.map((navItem) => (
         <Link
           as={NextLink}
           key={navItem.label}
           href={navItem.href}
           p={2}
-          fontSize={"sm"}
-          fontWeight={500}
+          fontSize={"md"}
+          fontWeight={600}
           color={currentPath === navItem.href ? activeColor : linkColor}
+          position='relative'
           _hover={{
             textDecoration: "none",
             color: linkHoverColor,
+            _after: {
+              transform: "scaleX(1)",
+              transformOrigin: "bottom left",
+            },
+          }}
+          _after={{
+            content: "''",
+            position: "absolute",
+            width: "100%",
+            transform: "scaleX(0)",
+            height: "2px",
+            bottom: 0,
+            left: 0,
+            backgroundColor:
+              currentPath === navItem.href ? activeColor : linkHoverColor,
+            transformOrigin: "bottom right",
+            transition: "transform 0.3s ease-out",
           }}>
           {navItem.label}
         </Link>
