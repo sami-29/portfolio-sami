@@ -52,20 +52,20 @@ export default function BlogPost({
         <ChakraMarkdown
           options={{
             overrides: {
-              h1: (props) => (
+              h1: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
                 <Heading as='h1' size='2xl' mt={8} mb={4} {...props} />
               ),
-              h2: (props) => (
+              h2: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
                 <Heading as='h2' size='xl' mt={6} mb={3} {...props} />
               ),
-              h3: (props) => (
+              h3: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
                 <Heading as='h3' size='lg' mt={4} mb={2} {...props} />
               ),
-              p: (props) => <Text mb={4} {...props} />,
-              ul: (props) => <chakra.ul pl={4} mb={4} {...props} />,
-              ol: (props) => <chakra.ol pl={4} mb={4} {...props} />,
-              li: (props) => <chakra.li mb={2} {...props} />,
-              code: ({ className, children }) => {
+              p: (props: React.HTMLAttributes<HTMLParagraphElement>) => <Text mb={4} {...props} />,
+              ul: (props: React.HTMLAttributes<HTMLUListElement>) => <chakra.ul pl={4} mb={4} {...props} />,
+              ol: (props: React.HTMLAttributes<HTMLOListElement>) => <chakra.ol pl={4} mb={4} {...props} />,
+              li: (props: React.HTMLAttributes<HTMLLIElement>) => <chakra.li mb={2} {...props} />,
+              code: ({ className, children }: { className?: string; children: React.ReactNode }) => {
                 const match = /language-(\w+)/.exec(className || "");
                 return match ? (
                   <SyntaxHighlighter
