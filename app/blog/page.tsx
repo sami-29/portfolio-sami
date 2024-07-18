@@ -1,5 +1,3 @@
-'use client'
-
 import { Box, VStack, Heading, useColorModeValue } from "@chakra-ui/react";
 import PostPreview from "../../components/PostPreview";
 import getPostMetadata from "../../utils/GetPostMetadata";
@@ -13,12 +11,21 @@ export default function Blogs() {
   const textColor = useColorModeValue("gray.800", "white");
 
   return (
-    <Box as="main">
-      <VStack spacing={8} align="start" w={["90%", "75%", "50%"]} mx="auto" mt={24}>
-        <Heading as="h1" fontSize={["4xl", "5xl", "6xl"]} color={textColor} mb={10}>
+    <Box as='main'>
+      <VStack
+        spacing={8}
+        align='start'
+        w={["90%", "75%", "50%"]}
+        mx='auto'
+        mt={24}>
+        <Heading
+          as='h1'
+          fontSize={["4xl", "5xl", "6xl"]}
+          color={textColor}
+          mb={10}>
           Blog posts
         </Heading>
-        <VStack spacing={6} w="full">
+        <VStack spacing={6} w='full'>
           {postPreviews}
         </VStack>
       </VStack>
