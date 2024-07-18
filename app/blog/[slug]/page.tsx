@@ -1,6 +1,10 @@
-'use client'
-
-import { Box, VStack, Heading, Text, useColorModeValue } from "@chakra-ui/react";
+import {
+  Box,
+  VStack,
+  Heading,
+  Text,
+  useColorModeValue,
+} from "../../../components/ChakraComponents";
 import getPostContent from "../../../utils/GetPostContent";
 import Markdown from "markdown-to-jsx";
 import getPostMetadata from "../../../utils/GetPostMetadata";
@@ -16,27 +20,29 @@ export const generateStaticParams = async () => {
 export default function Post(props: urlParamType) {
   const slug = props.params.slug;
   const post = getPostContent(slug);
-  const textColor = useColorModeValue("gray.800", "white");
-  const subtitleColor = useColorModeValue("gray.600", "gray.300");
 
   return (
-    <Box as="main">
-      <VStack spacing={8} align="start" w={["90%", "75%", "50%"]} mx="auto" mt={24}>
-        <Heading as="h1" fontSize={["4xl", "5xl", "6xl"]} color={textColor}>
+    <Box as='main'>
+      <VStack
+        spacing={8}
+        align='start'
+        w={["90%", "75%", "50%"]}
+        mx='auto'
+        mt={24}>
+        <Heading as='h1' fontSize={["4xl", "5xl", "6xl"]} color='gray.200'>
           {post.data.title}
         </Heading>
-        <Text fontSize="xl" color={subtitleColor}>
+        <Text fontSize='xl' color='gray.600'>
           {post.data.subtitle}
         </Text>
-        <Text fontSize="md" color={subtitleColor}>
+        <Text fontSize='md' color='gray.600'>
           {new Date(post.data.date).toDateString()}
         </Text>
         <Box
-          className="markdown-body"
-          color={textColor}
-          fontSize="lg"
-          lineHeight="tall"
-        >
+          className='markdown-body'
+          color='gray.800'
+          fontSize='lg'
+          lineHeight='tall'>
           <Markdown>{post.content}</Markdown>
         </Box>
       </VStack>

@@ -40,4 +40,6 @@ const PostPreview = forwardRef<HTMLDivElement, PostMetadata>((props, ref) => {
   );
 });
 
-export default forwardRef(PostPreview);
+PostPreview.displayName = 'PostPreview';
+
+export default PostPreview;
