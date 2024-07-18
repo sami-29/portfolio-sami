@@ -7,10 +7,8 @@ import {
   Text,
   Stack,
   IconButton,
-  Button,
   Collapse,
   Link,
-  useBreakpointValue,
   useDisclosure,
 } from "@chakra-ui/react";
 import { useColorModeValue } from "@chakra-ui/system";
@@ -92,23 +90,24 @@ const DesktopNav = ({ currentPath }: { currentPath: string }) => {
           _hover={{
             textDecoration: "none",
             color: linkHoverColor,
-            _after: {
-              transform: "scaleX(1)",
-              transformOrigin: "bottom left",
-            },
           }}
           _after={{
             content: "''",
             position: "absolute",
             width: "100%",
-            transform: "scaleX(0)",
+            transform: currentPath === navItem.href ? "scaleX(1)" : "scaleX(0)",
             height: "2px",
             bottom: 0,
             left: 0,
-            backgroundColor:
-              currentPath === navItem.href ? activeColor : linkHoverColor,
+            backgroundColor: activeColor,
             transformOrigin: "bottom right",
             transition: "transform 0.3s ease-out",
+          }}
+          _hover={{
+            _after: {
+              transform: "scaleX(1)",
+              transformOrigin: "bottom left",
+            },
           }}>
           {navItem.label}
         </Link>
@@ -143,7 +142,7 @@ const MobileNavItem = ({
   href: string;
   isActive: boolean;
 }) => {
-  const activeColor = useColorModeValue("blue.500", "blue.200");
+  const activeColor = useColorModeValue("brand.500", "brand.200");
   const inactiveColor = useColorModeValue("gray.600", "gray.200");
 
   return (
@@ -156,7 +155,23 @@ const MobileNavItem = ({
           _hover={{
             textDecoration: "none",
           }}>
-          <Text fontWeight={600} color={isActive ? activeColor : inactiveColor}>
+          <Text 
+            fontWeight={600} 
+            color={isActive ? activeColor : inactiveColor}
+            position="relative"
+            _after={{
+              content: "''",
+              position: "absolute",
+              width: "100%",
+              transform: isActive ? "scaleX(1)" : "scaleX(0)",
+              height: "2px",
+              bottom: "-4px",
+              left: 0,
+              backgroundColor: activeColor,
+              transformOrigin: "bottom right",
+              transition: "transform 0.3s ease-out",
+            }}
+          >
             {label}
           </Text>
         </Flex>
