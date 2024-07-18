@@ -6,6 +6,7 @@ import {
   Code,
 } from "@chakra-ui/react";
 import { useColorModeValue } from "@chakra-ui/react";
+import Markdown from "markdown-to-jsx";
 import getPostContent from "../../../utils/GetPostContent";
 import Markdown from "markdown-to-jsx";
 import getPostMetadata from "../../../utils/GetPostMetadata";
