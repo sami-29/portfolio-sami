@@ -19,7 +19,7 @@ export default function Blogs() {
         <Heading
           as='h1'
           fontSize={["4xl", "5xl", "6xl"]}
-          color="gray.800"
+          color='gray.800'
           mb={10}>
           Blog posts
         </Heading>
