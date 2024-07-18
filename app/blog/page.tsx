@@ -1,4 +1,6 @@
-import { Box, VStack, Heading } from "../../components/ChakraComponents";
+'use client'
+
+import { Box, VStack, Heading, Text, useColorModeValue } from "@chakra-ui/react";
 import PostPreview from "../../components/PostPreview";
 import getPostMetadata from "../../utils/GetPostMetadata";
 
@@ -7,6 +9,9 @@ export default function Blogs() {
   const postPreviews = postMetadata.map((post) => (
     <PostPreview key={post.slug} {...post} />
   ));
+
+  const textColor = useColorModeValue("gray.800", "white");
+  const subTextColor = useColorModeValue("gray.600", "gray.300");
 
   return (
     <Box as='main'>
@@ -19,10 +24,13 @@ export default function Blogs() {
         <Heading
           as='h1'
           fontSize={["4xl", "5xl", "6xl"]}
-          color='gray.800'
+          color={textColor}
           mb={10}>
           Blog posts
         </Heading>
+        <Text fontSize="lg" color={subTextColor}>
+          Explore my thoughts and insights on various topics related to web development and technology.
+        </Text>
         <VStack spacing={6} w='full'>
           {postPreviews}
         </VStack>
