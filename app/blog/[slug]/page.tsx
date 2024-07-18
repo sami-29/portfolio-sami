@@ -3,17 +3,13 @@ import {
   VStack,
   Heading,
   Text,
-  Code,
-} from "@chakra-ui/react";
+} from "../../../components/ChakraComponents";
 import { useColorModeValue } from "@chakra-ui/react";
-import Markdown from "markdown-to-jsx";
-import getPostContent from "../../../utils/GetPostContent";
-import { urlParamType } from "./UrlType";
 import getPostContent from "../../../utils/GetPostContent";
 import Markdown from "markdown-to-jsx";
 import getPostMetadata from "../../../utils/GetPostMetadata";
 import { urlParamType } from "./UrlType";
-import { Code } from '@chakra-ui/react';
+import { Code } from "@chakra-ui/react";
 
 export const generateStaticParams = async () => {
   const posts = getPostMetadata();
@@ -22,14 +18,11 @@ export const generateStaticParams = async () => {
   }));
 };
 
-export default function Post({ params }: { params: { slug: string } }) {
-  const post = getPostContent(params.slug);
+export default function Post(props: urlParamType) {
+  const slug = props.params.slug;
+  const post = getPostContent(slug);
   const textColor = useColorModeValue("gray.800", "gray.200");
   const subtitleColor = useColorModeValue("gray.600", "gray.400");
-
-  if (!post) {
-    return <Box>Post not found</Box>;
-  }
 
   return (
     <Box as='main'>
@@ -38,8 +31,7 @@ export default function Post({ params }: { params: { slug: string } }) {
         align='start'
         w={["90%", "75%", "50%"]}
         mx='auto'
-        mt={24}
-      >
+        mt={24}>
         <Heading as='h1' fontSize={["4xl", "5xl", "6xl"]} color={textColor}>
           {post.data.title}
         </Heading>
@@ -53,19 +45,23 @@ export default function Post({ params }: { params: { slug: string } }) {
           className='markdown-body'
           color={textColor}
           fontSize='lg'
-          lineHeight='tall'
-        >
+          lineHeight='tall'>
           <Markdown
             options={{
               overrides: {
-                code: ({ children }) => (
-                  <Code colorScheme="gray" p={2} borderRadius="md" whiteSpace="pre-wrap">
-                    {children}
-                  </Code>
-                ),
+                code: ({ children }) => {
+                  return (
+                    <Code
+                      colorScheme='gray'
+                      p={2}
+                      borderRadius='md'
+                      whiteSpace='pre-wrap'>
+                      {children}
+                    </Code>
+                  );
+                },
               },
-            }}
-          >
+            }}>
             {post.content}
           </Markdown>
         </Box>
