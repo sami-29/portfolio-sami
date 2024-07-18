@@ -8,6 +8,8 @@ import {
 import { useColorModeValue } from "@chakra-ui/react";
 import Markdown from "markdown-to-jsx";
 import getPostContent from "../../../utils/GetPostContent";
+import { urlParamType } from "./UrlType";
+import getPostContent from "../../../utils/GetPostContent";
 import Markdown from "markdown-to-jsx";
 import getPostMetadata from "../../../utils/GetPostMetadata";
 import { urlParamType } from "./UrlType";
@@ -20,11 +22,14 @@ export const generateStaticParams = async () => {
   }));
 };
 
-export default function Post(props: urlParamType) {
-  const slug = props.params.slug;
-  const post = getPostContent(slug);
+export default function Post({ params }: { params: { slug: string } }) {
+  const post = getPostContent(params.slug);
   const textColor = useColorModeValue("gray.800", "gray.200");
   const subtitleColor = useColorModeValue("gray.600", "gray.400");
+
+  if (!post) {
+    return <Box>Post not found</Box>;
+  }
 
   return (
     <Box as='main'>
