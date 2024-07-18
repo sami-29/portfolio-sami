@@ -3,8 +3,8 @@ import {
   VStack,
   Heading,
   Text,
-  useColorModeValue,
 } from "../../../components/ChakraComponents";
+import { useColorModeValue } from "@chakra-ui/react";
 import getPostContent from "../../../utils/GetPostContent";
 import Markdown from "markdown-to-jsx";
 import getPostMetadata from "../../../utils/GetPostMetadata";
