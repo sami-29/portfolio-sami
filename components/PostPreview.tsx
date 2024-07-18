@@ -13,8 +13,9 @@ const PostPreview = forwardRef<HTMLDivElement, PostMetadata>((props, ref) => {
   const borderColor = useColorModeValue("gray.200", "gray.600");
   const hoverBorderColor = useColorModeValue("gray.400", "gray.400");
   const titleColor = useColorModeValue("gray.800", "white");
-  const subtitleColor = useColorModeValue("gray.600", "gray.300");
-  const dateColor = useColorModeValue("gray.500", "gray.400");
+  const subtitleColor = useColorModeValue("gray.600", "white");
+  const dateColor = useColorModeValue("gray.500", "gray.300");
+  const bgColor = useColorModeValue("white", "gray.700");
 
   return (
     <Box
@@ -24,7 +25,9 @@ const PostPreview = forwardRef<HTMLDivElement, PostMetadata>((props, ref) => {
       borderRadius='lg'
       transition='all 0.2s'
       _hover={{ borderColor: hoverBorderColor }}
-      w='full'>
+      w='full'
+      bg={bgColor}
+    >
       <Link href={`/blog/${props.slug}`} _hover={{ textDecoration: "none" }}>
         <VStack align='start' spacing={2}>
           <Heading as='h2' fontSize='xl' fontWeight='bold' color={titleColor}>
