@@ -1,6 +1,10 @@
-'use client'
-
-import { Box, VStack, Heading, Text, useColorModeValue } from "@chakra-ui/react";
+import {
+  Box,
+  VStack,
+  Heading,
+  Text,
+  useColorModeValue,
+} from "@chakra-ui/react";
 import PostPreview from "../../components/PostPreview";
 import getPostMetadata from "../../utils/GetPostMetadata";
 
@@ -28,8 +32,9 @@ export default function Blogs() {
           mb={10}>
           Blog posts
         </Heading>
-        <Text fontSize="lg" color={subTextColor}>
-          Explore my thoughts and insights on various topics related to web development and technology.
+        <Text fontSize='lg' color={subTextColor}>
+          Explore my thoughts and insights on various topics related to web
+          development and technology.
         </Text>
         <VStack spacing={6} w='full'>
           {postPreviews}
