@@ -1,3 +1,5 @@
+"use client";
+
 import { Box, keyframes } from "@chakra-ui/react";
 
 const wiggle = keyframes`
