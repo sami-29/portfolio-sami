@@ -1,4 +1,5 @@
-import { Box, VStack, Heading, useColorModeValue } from "@chakra-ui/react";
+import { Box, VStack, Heading } from "@chakra-ui/react";
+import { useColorModeValue } from "@chakra-ui/system";
 import PostPreview from "../../components/PostPreview";
 import getPostMetadata from "../../utils/GetPostMetadata";
 
