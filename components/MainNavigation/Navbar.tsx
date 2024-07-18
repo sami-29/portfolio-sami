@@ -155,10 +155,10 @@ const MobileNavItem = ({
           _hover={{
             textDecoration: "none",
           }}>
-          <Text 
-            fontWeight={600} 
+          <Text
+            fontWeight={600}
             color={isActive ? activeColor : inactiveColor}
-            position="relative"
+            position='relative'
             _after={{
               content: "''",
               position: "absolute",
@@ -170,8 +170,7 @@ const MobileNavItem = ({
               backgroundColor: activeColor,
               transformOrigin: "bottom right",
               transition: "transform 0.3s ease-out",
-            }}
-          >
+            }}>
             {label}
           </Text>
         </Flex>
