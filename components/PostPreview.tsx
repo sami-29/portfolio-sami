@@ -6,9 +6,10 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import { Link } from "@chakra-ui/next-js";
+import { forwardRef } from "react";
 import { PostMetadata } from "../utils/GetPostMetadata";
 
-const PostPreview = (props: PostMetadata) => {
+const PostPreview = forwardRef<HTMLDivElement, PostMetadata>((props, ref) => {
   const borderColor = useColorModeValue("gray.200", "gray.600");
   const hoverBorderColor = useColorModeValue("gray.400", "gray.400");
   const titleColor = useColorModeValue("gray.800", "white");
@@ -37,6 +38,6 @@ const PostPreview = (props: PostMetadata) => {
       </Link>
     </Box>
   );
-};
+});
 
-export default PostPreview;
+export default forwardRef(PostPreview);
