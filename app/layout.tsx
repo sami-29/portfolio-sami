@@ -9,7 +9,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang='en' suppressHydrationWarning>
+    <html lang='en'>
       <head>
         <meta charSet='UTF-8' />
         <meta name='viewport' content='width=device-width, initial-scale=1.0' />
@@ -23,12 +23,12 @@ export default function RootLayout({
       </head>
       <body className='bg-white dark:bg-gray-900 scrollbar-thumb-gray-800 scrollbar-thin scrollbar-track-gray-500'>
         <ThemeProvider>
-        <header className='select-none'>
-          <Navbar />
-          <ThemeToggle />
-        </header>
-        {children}
-        <footer></footer>
+          <header className='select-none'>
+            <Navbar />
+            <ThemeToggle />
+          </header>
+          {children}
+          <footer></footer>
         </ThemeProvider>
       </body>
     </html>
