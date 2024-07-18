@@ -1,7 +1,7 @@
-import { Providers } from "./providers";
+import { Providers } from "../components/Providers";
 import Navbar from "../components/MainNavigation/Navbar";
 import ThemeToggle from "../components/ThemeToggle/ThemeToggle";
-import { ChakraProvider, Box } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 
 export default function RootLayout({
   children,
