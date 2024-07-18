@@ -61,22 +61,39 @@ export default function BlogPost({
               h3: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
                 <Heading as='h3' size='lg' mt={4} mb={2} {...props} />
               ),
-              p: (props: React.HTMLAttributes<HTMLParagraphElement>) => <Text mb={4} {...props} />,
-              ul: (props: React.HTMLAttributes<HTMLUListElement>) => <chakra.ul pl={4} mb={4} {...props} />,
-              ol: (props: React.HTMLAttributes<HTMLOListElement>) => <chakra.ol pl={4} mb={4} {...props} />,
-              li: (props: React.HTMLAttributes<HTMLLIElement>) => <chakra.li mb={2} {...props} />,
-              code: ({ className, children }: { className?: string; children: React.ReactNode }) => {
+              p: (props: React.HTMLAttributes<HTMLParagraphElement>) => (
+                <Text mb={4} {...props} />
+              ),
+              ul: (props: React.HTMLAttributes<HTMLUListElement>) => (
+                <chakra.ul pl={4} mb={4} {...props} />
+              ),
+              ol: (props: React.HTMLAttributes<HTMLOListElement>) => (
+                <chakra.ol pl={4} mb={4} {...props} />
+              ),
+              li: (props: React.HTMLAttributes<HTMLLIElement>) => (
+                <chakra.li mb={2} {...props} />
+              ),
+              code: ({
+                className,
+                children,
+              }: {
+                className?: string;
+                children: React.ReactNode;
+              }) => {
                 const match = /language-(\w+)/.exec(className || "");
                 return match ? (
-                  <SyntaxHighlighter
-                    language={match[1]}
-                    style={tomorrow}
-                    customStyle={{
-                      margin: "1.5rem 0",
-                      borderRadius: "0.375rem",
-                    }}>
-                    {String(children).replace(/\n$/, "")}
-                  </SyntaxHighlighter>
+                  <Box overflow='hidden' borderRadius='md' my={4}>
+                    <SyntaxHighlighter
+                      language={match[1]}
+                      style={tomorrow}
+                      customStyle={{
+                        margin: 0,
+                        padding: "1rem",
+                        borderRadius: 0,
+                      }}>
+                      {String(children).replace(/\n$/, "")}
+                    </SyntaxHighlighter>
+                  </Box>
                 ) : (
                   <Code
                     colorScheme='gray'
