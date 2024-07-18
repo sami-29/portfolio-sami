@@ -4,7 +4,7 @@ import projectsData from "./projectsData";
 
 export default function Projects() {
   const textColor = useColorModeValue("gray.800", "white");
-  const subTextColor = useColorModeValue("gray.600", "gray.400");
+  const subTextColor = useColorModeValue("gray.600", "gray.300");
 
   return (
     <Box as="main">

@@ -77,27 +77,28 @@ export default function Navbar() {
 }
 
 const DesktopNav = ({ currentPath }: { currentPath: string }) => {
-  const linkColor = useColorModeValue("gray.600", "gray.200");
-  const linkHoverColor = useColorModeValue("gray.800", "white");
-  const activeColor = useColorModeValue("blue.500", "blue.200");
+  const linkColor = useColorModeValue("gray.600", "gray.300");
+  const linkHoverColor = useColorModeValue("brand.600", "brand.200");
+  const activeColor = useColorModeValue("brand.500", "brand.200");
 
   return (
     <Stack direction={"row"} spacing={4}>
       {NAV_ITEMS.map((navItem) => (
-        <NextLink key={navItem.label} href={navItem.href} passHref>
-          <Link
-            p={2}
-            fontSize={"sm"}
-            fontWeight={500}
-            color={currentPath === navItem.href ? activeColor : linkColor}
-            _hover={{
-              textDecoration: "none",
-              color: linkHoverColor,
-            }}
-          >
-            {navItem.label}
-          </Link>
-        </NextLink>
+        <Link
+          as={NextLink}
+          key={navItem.label}
+          href={navItem.href}
+          p={2}
+          fontSize={"sm"}
+          fontWeight={500}
+          color={currentPath === navItem.href ? activeColor : linkColor}
+          _hover={{
+            textDecoration: "none",
+            color: linkHoverColor,
+          }}
+        >
+          {navItem.label}
+        </Link>
       ))}
     </Stack>
   );

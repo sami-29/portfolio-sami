@@ -14,7 +14,7 @@ import {
 
 export default function Home() {
   const textColor = useColorModeValue("gray.800", "white");
-  const subTextColor = useColorModeValue("gray.600", "gray.400");
+  const subTextColor = useColorModeValue("gray.600", "gray.300");
 
   return (
     <Box as='main' mb={10}>
