@@ -1,4 +1,5 @@
-import Image, { StaticImageData } from "next/image";
+import { Box, VStack, Heading, Text, Button, HStack, Image, Link, useColorModeValue } from "@chakra-ui/react";
+import { StaticImageData } from "next/image";
 
 interface ButtonLinkProps {
   link: string | null;
@@ -6,21 +7,19 @@ interface ButtonLinkProps {
 }
 
 function ButtonLink({ link, text }: ButtonLinkProps) {
-  if (link === null) {
-    return (
-      <a>
-        <button className='px-4 py-2 ml-4 text-gray-700 bg-gray-400 border border-gray-500 dark:bg-gray-400 rounded-3xl dark:text-gray-100 cursor-no-drop'>
-          {text}
-        </button>
-      </a>
-    );
-  }
   return (
-    <a href={link} target='_blank' rel='noreferrer'>
-      <button className='px-4 py-2 ml-4 border border-gray-500 dark:bg-gray-800 dark:hover:bg-gray-700 rounded-3xl dark:text-gray-100'>
-        {text}
-      </button>
-    </a>
+    <Button
+      as={Link}
+      href={link || "#"}
+      isExternal
+      isDisabled={!link}
+      colorScheme={link ? "gray" : "gray"}
+      variant={link ? "outline" : "solid"}
+      ml={4}
+      borderRadius="full"
+    >
+      {text}
+    </Button>
   );
 }
 
@@ -39,24 +38,28 @@ export default function Project({
   siteUrl,
   githubUrl,
 }: Props) {
-  return (
-    <div>
-      <div className='border-purple-200 rounded-xl md:border-t-24 md:border-x-24 dark:border-purple-300'>
-        <Image src={img} alt={`${title} image`} />
-      </div>
+  const borderColor = useColorModeValue("purple.200", "purple.300");
+  const titleColor = useColorModeValue("gray.800", "gray.200");
+  const descriptionColor = useColorModeValue("gray.600", "gray.400");
 
-      <div className='m-auto my-12 mb-32 sm:w-4/5'>
-        <h2 className='text-2xl sm:text-3xl lg:text-4xl dark:text-gray-200'>
+  return (
+    <VStack spacing={6} align="start" mb={16}>
+      <Box borderColor={borderColor} borderWidth={[0, 0, 2]} borderRadius="xl" overflow="hidden">
+        <Image src={img.src} alt={`${title} image`} width={img.width} height={img.height} />
+      </Box>
+
+      <VStack align="start" spacing={4} w="full">
+        <Heading as="h2" fontSize={["2xl", "3xl", "4xl"]} color={titleColor}>
           {title}
-        </h2>
-        <p className='my-6 mb-10 ml-6 text-lg dark:text-gray-400'>
+        </Heading>
+        <Text fontSize="lg" color={descriptionColor}>
           {description}
-        </p>
-        <div className='flex'>
-          <ButtonLink link={siteUrl} text='Live Site' />
-          <ButtonLink link={githubUrl} text='Github repo' />
-        </div>
-      </div>
-    </div>
+        </Text>
+        <HStack spacing={4}>
+          <ButtonLink link={siteUrl} text="Live Site" />
+          <ButtonLink link={githubUrl} text="Github repo" />
+        </HStack>
+      </VStack>
+    </VStack>
   );
 }

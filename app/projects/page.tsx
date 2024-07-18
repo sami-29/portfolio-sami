@@ -1,30 +1,32 @@
+import { Box, VStack, Heading, Text, useColorModeValue } from "@chakra-ui/react";
 import Project from "../../components/Project";
 import projectsData from "./projectsData";
 
 export default function Projects() {
+  const textColor = useColorModeValue("gray.800", "white");
+  const subTextColor = useColorModeValue("gray.600", "gray.400");
+
   return (
-    <main className=' dark:bg-gray-900'>
-      <div className='flex flex-col px-4 mt-24 ml-auto mr-auto font-mono sm:px:0 sm:w-3/4 xl:w-1/2'>
-        <h1 className='text-4xl sm:text-5xl md:text-5xl lg:text-6xl dark:text-white '>
+    <Box as="main">
+      <VStack spacing={8} align="start" w={["90%", "75%", "50%"]} mx="auto" mt={24}>
+        <Heading as="h1" fontSize={["4xl", "5xl", "6xl"]} color={textColor}>
           Projects
-        </h1>
-        <p className='my-10 text-lg dark:text-gray-400'>
-          Here&apos; a small selection of some of my recent projects and
+        </Heading>
+        <Text fontSize="lg" color={subTextColor}>
+          Here's a small selection of some of my recent projects and
           experiences.
-        </p>
-        {projectsData.map((project, index) => {
-          return (
-            <Project
-              key={index}
-              img={project.img}
-              title={project.title}
-              description={project.description}
-              siteUrl={project.siteUrl}
-              githubUrl={project.githubUrl}
-            />
-          );
-        })}
-      </div>
-    </main>
+        </Text>
+        {projectsData.map((project, index) => (
+          <Project
+            key={index}
+            img={project.img}
+            title={project.title}
+            description={project.description}
+            siteUrl={project.siteUrl}
+            githubUrl={project.githubUrl}
+          />
+        ))}
+      </VStack>
+    </Box>
   );
 }
