@@ -39,16 +39,16 @@ export default function Navbar() {
         borderBottom={1}
         borderStyle={"solid"}
         borderColor={useColorModeValue("gray.200", "gray.900")}
-        align={"center"}
-      >
+        align={"center"}>
         <Flex
           flex={{ base: 1, md: "auto" }}
           ml={{ base: -2 }}
-          display={{ base: "flex", md: "none" }}
-        >
+          display={{ base: "flex", md: "none" }}>
           <IconButton
             onClick={onToggle}
-            icon={isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />}
+            icon={
+              isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />
+            }
             variant={"ghost"}
             aria-label={"Toggle Navigation"}
           />
@@ -58,8 +58,7 @@ export default function Navbar() {
             textAlign={useBreakpointValue({ base: "center", md: "left" })}
             fontFamily={"heading"}
             color={useColorModeValue("gray.800", "white")}
-            fontWeight="bold"
-          >
+            fontWeight='bold'>
             Sami
           </Text>
 
@@ -95,8 +94,7 @@ const DesktopNav = ({ currentPath }: { currentPath: string }) => {
           _hover={{
             textDecoration: "none",
             color: linkHoverColor,
-          }}
-        >
+          }}>
           {navItem.label}
         </Link>
       ))}
@@ -106,15 +104,30 @@ const DesktopNav = ({ currentPath }: { currentPath: string }) => {
 
 const MobileNav = ({ currentPath }: { currentPath: string }) => {
   return (
-    <Stack bg={useColorModeValue("white", "gray.800")} p={4} display={{ md: "none" }}>
+    <Stack
+      bg={useColorModeValue("white", "gray.800")}
+      p={4}
+      display={{ md: "none" }}>
       {NAV_ITEMS.map((navItem) => (
-        <MobileNavItem key={navItem.label} {...navItem} isActive={currentPath === navItem.href} />
+        <MobileNavItem
+          key={navItem.label}
+          {...navItem}
+          isActive={currentPath === navItem.href}
+        />
       ))}
     </Stack>
   );
 };
 
-const MobileNavItem = ({ label, href, isActive }: { label: string; href: string; isActive: boolean }) => {
+const MobileNavItem = ({
+  label,
+  href,
+  isActive,
+}: {
+  label: string;
+  href: string;
+  isActive: boolean;
+}) => {
   const activeColor = useColorModeValue("blue.500", "blue.200");
   const inactiveColor = useColorModeValue("gray.600", "gray.200");
 
@@ -127,8 +140,7 @@ const MobileNavItem = ({ label, href, isActive }: { label: string; href: string;
           align={"center"}
           _hover={{
             textDecoration: "none",
-          }}
-        >
+          }}>
           <Text fontWeight={600} color={isActive ? activeColor : inactiveColor}>
             {label}
           </Text>
