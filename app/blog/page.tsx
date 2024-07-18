@@ -8,7 +8,7 @@ export default function Blogs() {
     <PostPreview key={post.slug} {...post} />
   ));
 
-  const textColor = useColorModeValue("gray.800", "white");
+  const textColor = useChakraColorModeValue("gray.800", "white");
 
   return (
     <Box as="main">
