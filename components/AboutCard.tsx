@@ -1,23 +1,46 @@
-import Image, { StaticImageData } from "next/image";
+import { Box, VStack, Heading, Text, Image, useColorModeValue } from "@chakra-ui/react";
+import { StaticImageData } from "next/image";
 
-interface props {
+interface Props {
   src: StaticImageData;
   title: string;
   description: string;
 }
 
-export default function AboutCard({ src, title, description }: props) {
+export default function AboutCard({ src, title, description }: Props) {
+  const bgColor = useColorModeValue("white", "gray.800");
+  const hoverBgColor = useColorModeValue("gray.100", "gray.700");
+  const borderColor = useColorModeValue("gray.200", "gray.600");
+  const titleColor = useColorModeValue("gray.800", "white");
+  const descriptionColor = useColorModeValue("gray.600", "gray.400");
+
   return (
-    <div className='cursor-pointer md:pt-2 bg-white md:hover:bg-gray-300 dark:md:hover:bg-gray-700  flex h-40 sm:h-32 pl-3 md:pl-0 rounded-lg  md:flex-col md:h-64 bg-inherit border-2 dark:md:bg-gray-800 dark:bg-inherit border-gray-600'>
-      <Image
-        className='h-auto mr-2 my-auto md:h-1/2 md:w-auto w-20 md:m-auto '
-        src={src}
-        alt={title}
-      />
-      <div className='my-auto md:h-1/2 md:mt-4 p-2 dark:md:bg-gray-900 rounded-lg rounded-t-none'>
-        <h3 className='text-xl dark:text-white'>{title}</h3>
-        <p className='text-sm dark:text-gray-400'>{description}</p>
-      </div>
-    </div>
+    <Box
+      cursor="pointer"
+      bg={bgColor}
+      _hover={{ bg: hoverBgColor }}
+      borderWidth={2}
+      borderColor={borderColor}
+      borderRadius="lg"
+      overflow="hidden"
+      transition="all 0.3s"
+    >
+      <VStack spacing={4} p={4}>
+        <Image
+          src={src.src}
+          alt={title}
+          boxSize="100px"
+          objectFit="contain"
+        />
+        <VStack spacing={2} align="start" w="full">
+          <Heading as="h3" size="md" color={titleColor}>
+            {title}
+          </Heading>
+          <Text fontSize="sm" color={descriptionColor}>
+            {description}
+          </Text>
+        </VStack>
+      </VStack>
+    </Box>
   );
 }

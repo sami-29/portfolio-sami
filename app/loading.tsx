@@ -1,5 +1,22 @@
+import { Box, keyframes } from "@chakra-ui/react";
+
+const wiggle = keyframes`
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+`;
+
 export default function Loading() {
   return (
-    <div className='top-0 absolute h-1 w-screen bg-gradient-to-r from-indigo-500 to-cyan-500 bg-400% animate-[wiggle_1s_linear_infinite]'></div>
+    <Box
+      position="absolute"
+      top={0}
+      left={0}
+      right={0}
+      height="2px"
+      bgGradient="linear(to-r, indigo.500, cyan.500)"
+      backgroundSize="400% 400%"
+      animation={`${wiggle} 1s linear infinite`}
+    />
   );
 }
