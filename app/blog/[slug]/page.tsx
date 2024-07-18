@@ -2,6 +2,7 @@ import getPostContent from "../../../utils/GetPostContent";
 import getPostMetadata from "../../../utils/GetPostMetadata";
 import { urlParamType } from "./UrlType";
 import BlogPost from "../../../components/BlogPost";
+import SEO from "../../../components/SEO";
 
 export const generateStaticParams = async () => {
   const posts = getPostMetadata();
@@ -19,11 +20,19 @@ export default function Post(props: urlParamType) {
   }
 
   return (
-    <BlogPost
-      title={post.data.title || ""}
-      subtitle={post.data.subtitle || ""}
-      date={post.data.date || ""}
-      content={post.content || ""}
-    />
+    <>
+      <SEO 
+        title={post.data.title || "Blog Post"}
+        description={post.data.subtitle || "Read this blog post by Sami Bentaleb"}
+        canonical={`https://www.samibentaleb.com/blog/${slug}`}
+        ogImage={post.data.ogImage || "https://www.samibentaleb.com/default-blog-og-image.jpg"}
+      />
+      <BlogPost
+        title={post.data.title || ""}
+        subtitle={post.data.subtitle || ""}
+        date={post.data.date || ""}
+        content={post.content || ""}
+      />
+    </>
   );
 }

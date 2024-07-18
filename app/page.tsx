@@ -12,6 +12,7 @@ import {
 } from "@chakra-ui/react";
 import { Link } from "@chakra-ui/next-js";
 import { Github, Linkedin } from "lucide-react";
+import SEO from "../components/SEO";
 
 export default function Home() {
   const textColor = useColorModeValue("gray.800", "white");
@@ -19,14 +20,12 @@ export default function Home() {
 
   return (
     <>
-      <head>
-        <title>Sami Bentaleb</title>
-        <meta
-          name='description'
-          content='Fullstack web developer creating interactive and responsive websites.'
-        />
-        <link rel='icon' href='/favicon.ico' />
-      </head>
+      <SEO 
+        title="Home"
+        description="Fullstack web developer creating interactive and responsive websites."
+        canonical="https://www.samibentaleb.com"
+        ogImage="https://www.samibentaleb.com/og-image.jpg"
+      />
       <Box as='main' mb={10}>
         <VStack
           w={["90%", "75%", "50%"]}

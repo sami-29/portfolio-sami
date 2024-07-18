@@ -9,12 +9,20 @@ import {
 } from "@chakra-ui/react";
 import Project from "../../components/Project";
 import projectsData from "./projectsData";
+import SEO from "../../components/SEO";
 
 export default function Projects() {
   const textColor = useColorModeValue("gray.800", "white");
   const subTextColor = useColorModeValue("gray.600", "gray.300");
 
   return (
+    <>
+      <SEO 
+        title="Projects"
+        description="Explore a selection of recent projects and experiences by Sami Bentaleb, a fullstack web developer."
+        canonical="https://www.samibentaleb.com/projects"
+        ogImage="https://www.samibentaleb.com/projects-og-image.jpg"
+      />
     <Box as='main'>
       <VStack
         spacing={8}

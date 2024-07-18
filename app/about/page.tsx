@@ -10,6 +10,7 @@ import {
 } from "@chakra-ui/react";
 import AboutCard from "../../components/AboutCard";
 import cards from "./aboutData";
+import SEO from "../../components/SEO";
 
 export default function About() {
   const mostlyUsed = cards.filter((card) => card.MostlyUsed === true);
@@ -19,14 +20,12 @@ export default function About() {
 
   return (
     <>
-      <head>
-        <title>About</title>
-        <meta
-          name='description'
-          content='Fullstack web developer creating interactive and responsive websites.'
-        />
-        <link rel='icon' href='/favicon.ico' />
-      </head>
+      <SEO 
+        title="About"
+        description="Learn about Sami Bentaleb, a fullstack web developer with 4 years of experience in building projects and freelancing."
+        canonical="https://www.samibentaleb.com/about"
+        ogImage="https://www.samibentaleb.com/about-og-image.jpg"
+      />
       <Box as='main' mb={10}>
         <VStack
           spacing={8}
