@@ -14,7 +14,7 @@ export default function Post(props: urlParamType) {
   const slug = props.params.slug;
   const post = getPostContent(slug);
   return (
-    <div className='prose dark:prose-invert flex flex-col font-mono ml-auto mr-auto mt-24 px-4 sm:px:0 sm:w-3/4 xl:w-1/2'>
+    <div className='flex flex-col px-4 mt-24 ml-auto mr-auto font-mono prose dark:prose-invert sm:px:0 sm:w-3/4 xl:w-1/2'>
       <h1 className='text-4xl sm:text-5xl md:text-5xl lg:text-6xl'>
         {post.data.title}
       </h1>
