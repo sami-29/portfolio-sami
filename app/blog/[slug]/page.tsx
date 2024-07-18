@@ -3,7 +3,8 @@ import {
   VStack,
   Heading,
   Text,
-} from "../../../components/ChakraComponents";
+  Code,
+} from "@chakra-ui/react";
 import { useColorModeValue } from "@chakra-ui/react";
 import getPostContent from "../../../utils/GetPostContent";
 import Markdown from "markdown-to-jsx";
@@ -31,7 +32,8 @@ export default function Post(props: urlParamType) {
         align='start'
         w={["90%", "75%", "50%"]}
         mx='auto'
-        mt={24}>
+        mt={24}
+      >
         <Heading as='h1' fontSize={["4xl", "5xl", "6xl"]} color={textColor}>
           {post.data.title}
         </Heading>
@@ -45,17 +47,16 @@ export default function Post(props: urlParamType) {
           className='markdown-body'
           color={textColor}
           fontSize='lg'
-          lineHeight='tall'>
+          lineHeight='tall'
+        >
           <Markdown
             options={{
               overrides: {
-                code: ({ children }) => {
-                  return (
-                    <Code colorScheme="gray" p={2} borderRadius="md" whiteSpace="pre-wrap">
-                      {children}
-                    </Code>
-                  );
-                },
+                code: ({ children }) => (
+                  <Code colorScheme="gray" p={2} borderRadius="md" whiteSpace="pre-wrap">
+                    {children}
+                  </Code>
+                ),
               },
             }}
           >
