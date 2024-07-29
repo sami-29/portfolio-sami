@@ -8,14 +8,27 @@ import {
   VStack,
   HStack,
   useColorModeValue,
+  useToast,
+  Tooltip,
 } from "@chakra-ui/react";
 import { Link } from "@chakra-ui/next-js";
-import { Github, Linkedin } from "lucide-react";
+import { Github, Linkedin, Copy } from "lucide-react";
 import SEO from "../components/SEO";
 
 export default function Home() {
   const textColor = useColorModeValue("gray.800", "white");
   const subTextColor = useColorModeValue("gray.600", "gray.300");
+  const toast = useToast();
+
+  const copyDiscordUsername = () => {
+    navigator.clipboard.writeText("lasang.");
+    toast({
+      title: "Discord username copied!",
+      status: "success",
+      duration: 2000,
+      isClosable: true,
+    });
+  };
 
   return (
     <>
@@ -45,22 +58,17 @@ export default function Home() {
             constantly expanding my knowledge and experience in the field.
             Let&apos;s work together to bring your next project to life!
           </Text>
-          <HStack spacing={6}>
-            <Box>
-              <Text mb={1}>Discord:</Text>
+          <HStack spacing={6} flexWrap="wrap">
+            <Tooltip label="Click to copy Discord username" hasArrow>
               <Button
-                onClick={() => {
-                  navigator.clipboard.writeText("lasang.");
-                  alert("Discord username copied to clipboard!");
-                }}
-                variant="outline"
+                onClick={copyDiscordUsername}
+                leftIcon={<Copy size={16} />}
                 colorScheme="blue"
-                size="sm"
-                title="Click to copy"
+                variant="outline"
               >
                 lasang.
               </Button>
-            </Box>
+            </Tooltip>
             <Link
               color={textColor}
               href='https://www.github.com/sami-29'
