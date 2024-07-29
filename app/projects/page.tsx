@@ -20,8 +20,8 @@ export default function Projects() {
       <SEO
         title='Projects'
         description='Explore a selection of recent projects and experiences by Sami Bentaleb, a fullstack web developer.'
-        canonical='https://www.samibentaleb.com/projects'
-        ogImage='https://www.samibentaleb.com/projects-og-image.jpg'
+        canonical='https://portfolio-sami.vercel.app/projects'
+        ogImage='https://portfolio-sami.vercel.app/og-image.jpg'
       />
       <Box as='main'>
         <VStack
