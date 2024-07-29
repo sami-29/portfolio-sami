@@ -118,7 +118,7 @@ const cards = [
     title: "SQL",
     description: "Manages large data sets",
     src: Sql,
-    MostlyUsed: false,
+    MostlyUsed: true,
   },
   {
     title: "mongodb",
@@ -136,7 +136,7 @@ const cards = [
     title: "tRPC",
     description: "End-to-end typesafe API toolkit",
     src: tRPC,
-    MostlyUsed: false,
+    MostlyUsed: true,
   },
   {
     title: "Vue",

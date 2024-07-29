@@ -14,6 +14,7 @@ import {
 import { Link } from "@chakra-ui/next-js";
 import { Github, Linkedin, Copy } from "lucide-react";
 import SEO from "../components/SEO";
+import { FaDiscord } from "react-icons/fa";
 
 export default function Home() {
   const textColor = useColorModeValue("gray.800", "white");
@@ -58,43 +59,41 @@ export default function Home() {
             constantly expanding my knowledge and experience in the field.
             Let&apos;s work together to bring your next project to life!
           </Text>
-          <HStack spacing={6} flexWrap="wrap">
-            <Tooltip label="Click to copy Discord username" hasArrow>
-              <Button
-                onClick={copyDiscordUsername}
-                leftIcon={<Copy size={16} />}
-                colorScheme="blue"
-                variant="outline"
-              >
-                lasang.
-              </Button>
-            </Tooltip>
+          <HStack spacing={6} flexWrap='wrap'>
             <Link
               color={textColor}
               href='https://www.github.com/sami-29'
-              isExternal
-            >
+              isExternal>
               <Github size={32} />
             </Link>
             <Link
               color={textColor}
               href='https://www.linkedin.com/in/sami-bentaleb-a96293221/'
-              isExternal
-            >
+              isExternal>
               <Linkedin size={32} />
             </Link>
-            <Button
-              as={Link}
-              href='mailto:sami.bentaleb.dev@gmail.com'
-              isExternal
-              colorScheme='gray'
-              variant='outline'
-              px={6}
-              py={2}
-              borderRadius='full'
-            >
-              Email me
-            </Button>
+            <Tooltip label='Click to copy Discord username' hasArrow>
+              <Button
+                onClick={copyDiscordUsername}
+                rightIcon={<Copy size={16} />}
+                colorScheme='blue'
+                variant='outline'>
+                <FaDiscord size={32} />
+              </Button>
+            </Tooltip>
+            <Tooltip label='Click to send an email' hasArrow>
+              <Button
+                as={Link}
+                href='mailto:sami.bentaleb.dev@gmail.com'
+                isExternal
+                colorScheme='gray'
+                variant='outline'
+                px={6}
+                py={2}
+                borderRadius='full'>
+                Email me
+              </Button>
+            </Tooltip>
           </HStack>
         </VStack>
       </Box>

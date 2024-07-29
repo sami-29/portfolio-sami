@@ -1,5 +1,4 @@
 import React from "react";
-import Head from "next/head";
 
 interface SEOProps {
   title: string;
@@ -18,7 +17,7 @@ const SEO: React.FC<SEOProps> = ({
   const fullTitle = `${title} | ${siteName}`;
 
   return (
-    <Head>
+    <header>
       <title>{fullTitle}</title>
       <meta name='description' content={description} />
       <meta name='viewport' content='width=device-width, initial-scale=1' />
@@ -36,7 +35,7 @@ const SEO: React.FC<SEOProps> = ({
       <meta name='twitter:title' content={fullTitle} />
       <meta name='twitter:description' content={description} />
       {ogImage && <meta name='twitter:image' content={ogImage} />}
-    </Head>
+    </header>
   );
 };
 

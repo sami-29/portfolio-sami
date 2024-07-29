@@ -10,32 +10,51 @@ import RateMyApp from "../../public/assets/projects/RateMyApp.png";
 import eTasc from "../../public/assets/projects/eTasc.png";
 import Restaurant_template from "../../public/assets/projects/Restaurant_template.png";
 import Tetris_logo from "../../public/assets/projects/Tetris_logo.png";
+import portfolio from "../../public/assets/projects/portfolio.png";
+import easyai from "../../public/assets/projects/easyai.png";
 
 const projectsData = [
   {
-    img: RateMyApp,
-    title: "RateMyApp(v0.0.1)",
-    description:
-      "RateMyApp is a user-driven platform I developed to allow users to submit their applications for constructive critique, donations, or open-source contributions. Bootstrapped with create-t3-app, the tech stack includes Next.js, Clerk (auth), Prisma (ORM), TailwindCss with Daisy UI (UI), Planetscale (database), and Uploadthing (image storage). It also utilizes tanstack, react query, zod, react-hook-form, and dayjs libraries.",
-    siteUrl: "https://ratemyapp.vercel.app",
-    githubUrl: "https://github.com/sami-29/rate-my-app-t3",
-  },
-  {
     img: MARE,
-    title: "Unnamed Project",
+    title: "Maritime Risk Assessment Engine (MARE)",
     description:
       "A project built using Mapbox, Turf, D3.js, and Vanilla JavaScript. Due to privacy concerns, I am unable to provide more information about this project.",
     siteUrl: null,
     githubUrl: null,
   },
   {
+    img: easyai,
+    title: "EasyAI *In development*",
+    description:
+      "EasyAI is a project I developed to make AI workflows more accessible to non-technical users. The tech stack includes Next.js, ChakraUI, and Supabase. The project is still in development.",
+    siteUrl: null,
+    githubUrl: null,
+  },
+  {
+    img: RateMyApp,
+    title: "RateMyApp",
+    description:
+      "RateMyApp is a user-driven platform I developed to allow users to submit their applications for constructive critique, donations, or open-source contributions. Bootstrapped with create-t3-app, the tech stack includes Next.js, Clerk (auth), Prisma (ORM), TailwindCss with Daisy UI (UI), Planetscale (database), and Uploadthing (image storage). It also utilizes tanstack, react query, zod, react-hook-form, and dayjs libraries.",
+    siteUrl: "https://ratemyapp.vercel.app",
+    githubUrl: "https://github.com/sami-29/rate-my-app-t3",
+  },
+  {
     img: eTasc,
-    title: "Annotation and Text Analysis Platform",
+    title: "E-TASC",
     description:
       "This is an annotation and text analysis platform. Due to privacy concerns, I am unable to provide more information about this project.",
     siteUrl: null,
     githubUrl: null,
   },
+  {
+    img: portfolio,
+    title: "Custom portfolio",
+    description:
+      "This portfolio website was built using Vite, React, Chakra UI, and Framer Motion. It includes an image viewer, a masonry grid, and a fun easteregg. The site is mobile-responsive and simple to navigate.",
+    siteUrl: "https://portfolio-jacob.pages.dev/",
+    githubUrl: null,
+  },
+
   {
     img: Tetris_logo,
     title: "Tetris solver",
@@ -50,7 +69,7 @@ const projectsData = [
     description:
       "A customizable restaurant website template built using Next.js. It's designed with user experience and ease of use in mind. Technologies used include Next.js 13, Tailwind, FramerFramer Motion, Leaflet,react-hook-form with Yup.",
     siteUrl: "https://restaurant-template-one.vercel.app",
-    githubUrl: "https://github.com/sami-29/restaurant-template",
+    githubUrl: null,
   },
   {
     img: CDLA,

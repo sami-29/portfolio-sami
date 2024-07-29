@@ -1,4 +1,11 @@
-import { Box, VStack, Heading, Text, Image, useColorModeValue } from "@chakra-ui/react";
+import {
+  Box,
+  VStack,
+  Heading,
+  Text,
+  Image,
+  useColorModeValue,
+} from "@chakra-ui/react";
 import { StaticImageData } from "next/image";
 
 interface Props {
@@ -16,27 +23,21 @@ export default function AboutCard({ src, title, description }: Props) {
 
   return (
     <Box
-      cursor="pointer"
+      cursor='pointer'
       bg={bgColor}
       _hover={{ bg: hoverBgColor }}
       borderWidth={2}
       borderColor={borderColor}
-      borderRadius="lg"
-      overflow="hidden"
-      transition="all 0.3s"
-    >
+      borderRadius='lg'
+      overflow='hidden'
+      transition='all 0.3s'>
       <VStack spacing={4} p={4}>
-        <Image
-          src={src.src}
-          alt={title}
-          boxSize="100px"
-          objectFit="contain"
-        />
-        <VStack spacing={2} align="start" w="full">
-          <Heading as="h3" size="md" color={titleColor}>
+        <Image src={src.src} alt={title} boxSize='100px' objectFit='contain' />
+        <VStack spacing={2} align='start' w='full'>
+          <Heading as='h3' size='md' color={titleColor}>
             {title}
           </Heading>
-          <Text fontSize="sm" color={descriptionColor}>
+          <Text fontSize='sm' color={descriptionColor}>
             {description}
           </Text>
         </VStack>

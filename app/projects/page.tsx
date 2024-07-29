@@ -7,6 +7,7 @@ import {
   Text,
   useColorModeValue,
   Button,
+  Tooltip,
 } from "@chakra-ui/react";
 import { ArrowUpIcon } from "@chakra-ui/icons";
 import Project from "../../components/Project";
@@ -40,7 +41,7 @@ export default function Projects() {
         canonical='https://portfolio-sami.vercel.app/projects'
         ogImage='https://portfolio-sami.vercel.app/og-image.jpg'
       />
-      <Box as='main' position="relative" pb={16}>
+      <Box as='main' position='relative' pb={16}>
         <VStack
           spacing={8}
           align='start'
@@ -66,18 +67,19 @@ export default function Projects() {
           ))}
         </VStack>
         {showScrollTopButton && (
-          <Button
-            position="fixed"
-            bottom="20px"
-            right="20px"
-            onClick={scrollToTop}
-            colorScheme="blue"
-            size="lg"
-            borderRadius="full"
-            boxShadow="lg"
-          >
-            <ArrowUpIcon />
-          </Button>
+          <Tooltip label='Scroll to top' placement='left'>
+            <Button
+              position='fixed'
+              bottom='40px'
+              right='40px'
+              onClick={scrollToTop}
+              w={14}
+              h={14}
+              borderRadius='full'
+              boxShadow='lg'>
+              <ArrowUpIcon w={7} h={7} />
+            </Button>
+          </Tooltip>
         )}
       </Box>
     </>
