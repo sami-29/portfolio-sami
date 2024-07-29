@@ -46,6 +46,12 @@ export default function Home() {
             Let&apos;s work together to bring your next project to life!
           </Text>
           <HStack spacing={6}>
+            <Text>
+              Discord:{" "}
+              <strong onClick={() => navigator.clipboard.writeText("lasang.")}>
+                &quot;{`lasang.`}&quot;
+              </strong>
+            </Text>
             <Link
               color={textColor}
               href='https://www.github.com/sami-29'
