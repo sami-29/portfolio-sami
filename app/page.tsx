@@ -46,22 +46,33 @@ export default function Home() {
             Let&apos;s work together to bring your next project to life!
           </Text>
           <HStack spacing={6}>
-            <Text>
-              Discord:{" "}
-              <strong onClick={() => navigator.clipboard.writeText("lasang.")}>
-                &quot;{`lasang.`}&quot;
-              </strong>
-            </Text>
+            <Box>
+              <Text mb={1}>Discord:</Text>
+              <Button
+                onClick={() => {
+                  navigator.clipboard.writeText("lasang.");
+                  alert("Discord username copied to clipboard!");
+                }}
+                variant="outline"
+                colorScheme="blue"
+                size="sm"
+                title="Click to copy"
+              >
+                lasang.
+              </Button>
+            </Box>
             <Link
               color={textColor}
               href='https://www.github.com/sami-29'
-              isExternal>
+              isExternal
+            >
               <Github size={32} />
             </Link>
             <Link
               color={textColor}
               href='https://www.linkedin.com/in/sami-bentaleb-a96293221/'
-              isExternal>
+              isExternal
+            >
               <Linkedin size={32} />
             </Link>
             <Button
@@ -72,7 +83,8 @@ export default function Home() {
               variant='outline'
               px={6}
               py={2}
-              borderRadius='full'>
+              borderRadius='full'
+            >
               Email me
             </Button>
           </HStack>
