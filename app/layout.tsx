@@ -2,6 +2,7 @@ import { Providers } from "../components/Providers";
 import Navbar from "../components/MainNavigation/Navbar";
 import ThemeToggle from "../components/ThemeToggle/ThemeToggle";
 import { Box } from "@chakra-ui/react";
+import { Analytics } from "@vercel/analytics/react";
 
 export default function RootLayout({
   children,
@@ -20,6 +21,7 @@ export default function RootLayout({
             </Box>
           </Box>
         </Providers>
+        <Analytics />
       </body>
     </html>
   );
