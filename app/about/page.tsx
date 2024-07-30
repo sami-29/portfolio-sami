@@ -20,11 +20,11 @@ export default function About() {
 
   return (
     <>
-      <SEO 
-        title="About"
-        description="Learn about Sami Bentaleb, a fullstack web developer with 4 years of experience in building projects and freelancing."
-        canonical="https://www.samibentaleb.com/about"
-        ogImage="https://www.samibentaleb.com/about-og-image.jpg"
+      <SEO
+        title='About'
+        description='Learn about Sami Bentaleb, a fullstack web developer with 4 years of experience in building projects and freelancing.'
+        canonical='https://www.samibentaleb.com/about'
+        ogImage='https://www.samibentaleb.com/about-og-image.jpg'
       />
       <Box as='main' mb={10}>
         <VStack
@@ -34,37 +34,41 @@ export default function About() {
           mx='auto'
           mt={24}>
           <Heading as='h1' fontSize={["4xl", "5xl", "6xl"]} color={textColor}>
-            About me
+            About Me
           </Heading>
           <Text fontSize='lg' color={subTextColor}>
-            Welcome to my portfolio! My name is Bentaleb Sami, a full-stack web
-            developer with a passion for creating visually appealing and
-            user-friendly websites. With 4 years of experience in both building
-            projects and freelancing, I am a dedicated and skilled developer who
-            is always looking for new challenges. As a computer science student
-            at the University of Badji Moukhtar Annaba, I am constantly
-            expanding my knowledge and experience in the field.
+            I&apos;m Bentaleb Sami, a full stack web developer with more than 4
+            years of experience in creating comprehensive web solutions. My
+            journey in web development has led me to work on a diverse range of
+            projects, honing my skills in both front-end and back-end
+            technologies.
             <br />
             <br />
-            I specialize in creating interactive and responsive websites that
-            are not only visually stunning, but also easy to navigate and use. I
-            have a strong understanding of web development technologies such as
-            HTML, CSS, JavaScript, and various frameworks and libraries. I also
-            have experience working with various back-end technologies such as
-            Node.js and PHP, ensuring that your website not only looks great but
-            also functions smoothly.
+            Some of the notable projects I&apos;ve worked on include: • A
+            dynamic music platform with user accounts and playlist management •
+            A portfolio website for an architect with an image viewer, 3D
+            viewing capabilities, flipbook integration and a music player • A
+            Maritime Risk Assessment Engine with complex data visualization and
+            filtering • An annotation and text analysis platform for a research
+            institution
             <br />
             <br />
-            I take pride in my attention to detail and strive to deliver
-            high-quality work. I am a strong collaborator and communicator, and
-            I enjoy working with clients to understand their needs and bring
-            their vision to life.
+            I approach each project with a focus on creating intuitive user
+            interfaces, efficient backend systems, and seamless integration
+            between the two. My goal is always to deliver web solutions that not
+            only look great but also perform exceptionally well.
             <br />
             <br />
-            Take a look at my portfolio to see some of my previous work and
-            don&apos;t hesitate to contact me if you have any questions or are
-            interested in working together. Let&apos;s bring your next project
-            to life!
+            With a background in Computer Science, I continually expand my
+            knowledge to stay current with the latest web development trends and
+            best practices. This allows me to provide innovative and efficient
+            solutions to meet diverse client needs.
+            <br />
+            <br />I invite you to explore my portfolio to see examples of my
+            work. Whether you need a new website, want to upgrade an existing
+            one, or have a custom web application in mind, I&apos;m here to help
+            bring your vision to reality. Let&apos;s collaborate and create a
+            standout web presence for your business or project.
           </Text>
           <Heading
             as='h2'

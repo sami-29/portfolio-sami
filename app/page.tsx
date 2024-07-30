@@ -47,17 +47,18 @@ export default function Home() {
           spacing={8}
           align='start'>
           <Heading as='h1' fontSize={["4xl", "5xl", "6xl"]} color={textColor}>
-            Fullstack web developer creating interactive and responsive
-            websites.
+            Full Stack Web Developer crafting dynamic and responsive digital
+            experiences.
           </Heading>
           <Text fontSize={["md", "lg", "xl"]} color={subTextColor}>
-            Welcome to my portfolio! I am Bentaleb Sami, a full-stack web
-            developer with a passion for creating interactive and responsive
-            websites. With 4 years of experience in both building projects and
-            freelancing, I am a dedicated and skilled developer. As a computer
-            science student at the University of Badji Moukhtar Annaba, I am
-            constantly expanding my knowledge and experience in the field.
-            Let&apos;s work together to bring your next project to life!
+            Welcome to my portfolio. I&apos;m Bentaleb Sami, a full stack web
+            developer with more than 4 years of experience in freelancing and
+            personal projects. I specialize in building interactive websites,
+            e-commerce platforms, and web applications. My expertise covers
+            front-end and back-end technologies, ensuring seamless, efficient,
+            and user-friendly digital solutions. From concept to deployment,
+            I&apos;m dedicated to bringing your web projects to life with
+            creativity and technical precision.
           </Text>
           <HStack spacing={6} flexWrap='wrap'>
             <Link
