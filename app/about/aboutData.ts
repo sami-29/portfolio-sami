@@ -22,6 +22,10 @@ import Vue from "../../public/assets/about/Vue.webp";
 import ruby from "../../public/assets/about/ruby.png";
 import linux from "../../public/assets/about/linux.png";
 import rails from "../../public/assets/about/rails.png";
+import htmx from "../../public/assets/about/htmx.dark.svg";
+import aws from "../../public/assets/about/AWS-Logo.svg";
+import go from "../../public/assets/about/Go.svg";
+import flask from "../../public/assets/about/Flask.svg";
 
 const cards = [
   {
@@ -94,7 +98,7 @@ const cards = [
     title: "Vite",
     description: "Next-gen front-end build tool",
     src: vite,
-    MostlyUsed: false,
+    MostlyUsed: true,
   },
   {
     title: "Three.js",
@@ -167,6 +171,31 @@ const cards = [
     description: "Open-source Unix-like OS",
     src: linux,
     MostlyUsed: true,
+  },
+  {
+    title: "Htmx",
+    description: "dynamic HTML interactivity with minimal JavaScript required.",
+    src: htmx,
+    MostlyUsed: false,
+  },
+  {
+    title: "AWS",
+    description:
+      "cloud services platform for scalable infrastructure and tools",
+    src: aws,
+    MostlyUsed: true,
+  },
+  {
+    title: "Go",
+    description: "simple, fast, concurrent language for scalable applications.",
+    src: go,
+    MostlyUsed: false,
+  },
+  {
+    title: "Flask",
+    description: "Python web framework",
+    src: flask,
+    MostlyUsed: false,
   },
 ];
 

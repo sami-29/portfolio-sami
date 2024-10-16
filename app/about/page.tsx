@@ -78,7 +78,8 @@ export default function About() {
             Mostly Used Tools
           </Heading>
           <Text fontSize='lg' color={textColor}>
-            The tools I most frequently use while developing.
+            Here are some of the key technologies and tools I frequently use in
+            my development process:
           </Text>
         </VStack>
         <SimpleGrid
@@ -104,11 +105,11 @@ export default function About() {
           mx='auto'
           mt={24}>
           <Heading as='h2' fontSize={["3xl", "4xl", "5xl"]} color={textColor}>
-            Other Technologies I Work With/Learning
+            Other Technologies
           </Heading>
           <Text fontSize='lg' color={textColor}>
-            Other tools and technologies that I am capable of working with or
-            currently learning.
+            Other technologies that I am capable of working with and would love
+            to use more often:
           </Text>
         </VStack>
         <SimpleGrid

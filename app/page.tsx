@@ -36,8 +36,8 @@ export default function Home() {
       <SEO
         title='Home'
         description='Fullstack web developer creating interactive and responsive websites.'
-        canonical='https://www.samibentaleb.com'
-        ogImage='https://www.samibentaleb.com/og-image.jpg'
+        canonical='https://portfolio-sami.vercel.app/favicon.ico'
+        ogImage='https://portfolio-sami.vercel.app/favicon.ico'
       />
       <Box as='main' mb={10}>
         <VStack
@@ -47,18 +47,16 @@ export default function Home() {
           spacing={8}
           align='start'>
           <Heading as='h1' fontSize={["4xl", "5xl", "6xl"]} color={textColor}>
-            Full Stack Web Developer crafting dynamic and responsive digital
-            experiences.
+            Hey! I&apos;m Sami a Full Stack Web Developer
           </Heading>
           <Text fontSize={["md", "lg", "xl"]} color={subTextColor}>
-            Welcome to my portfolio. I&apos;m Bentaleb Sami, a full stack web
-            developer with more than 4 years of experience in freelancing and
-            personal projects. I specialize in building interactive websites,
-            e-commerce platforms, and web applications. My expertise covers
-            front-end and back-end technologies, ensuring seamless, efficient,
-            and user-friendly digital solutions. From concept to deployment,
-            I&apos;m dedicated to bringing your web projects to life with
-            creativity and technical precision.
+            Welcome to my portfolio. I&apos;m a full stack web developer with
+            over 4 years of experience in freelancing and personal projects. My
+            expertise lies in creating interactive websites, e-commerce
+            platforms, and web applications. I specialize in both front-end and
+            back-end technologies, as well as general programming skills
+            ensuring efficient and user-friendly digital solutions from concept
+            to deployment.
           </Text>
           <HStack spacing={6} flexWrap='wrap'>
             <Link

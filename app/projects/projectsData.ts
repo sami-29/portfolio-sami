@@ -1,15 +1,13 @@
-import huddle1 from "../../public/assets/projects/huddle1.webp";
 import portal2d from "../../public/assets/projects/portal2d.png";
 import linus1 from "../../public/assets/projects/linus1.webp";
 import rps1 from "../../public/assets/projects/rps1.webp";
 import shadow_foundry from "../../public/assets/projects/shadow_foundry.webp";
-import todo1 from "../../public/assets/projects/todo1.webp";
 import CDLA from "../../public/assets/projects/CDLA.webp";
 import MARE from "../../public/assets/projects/MARE.webp";
 import RateMyApp from "../../public/assets/projects/RateMyApp.png";
 import eTasc from "../../public/assets/projects/eTasc.png";
 import Restaurant_template from "../../public/assets/projects/Restaurant_template.png";
-import Tetris_logo from "../../public/assets/projects/Tetris_logo.png";
+import Tetris from "../../public/assets/projects/Tetris.png";
 import portfolio from "../../public/assets/projects/portfolio.png";
 import easyai from "../../public/assets/projects/easyai.png";
 
@@ -18,7 +16,7 @@ const projectsData = [
     img: MARE,
     title: "Maritime Risk Assessment Engine (MARE)",
     description:
-      "A project built using Mapbox, Turf, D3.js, and Vanilla JavaScript. Due to privacy concerns, I am unable to provide more information about this project.",
+      "A project built using Mapbox, Turf, D3.js, and Vanilla Javascript, the rest of the functionality is custom built.",
     siteUrl: null,
     githubUrl: null,
   },
@@ -26,7 +24,15 @@ const projectsData = [
     img: easyai,
     title: "EasyAI *In development*",
     description:
-      "EasyAI is a project I developed to make AI workflows more accessible to non-technical users. The tech stack includes Next.js, ChakraUI, and Supabase. The project is still in development.",
+      "EasyAI is a project I developed to make AI workflows more accessible to non-technical users. The tech stack includes Next.js, ChakraUI, and Supabase. the api's used are OpenAI and ComfyUI for custom workflows. The project is currently in development.",
+    siteUrl: null,
+    githubUrl: null,
+  },
+  {
+    img: Tetris,
+    title: "Tetris solver *In development*",
+    description:
+      "The game rules are: Given a sequence of X pieces, and an initial board state clear Y lines. this python project was used to create very large datasets to train a neural network. which I then used to build a web app using flask for the backend and HTMX + Alpine.js for the frontend, development is in progress.",
     siteUrl: null,
     githubUrl: null,
   },
@@ -42,7 +48,7 @@ const projectsData = [
     img: eTasc,
     title: "E-TASC",
     description:
-      "This is an annotation and text analysis platform. Due to privacy concerns, I am unable to provide more information about this project.",
+      "This is an annotation and text analysis platform. it was built using vanilla javascript, HTML, and CSS. the functionality was custom built by me except for Word category which uses the Stanford CoreNLP library.",
     siteUrl: null,
     githubUrl: null,
   },
@@ -52,15 +58,6 @@ const projectsData = [
     description:
       "This portfolio website was built using Vite, React, Chakra UI, and Framer Motion. It includes an image viewer, a masonry grid, and a fun easteregg. The site is mobile-responsive and simple to navigate.",
     siteUrl: "https://portfolio-jacob.pages.dev/",
-    githubUrl: null,
-  },
-
-  {
-    img: Tetris_logo,
-    title: "Tetris solver",
-    description:
-      "A python program that solves a large number of Tetris games using Heuristics, The games are usually in this format: Given a sequence of X pieces, and an initial board state clear Y lines. It can also be used to create solvable games with their X pieces and Y lines to clear.",
-    siteUrl: null,
     githubUrl: null,
   },
   {
@@ -75,7 +72,7 @@ const projectsData = [
     img: CDLA,
     title: "Calendrier de l'avent",
     description:
-      "I contributed to this project by developing a video carousel for the website in Elementor/WordPress. This was achieved using custom JavaScript, the Swiper library, and jQuery.",
+      "I contributed to this website that's built using Elementor/WordPress. I used custom CSS and jQuery for the parts i worked on.",
     siteUrl: "https://calendrierdelavent.com",
     githubUrl: null,
   },
@@ -111,22 +108,6 @@ const projectsData = [
       "Linus Tech Tips is a university project I developed to create a shopping page complete with a cart, product details, and filtering capabilities. The site is named after a popular Canadian tech YouTuber. It was built using PHP, MySQL, and plain CSS3.",
     siteUrl: "https://ltt-dev.000webhostapp.com/",
     githubUrl: "https://github.com/sami-29/linus_tech_tips",
-  },
-  {
-    img: todo1,
-    title: "Todo Website",
-    description:
-      "This todo website was built using React and CSS3. It offers functionalities like adding and removing tasks, marking tasks as done, and switching between a dark and light theme with different backgrounds.",
-    siteUrl: "https://todo-list-react.pages.dev/",
-    githubUrl: "https://github.com/sami-29/todo-list-react",
-  },
-  {
-    img: huddle1,
-    title: "Huddle Landing Page",
-    description:
-      "The Huddle Landing Page is a mockup website from FrontendMentor.io. It was built using HTML and CSS, with the primary challenge being SVG alignment for optimal compatibility with all screen sizes.",
-    siteUrl: "https://sami-29.github.io/huddle-landing-page/",
-    githubUrl: "https://github.com/sami-29/huddle-landing-page",
   },
 ];
 
