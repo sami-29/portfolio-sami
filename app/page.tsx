@@ -46,7 +46,7 @@ export default function Home() {
         <VStack
           w={["90%", "75%", "50%"]}
           mx='auto'
-          mt={{ base: 8, md: 16 }}
+          mt={{ base: 6, md: 8 }}
           spacing={{ base: 6, md: 8 }}
           align='start'>
           <Heading as='h1' fontSize={["4xl", "5xl", "6xl"]} color={textColor}>
@@ -99,16 +99,16 @@ export default function Home() {
           </HStack>
         </VStack>
 
-        <VStack w="full" spacing={8} mt={16}>
-          <Heading as="h2" fontSize={["3xl", "4xl"]} color={textColor}>
+        <VStack
+          w='full'
+          spacing={8}
+          mt={{ base: 6, md: 8 }}
+          maxW={"container.lg"}
+          mx={"auto"}>
+          <Heading as='h2' fontSize={["3xl", "4xl"]} color={textColor}>
             Featured Projects
           </Heading>
-          <SimpleGrid 
-            columns={{ base: 1, md: 2 }} 
-            spacing={8} 
-            w="full"
-            px={4}
-          >
+          <SimpleGrid columns={{ base: 1, md: 2 }} spacing={8} w='full' px={4}>
             {projectsData.slice(0, 2).map((project, index) => (
               <Project
                 key={index}
@@ -120,13 +120,7 @@ export default function Home() {
               />
             ))}
           </SimpleGrid>
-          <Button
-            as={Link}
-            href="/projects"
-            size="lg"
-            variant="outline"
-            mt={4}
-          >
+          <Button as={Link} href='/projects' size='lg' variant='outline' mt={4}>
             See More Projects
           </Button>
         </VStack>

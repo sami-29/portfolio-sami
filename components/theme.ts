@@ -1,8 +1,8 @@
 import { extendTheme, type ThemeConfig } from "@chakra-ui/react";
 
 const config: ThemeConfig = {
-  initialColorMode: "system",
-  useSystemColorMode: true,
+  initialColorMode: "dark",
+  useSystemColorMode: false,
 };
 
 const colors = {
@@ -24,13 +24,13 @@ const theme = extendTheme({
   config,
   colors,
   styles: {
-    global: (props: { colorMode: string }) => ({
+    global: {
       body: {
-        bg: props.colorMode === 'dark' ? 'gray.800' : 'white',
-        color: props.colorMode === 'dark' ? 'white' : 'gray.800',
+        bg: "gray.800",
+        color: "white",
         overflowY: "scroll",
       },
-    }),
+    },
   },
   components: {
     Button: {
@@ -39,21 +39,21 @@ const theme = extendTheme({
         borderRadius: "full",
       },
       variants: {
-        solid: (props: { colorMode: string }) => ({
+        solid: {
           bg: "brand.200",
-          color: props.colorMode === 'dark' ? 'gray.800' : 'gray.900',
+          color: "gray.800",
           _hover: {
             bg: "brand.300",
           },
-        }),
-        outline: (props: { colorMode: string }) => ({
+        },
+        outline: {
           borderColor: "brand.200",
           color: "brand.200",
           _hover: {
             bg: "brand.200",
-            color: props.colorMode === 'dark' ? 'gray.800' : 'gray.900',
+            color: "gray.800",
           },
-        }),
+        },
       },
     },
     Link: {

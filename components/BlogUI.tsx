@@ -25,7 +25,7 @@ export default function BlogUI({ postMetadata }: BlogUIProps) {
         align='start'
         w={["90%", "75%", "50%"]}
         mx='auto'
-        mt={24}>
+        mt={{ base: 8, md: 16 }}>
         <Heading
           as='h1'
           fontSize={["4xl", "5xl", "6xl"]}

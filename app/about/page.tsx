@@ -32,7 +32,7 @@ export default function About() {
           align='start'
           w={["90%", "75%", "50%"]}
           mx='auto'
-          mt={24}>
+          mt={{ base: 8, md: 16 }}>
           <Heading as='h1' fontSize={["4xl", "5xl", "6xl"]} color={textColor}>
             About Me
           </Heading>
@@ -123,8 +123,7 @@ export default function About() {
             Other Technologies
           </Heading>
           <Text fontSize='lg' color={textColor}>
-            Other technologies that I am capable of working with and would love
-            to use more often:
+            Other technologies that I&apos;ve worked with or currently learning:
           </Text>
         </VStack>
         <SimpleGrid

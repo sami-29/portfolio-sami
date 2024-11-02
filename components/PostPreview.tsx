@@ -25,15 +25,14 @@ const PostPreview = forwardRef<HTMLDivElement, PostMetadata>((props, ref) => {
       borderColor={borderColor}
       borderRadius='lg'
       transition='all 0.2s'
-      _hover={{ 
-        bg: hoverBgColor,
+      _hover={{
+        borderColor: hoverBgColor,
         color: hoverTextColor,
-        transform: 'translateY(-2px)',
-        boxShadow: 'lg'
+        transform: "translateY(-2px)",
+        boxShadow: "lg",
       }}
       w='full'
-      bg={bgColor}
-    >
+      bg={bgColor}>
       <Link href={`/blog/${props.slug}`} _hover={{ textDecoration: "none" }}>
         <VStack align='start' spacing={2}>
           <Heading as='h2' fontSize='xl' fontWeight='bold' color={titleColor}>
@@ -49,6 +48,6 @@ const PostPreview = forwardRef<HTMLDivElement, PostMetadata>((props, ref) => {
   );
 });
 
-PostPreview.displayName = 'PostPreview';
+PostPreview.displayName = "PostPreview";
 
 export default PostPreview;

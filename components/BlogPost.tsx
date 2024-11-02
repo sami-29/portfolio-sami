@@ -11,7 +11,7 @@ import {
 } from "@chakra-ui/react";
 import Markdown from "markdown-to-jsx";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { tomorrow } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { a11yDark } from "react-syntax-highlighter/dist/cjs/styles/hljs";
 
 interface BlogPostProps {
   title: string;
@@ -85,7 +85,7 @@ export default function BlogPost({
                   <Box overflow='hidden' borderRadius='md' my={4}>
                     <SyntaxHighlighter
                       language={match[1]}
-                      style={tomorrow}
+                      style={a11yDark}
                       customStyle={{
                         margin: 0,
                         padding: "1rem",
