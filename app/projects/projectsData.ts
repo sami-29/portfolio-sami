@@ -10,6 +10,7 @@ import Restaurant_template from "../../public/assets/projects/Restaurant_templat
 import Tetris from "../../public/assets/projects/Tetris.png";
 import portfolio from "../../public/assets/projects/portfolio.png";
 import easyai from "../../public/assets/projects/easyai.png";
+import personalFitness from "../../public/assets/projects/personalFitness.png";
 
 const projectsData = [
   {
@@ -59,6 +60,13 @@ const projectsData = [
       "This minimalist portfolio website was built using Vite, React, React Router, TailwindCSS, and Framer Motion. It includes an image viewer, a masonry grid, and a fun easteregg. The site is mobile-responsive and simple to navigate.",
     siteUrl: "https://portfolio-jacob.pages.dev/",
     githubUrl: null,
+  },
+  {
+    img: personalFitness,
+    title: "Personal Fitness website",
+    description:
+      "This personal fitness website was built using Next.js, wispCMS, TypeScript, TailwindCSS, Framer Motion, Leaflet, and Umami.is for analytics. It's mobile-responsive and simple to navigate.",
+    siteUrl: "https://icpersonaltraining.vercel.app/",
   },
   {
     img: Restaurant_template,
