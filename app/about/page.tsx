@@ -44,13 +44,28 @@ export default function About() {
             technologies.
             <br />
             <br />
-            Some of the notable projects I&apos;ve worked on include: • A
-            dynamic music platform with user accounts and playlist management •
-            A portfolio website for an architect with an image viewer, 3D
-            viewing capabilities, flipbook integration and a music player • A
-            Maritime Risk Assessment Engine with complex data visualization and
-            filtering • An annotation and text analysis platform for a research
-            institution
+            Some of the notable projects I&apos;ve worked on include:
+            <br />
+            <br />
+            <ul
+              style={{
+                marginLeft: 32,
+              }}>
+              <li>
+                A dynamic music platform with user accounts and playlist
+                management
+              </li>{" "}
+              <li>
+                A portfolio website for an architect with an image viewer, 3D
+                viewing capabilities, flipbook integration and a music player
+              </li>{" "}
+              <li>
+                {" "}
+                A Maritime Risk Assessment Engine with complex data
+                visualization and filtering • An annotation and text analysis
+                platform for a research institution
+              </li>
+            </ul>
             <br />
             <br />
             I approach each project with a focus on creating intuitive user

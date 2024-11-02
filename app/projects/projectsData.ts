@@ -56,7 +56,7 @@ const projectsData = [
     img: portfolio,
     title: "Custom portfolio",
     description:
-      "This portfolio website was built using Vite, React, Chakra UI, and Framer Motion. It includes an image viewer, a masonry grid, and a fun easteregg. The site is mobile-responsive and simple to navigate.",
+      "This minimalist portfolio website was built using Vite, React, React Router, TailwindCSS, and Framer Motion. It includes an image viewer, a masonry grid, and a fun easteregg. The site is mobile-responsive and simple to navigate.",
     siteUrl: "https://portfolio-jacob.pages.dev/",
     githubUrl: null,
   },
