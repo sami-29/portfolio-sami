@@ -4,6 +4,7 @@ import ThemeToggle from "../components/ThemeToggle/ThemeToggle";
 import { Box } from "@chakra-ui/react";
 import { Analytics } from "@vercel/analytics/react";
 import Head from "next/head";
+import Script from "next/script";
 
 export default function RootLayout({
   children,
@@ -12,12 +13,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
-      <Head>
-        <script
-          defer
-          src='https://cloud.umami.is/script.js'
-          data-website-id='a8d67507-76c6-42d2-b099-540de21a96af'></script>
-      </Head>
+      <Script
+        async
+        defer
+        src='https://cloud.umami.is/script.js'
+        data-website-id='a8d67507-76c6-42d2-b099-540de21a96af'></Script>
       <body>
         <Providers>
           <Box minHeight='100vh'>
