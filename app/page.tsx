@@ -47,16 +47,16 @@ export default function Home() {
           spacing={8}
           align='start'>
           <Heading as='h1' fontSize={["4xl", "5xl", "6xl"]} color={textColor}>
-            Hey! I&apos;m Sami a Full Stack Web Developer
+            Hey! I&apos;m Sami a Full-stack Web Developer
           </Heading>
           <Text fontSize={["md", "lg", "xl"]} color={subTextColor}>
-            Welcome to my portfolio. I&apos;m a full stack web developer with
+            Welcome to my portfolio. I&apos;m a full-stack web developer with
             over 4 years of experience in freelancing and personal projects. My
-            expertise lies in creating interactive websites, e-commerce
-            platforms, and web applications. I specialize in both front-end and
-            back-end technologies, as well as general programming skills
-            ensuring efficient and user-friendly digital solutions from concept
-            to deployment.
+            expertise lies in creating interactive websites, startups, and web
+            applications. I specialize in both front-end and back-end
+            technologies, as well as general programming skills ensuring
+            efficient and user-friendly digital solutions from concept to
+            deployment.
           </Text>
           <HStack spacing={6} flexWrap='wrap'>
             <Link

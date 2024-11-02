@@ -28,6 +28,7 @@ function ButtonLink({ link, text }: ButtonLinkProps) {
       colorScheme={link ? "brand" : "gray"}
       variant={link ? "outline" : "solid"}
       size='md'
+      rel='noopener noreferrer'
       borderRadius='full'>
       {text}
     </Button>

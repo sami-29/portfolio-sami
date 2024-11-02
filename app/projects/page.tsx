@@ -62,7 +62,7 @@ export default function Projects() {
               title={project.title}
               description={project.description}
               siteUrl={project.siteUrl}
-              githubUrl={project.githubUrl}
+              githubUrl={project.githubUrl as string | null}
             />
           ))}
         </VStack>
