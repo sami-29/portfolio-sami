@@ -7,10 +7,13 @@ import {
   Button,
   VStack,
   HStack,
+  SimpleGrid,
   useColorModeValue,
   useToast,
   Tooltip,
 } from "@chakra-ui/react";
+import Project from "../components/Project";
+import projectsData from "./projects/projectsData";
 import { Link } from "@chakra-ui/next-js";
 import { Github, Linkedin, Copy } from "lucide-react";
 import SEO from "../components/SEO";
@@ -43,8 +46,8 @@ export default function Home() {
         <VStack
           w={["90%", "75%", "50%"]}
           mx='auto'
-          mt={24}
-          spacing={8}
+          mt={{ base: 8, md: 16 }}
+          spacing={{ base: 6, md: 8 }}
           align='start'>
           <Heading as='h1' fontSize={["4xl", "5xl", "6xl"]} color={textColor}>
             Hey! I&apos;m Sami a Full-stack Web Developer
@@ -58,7 +61,7 @@ export default function Home() {
             efficient and user-friendly digital solutions from concept to
             deployment.
           </Text>
-          <HStack spacing={6} flexWrap='wrap'>
+          <HStack spacing={4} flexWrap='wrap'>
             <Link
               color={textColor}
               href='https://www.github.com/sami-29'
@@ -94,6 +97,38 @@ export default function Home() {
               </Button>
             </Tooltip>
           </HStack>
+        </VStack>
+
+        <VStack w="full" spacing={8} mt={16}>
+          <Heading as="h2" fontSize={["3xl", "4xl"]} color={textColor}>
+            Featured Projects
+          </Heading>
+          <SimpleGrid 
+            columns={{ base: 1, md: 2 }} 
+            spacing={8} 
+            w="full"
+            px={4}
+          >
+            {projectsData.slice(0, 2).map((project, index) => (
+              <Project
+                key={index}
+                images={project.images}
+                title={project.title}
+                description={project.description}
+                slug={project.slug}
+                tags={project.tags}
+              />
+            ))}
+          </SimpleGrid>
+          <Button
+            as={Link}
+            href="/projects"
+            size="lg"
+            variant="outline"
+            mt={4}
+          >
+            See More Projects
+          </Button>
         </VStack>
       </Box>
     </>

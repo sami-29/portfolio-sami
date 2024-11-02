@@ -1,7 +1,7 @@
 import { extendTheme, type ThemeConfig } from "@chakra-ui/react";
 
 const config: ThemeConfig = {
-  initialColorMode: "light",
+  initialColorMode: "system",
   useSystemColorMode: true,
 };
 
@@ -26,8 +26,8 @@ const theme = extendTheme({
   styles: {
     global: (props: { colorMode: string }) => ({
       body: {
-        bg: props.colorMode === "dark" ? "gray.800" : "white",
-        color: props.colorMode === "dark" ? "white" : "gray.800",
+        bg: props.colorMode === 'dark' ? 'gray.800' : 'white',
+        color: props.colorMode === 'dark' ? 'white' : 'gray.800',
         overflowY: "scroll",
       },
     }),
@@ -40,30 +40,30 @@ const theme = extendTheme({
       },
       variants: {
         solid: (props: { colorMode: string }) => ({
-          bg: props.colorMode === "dark" ? "brand.200" : "brand.500",
-          color: props.colorMode === "dark" ? "gray.800" : "white",
+          bg: "brand.200",
+          color: props.colorMode === 'dark' ? 'gray.800' : 'gray.900',
           _hover: {
-            bg: props.colorMode === "dark" ? "brand.300" : "brand.600",
+            bg: "brand.300",
           },
         }),
         outline: (props: { colorMode: string }) => ({
-          borderColor: props.colorMode === "dark" ? "brand.200" : "brand.500",
-          color: props.colorMode === "dark" ? "brand.200" : "brand.500",
+          borderColor: "brand.200",
+          color: "brand.200",
           _hover: {
-            bg: props.colorMode === "dark" ? "brand.200" : "brand.500",
-            color: props.colorMode === "dark" ? "gray.800" : "white",
+            bg: "brand.200",
+            color: props.colorMode === 'dark' ? 'gray.800' : 'gray.900',
           },
         }),
       },
     },
     Link: {
-      baseStyle: (props: { colorMode: string }) => ({
-        color: props.colorMode === "dark" ? "brand.200" : "brand.500",
+      baseStyle: {
+        color: "brand.200",
         _hover: {
           textDecoration: "none",
-          color: props.colorMode === "dark" ? "brand.300" : "brand.600",
+          color: "brand.300",
         },
-      }),
+      },
     },
   },
 });

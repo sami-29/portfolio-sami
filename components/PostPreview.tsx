@@ -11,11 +11,12 @@ import { PostMetadata } from "../utils/GetPostMetadata";
 
 const PostPreview = forwardRef<HTMLDivElement, PostMetadata>((props, ref) => {
   const borderColor = useColorModeValue("gray.200", "gray.600");
-  const hoverBorderColor = useColorModeValue("gray.400", "gray.400");
   const titleColor = useColorModeValue("gray.800", "white");
   const subtitleColor = useColorModeValue("gray.600", "white");
   const dateColor = useColorModeValue("gray.500", "gray.300");
   const bgColor = useColorModeValue("white", "gray.700");
+  const hoverBgColor = "brand.200";
+  const hoverTextColor = "gray.800";
 
   return (
     <Box
@@ -24,7 +25,12 @@ const PostPreview = forwardRef<HTMLDivElement, PostMetadata>((props, ref) => {
       borderColor={borderColor}
       borderRadius='lg'
       transition='all 0.2s'
-      _hover={{ borderColor: hoverBorderColor }}
+      _hover={{ 
+        bg: hoverBgColor,
+        color: hoverTextColor,
+        transform: 'translateY(-2px)',
+        boxShadow: 'lg'
+      }}
       w='full'
       bg={bgColor}
     >

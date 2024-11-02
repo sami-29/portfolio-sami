@@ -65,7 +65,7 @@ export default function Navbar() {
       </Flex>
 
       <Collapse in={isOpen} animateOpacity>
-        <MobileNav currentPath={currentPath} />
+        <MobileNav currentPath={currentPath} onToggle={onToggle} />
       </Collapse>
     </Box>
   );
@@ -114,17 +114,25 @@ const DesktopNav = ({ currentPath }: { currentPath: string }) => {
   );
 };
 
-const MobileNav = ({ currentPath }: { currentPath: string }) => {
+const MobileNav = ({ 
+  currentPath, 
+  onToggle 
+}: { 
+  currentPath: string;
+  onToggle: () => void;
+}) => {
   return (
     <Stack
       bg={useColorModeValue("white", "gray.800")}
       p={4}
+      ml={"auto"}
       display={{ md: "none" }}>
       {NAV_ITEMS.map((navItem) => (
         <MobileNavItem
           key={navItem.label}
           {...navItem}
           isActive={currentPath === navItem.href}
+          onToggle={onToggle}
         />
       ))}
     </Stack>
@@ -135,28 +143,37 @@ const MobileNavItem = ({
   label,
   href,
   isActive,
+  onToggle,
 }: {
   label: string;
   href: string;
   isActive: boolean;
+  onToggle: () => void;
 }) => {
   const activeColor = useColorModeValue("brand.500", "brand.200");
   const inactiveColor = useColorModeValue("gray.600", "gray.200");
 
   return (
     <Stack spacing={4}>
-      <Link href={href}>
-        <Flex
-          py={2}
-          justify={"space-between"}
-          align={"center"}
-          _hover={{
-            textDecoration: "none",
-          }}>
+      <Flex 
+        py={2} 
+        justify={"space-between"} 
+        align={"center"}
+        onClick={onToggle}
+      >
+        <Link 
+          href={href} 
+          ml={"auto"} 
+          pr={2}
+          _hover={{ textDecoration: 'none' }}
+        >
           <Text
             fontWeight={600}
             color={isActive ? activeColor : inactiveColor}
             position='relative'
+            _hover={{
+              color: activeColor,
+            }}
             _after={{
               content: "''",
               position: "absolute",
@@ -171,8 +188,8 @@ const MobileNavItem = ({
             }}>
             {label}
           </Text>
-        </Flex>
-      </Link>
+        </Link>
+      </Flex>
     </Stack>
   );
 };

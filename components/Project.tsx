@@ -1,88 +1,87 @@
-import {
-  Box,
-  VStack,
-  Heading,
-  Text,
-  Button,
-  HStack,
-  Image,
-  useColorModeValue,
-} from "@chakra-ui/react";
-import { Link } from "@chakra-ui/next-js";
-import { StaticImageData } from "next/image";
+import { Box, Heading, Text, Image, Flex } from "@chakra-ui/react";
+import NextLink from "next/link";
+import type { Project as ProjectType } from "../app/projects/types";
 
-interface ButtonLinkProps {
-  link: string | null;
-  text: string;
-}
+type Props = Pick<ProjectType, "images" | "title" | "description" | "slug" | "tags">;
 
-function ButtonLink({ link, text }: ButtonLinkProps) {
+export default function Project({ images, title, description, slug, tags }: Props) {
   return (
-    <Button
-      as={Link}
-      href={link || "#"}
-      isExternal
-      isDisabled={!link}
-      onClick={(e) => !link && e.preventDefault()}
-      cursor={link ? "pointer" : "not-allowed"}
-      colorScheme={link ? "brand" : "gray"}
-      variant={link ? "outline" : "solid"}
-      size='md'
-      rel='noopener noreferrer'
-      borderRadius='full'>
-      {text}
-    </Button>
-  );
-}
-
-interface Props {
-  img: StaticImageData;
-  title: string;
-  description: string;
-  siteUrl: string | null;
-  githubUrl: string | null;
-}
-
-export default function Project({
-  img,
-  title,
-  description,
-  siteUrl,
-  githubUrl,
-}: Props) {
-  const borderColor = useColorModeValue("brand.200", "brand.300");
-  const titleColor = useColorModeValue("gray.800", "gray.200");
-  const descriptionColor = useColorModeValue("gray.600", "gray.400");
-
-  return (
-    <VStack spacing={6} align='start' mb={16}>
+    <Box
+      as={NextLink}
+      href={`/projects/${slug}`}
+      position="relative"
+      overflow="hidden"
+      borderRadius="xl"
+      transition="all 0.3s"
+      _hover={{
+        transform: 'scale(1.02)',
+        '& > .overlay': {
+          opacity: 1
+        }
+      }}
+    >
+      <Image
+        src={images[0].src.src}
+        alt={images[0].alt || `${title} image`}
+        width="100%"
+        height="300px"
+        objectFit="cover"
+      />
       <Box
-        borderColor={borderColor}
-        borderWidth={[0, 0, 2]}
-        borderRadius='xl'
-        overflow='hidden'
-        w='full'>
-        <Image
-          src={img.src}
-          alt={`${title} image`}
-          width='100%'
-          height='auto'
-          objectFit='cover'
-        />
-      </Box>
-
-      <VStack align='start' spacing={4} w='full'>
-        <Heading as='h2' fontSize={["2xl", "3xl", "4xl"]} color={titleColor}>
+        className="overlay"
+        position="absolute"
+        top={0}
+        left={0}
+        right={0}
+        bottom={0}
+        bg="rgba(0, 0, 0, 0.7)"
+        opacity={{ base: 0.5, md: 0 }}
+        transition="opacity 0.3s"
+        p={6}
+        display="flex"
+        flexDirection="column"
+        justifyContent="center"
+      >
+        <Heading
+          as="h2"
+          fontSize="xl"
+          color="white"
+          mb={2}
+          noOfLines={2}
+        >
           {title}
         </Heading>
-        <Text fontSize='lg' color={descriptionColor}>
+        <Text
+          fontSize="sm"
+          color="gray.200"
+          noOfLines={{ base: 4, md: 3 }}
+          mb={2}
+        >
           {description}
         </Text>
-        <HStack spacing={4}>
-          <ButtonLink link={siteUrl} text='Live Site' />
-          <ButtonLink link={githubUrl} text='Github repo' />
-        </HStack>
-      </VStack>
-    </VStack>
+        {tags && tags.length > 0 && (
+          <Flex gap={2} flexWrap="wrap">
+            {tags.map((tag, index) => (
+              <Box
+                key={index}
+                px={2}
+                py={1}
+                borderRadius="full"
+                fontSize="xs"
+                fontWeight="semibold"
+                bg={`${tag.colorScheme}.500`}
+                color="white"
+                _dark={{
+                  bg: `${tag.colorScheme}.200`,
+                  color: "gray.800"
+                }}
+              >
+                {tag.label}
+              </Box>
+            ))}
+          </Flex>
+        )}
+      </Box>
+    </Box>
   );
 }

@@ -16,16 +16,22 @@ interface Props {
 
 export default function AboutCard({ src, title, description }: Props) {
   const bgColor = useColorModeValue("white", "gray.800");
-  const hoverBgColor = useColorModeValue("gray.100", "gray.700");
   const borderColor = useColorModeValue("gray.200", "gray.600");
   const titleColor = useColorModeValue("gray.800", "white");
   const descriptionColor = useColorModeValue("gray.600", "gray.400");
+  const hoverBgColor = "brand.200";
+  const hoverTextColor = "gray.800";
 
   return (
     <Box
       cursor='pointer'
       bg={bgColor}
-      _hover={{ bg: hoverBgColor }}
+      _hover={{
+        borderColor: hoverBgColor,
+        color: hoverTextColor,
+        transform: "translateY(-2px)",
+        boxShadow: "lg",
+      }}
       borderWidth={2}
       borderColor={borderColor}
       borderRadius='lg'

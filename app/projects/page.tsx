@@ -2,12 +2,13 @@
 
 import {
   Box,
-  VStack,
+  SimpleGrid,
   Heading,
   Text,
   useColorModeValue,
   Button,
   Tooltip,
+  Container,
 } from "@chakra-ui/react";
 import { ArrowUpIcon } from "@chakra-ui/icons";
 import Project from "../../components/Project";
@@ -41,31 +42,31 @@ export default function Projects() {
         canonical='https://portfolio-sami.vercel.app/projects'
         ogImage='https://portfolio-sami.vercel.app/og-image.jpg'
       />
-      <Box as='main' position='relative' pb={16}>
-        <VStack
-          spacing={8}
-          align='start'
-          w={["90%", "75%", "50%"]}
-          mx='auto'
-          mt={24}>
-          <Heading as='h1' fontSize={["4xl", "5xl", "6xl"]} color={textColor}>
+      <Box as="main" position="relative" pb={16}>
+        <Container maxW="7xl" px={{ base: 4, md: 8 }} mt={{ base: 8, md: 16 }}>
+          <Heading as="h1" fontSize={["4xl", "5xl", "6xl"]} color={textColor} mb={4}>
             Projects
           </Heading>
-          <Text fontSize='lg' color={subTextColor}>
+          <Text fontSize="lg" color={subTextColor} mb={8}>
             Here&apos;s a small selection of some of my recent projects and
             experiences.
           </Text>
-          {projectsData.map((project, index) => (
-            <Project
-              key={index}
-              img={project.img}
-              title={project.title}
-              description={project.description}
-              siteUrl={project.siteUrl}
-              githubUrl={project.githubUrl as string | null}
-            />
-          ))}
-        </VStack>
+          <SimpleGrid 
+            columns={{ base: 1, md: 2, lg: 3 }} 
+            spacing={{ base: 8, lg: 10 }}
+          >
+            {projectsData.map((project, index) => (
+              <Project
+                key={index}
+                images={project.images}
+                title={project.title}
+                description={project.description}
+                slug={project.slug}
+                tags={project.tags}
+              />
+            ))}
+          </SimpleGrid>
+        </Container>
         {showScrollTopButton && (
           <Tooltip label='Scroll to top' placement='left'>
             <Button
