@@ -54,7 +54,7 @@ export default function Home() {
           </Heading>
           <Text fontSize={["md", "lg", "xl"]} color={subTextColor}>
             Welcome to my portfolio. I&apos;m a full-stack web developer with
-            over 4 years of experience in freelancing and personal projects. My
+            over 5 years of experience in freelancing and personal projects. My
             expertise lies in creating interactive websites, startups, and web
             applications. I specialize in both front-end and back-end
             technologies, as well as general programming skills ensuring

@@ -24,6 +24,10 @@ import tracktalk1 from "../../public/assets/projects/tracktalk1.png";
 import tracktalk2 from "../../public/assets/projects/tracktalk2.png";
 import tracktalk3 from "../../public/assets/projects/tracktalk3.png";
 import tracktalk4 from "../../public/assets/projects/tracktalk4.png";
+import pharma from "../../public/assets/projects/pharma.png";
+import pharma2 from "../../public/assets/projects/pharma2.png";
+import pharma3 from "../../public/assets/projects/pharma3.png";
+import pharma4 from "../../public/assets/projects/pharma4.png";
 
 const projectsData: Project[] = [
   {
@@ -90,6 +94,44 @@ const projectsData: Project[] = [
     ],
     description:
       "EasyAI is a project I developed to make AI workflows more accessible to non-technical users. The tech stack includes Next.js, ChakraUI, and Supabase. the api's used are OpenAI and ComfyUI for custom workflows. The project is currently in development.",
+    siteUrl: null,
+    githubUrl: null,
+  },
+  {
+    images: [
+      {
+        src: pharma4,
+        alt: "Pharma Platform Screenshot",
+        isSpecial: false,
+        isCustomStyles: false,
+      },
+      {
+        src: pharma,
+        alt: "Pharma Platform Screenshot",
+        isSpecial: false,
+        isCustomStyles: false,
+      },
+      {
+        src: pharma2,
+        alt: "Pharma Platform Screenshot",
+        isSpecial: false,
+        isCustomStyles: false,
+      },
+      {
+        src: pharma3,
+        alt: "Pharma Platform Screenshot",
+        isSpecial: false,
+        isCustomStyles: false,
+      },
+    ],
+    slug: "pharma",
+    title: "Pharma",
+    tags: [
+      { label: "In Development", colorScheme: "purple" },
+      { label: "Client Project", colorScheme: "orange" },
+    ],
+    description:
+      "Pharma is dashboard for pharmacies to manage sigs, weekly reports, standardize sig naming using permutations, powered by AI to double check the accuracy of the data.",
     siteUrl: null,
     githubUrl: null,
   },
@@ -248,7 +290,7 @@ const projectsData: Project[] = [
       { label: "Client Project", colorScheme: "orange" },
       { label: "Next.js", colorScheme: "gray" },
     ],
-    siteUrl: "https://icpersonaltraining.vercel.app/",
+    siteUrl: "https://icpersonaltraining.com/",
     githubUrl: null,
   },
   {

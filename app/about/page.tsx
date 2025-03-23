@@ -37,7 +37,7 @@ export default function About() {
             About Me
           </Heading>
           <Text fontSize='lg' color={subTextColor}>
-            I&apos;m Bentaleb Sami, a full stack web developer with more than 4
+            I&apos;m Bentaleb Sami, a full stack web developer with more than 5
             years of experience in creating comprehensive web solutions. My
             journey in web development has led me to work on a diverse range of
             projects, honing my skills in both front-end and back-end
