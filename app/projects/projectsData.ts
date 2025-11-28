@@ -231,7 +231,7 @@ const projectsData: Project[] = [
       },
     ],
     slug: "pharma",
-    title: "Pharma",
+    title: "SmartSig",
     tags: [
       { label: "In Development", colorScheme: "purple" },
       { label: "Client Project", colorScheme: "orange" },
