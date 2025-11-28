@@ -39,22 +39,24 @@ export default function Projects() {
       <SEO
         title='Projects'
         description='Explore a selection of recent projects and experiences by Sami Bentaleb, a fullstack web developer.'
-        canonical='https://portfolio-sami.vercel.app/projects'
-        ogImage='https://portfolio-sami.vercel.app/og-image.jpg'
+        path='/projects'
       />
-      <Box as="main" position="relative" pb={16}>
-        <Container maxW="7xl" px={{ base: 4, md: 8 }} mt={{ base: 8, md: 16 }}>
-          <Heading as="h1" fontSize={["4xl", "5xl", "6xl"]} color={textColor} mb={4}>
+      <Box as='main' position='relative' pb={16}>
+        <Container maxW='7xl' px={{ base: 4, md: 8 }} mt={{ base: 8, md: 16 }}>
+          <Heading
+            as='h1'
+            fontSize={["4xl", "5xl", "6xl"]}
+            color={textColor}
+            mb={4}>
             Projects
           </Heading>
-          <Text fontSize="lg" color={subTextColor} mb={8}>
+          <Text fontSize='lg' color={subTextColor} mb={8}>
             Here&apos;s a small selection of some of my recent projects and
             experiences.
           </Text>
-          <SimpleGrid 
-            columns={{ base: 1, md: 2, lg: 3 }} 
-            spacing={{ base: 8, lg: 10 }}
-          >
+          <SimpleGrid
+            columns={{ base: 1, md: 2, lg: 3 }}
+            spacing={{ base: 8, lg: 10 }}>
             {projectsData.map((project, index) => (
               <Project
                 key={index}

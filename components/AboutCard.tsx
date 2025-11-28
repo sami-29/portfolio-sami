@@ -12,38 +12,60 @@ interface Props {
   src: StaticImageData;
   title: string;
   description: string;
+  website?: string;
 }
 
-export default function AboutCard({ src, title, description }: Props) {
+export default function AboutCard({ src, title, description, website }: Props) {
   const bgColor = useColorModeValue("white", "gray.800");
   const borderColor = useColorModeValue("gray.200", "gray.600");
   const titleColor = useColorModeValue("gray.800", "white");
-  const descriptionColor = useColorModeValue("gray.600", "gray.400");
-  const hoverBgColor = "brand.200";
-  const hoverTextColor = "gray.800";
+  const descriptionColor = useColorModeValue("gray.600", "gray.300");
+  const hoverBorderColor = useColorModeValue("brand.400", "brand.300");
+  const hoverShadow = useColorModeValue("lg", "dark-lg");
+
+  const handleClick = () => {
+    if (website) {
+      window.open(website, "_blank", "noopener,noreferrer");
+    }
+  };
 
   return (
     <Box
-      cursor='pointer'
       bg={bgColor}
       _hover={{
-        borderColor: hoverBgColor,
-        color: hoverTextColor,
-        transform: "translateY(-2px)",
-        boxShadow: "lg",
+        borderColor: hoverBorderColor,
+        transform: "translateY(-4px)",
+        boxShadow: hoverShadow,
       }}
-      borderWidth={2}
+      borderWidth={1}
       borderColor={borderColor}
-      borderRadius='lg'
+      borderRadius='xl'
       overflow='hidden'
-      transition='all 0.3s'>
-      <VStack spacing={4} p={4}>
-        <Image src={src.src} alt={title} boxSize='100px' objectFit='contain' />
-        <VStack spacing={2} align='start' w='full'>
-          <Heading as='h3' size='md' color={titleColor}>
+      transition='all 0.3s ease'
+      height='100%'
+      position='relative'
+      cursor={website ? "pointer" : "default"}
+      onClick={handleClick}>
+      <VStack spacing={4} p={6} align='center' height='100%'>
+        <Box position='relative'>
+          <Image
+            src={src.src}
+            alt={`${title} technology logo`}
+            boxSize='80px'
+            objectFit='contain'
+            filter='drop-shadow(0 2px 4px rgba(0,0,0,0.1))'
+          />
+        </Box>
+        <VStack spacing={2} align='center' flex={1} justify='center'>
+          <Heading as='h3' size='sm' color={titleColor} textAlign='center'>
             {title}
           </Heading>
-          <Text fontSize='sm' color={descriptionColor}>
+          <Text
+            fontSize='xs'
+            color={descriptionColor}
+            textAlign='center'
+            lineHeight='1.4'
+            noOfLines={3}>
             {description}
           </Text>
         </VStack>

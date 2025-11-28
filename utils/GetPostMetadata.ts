@@ -6,6 +6,7 @@ export interface PostMetadata {
   date: string;
   subtitle: string;
   slug: string;
+  content: string;
 }
 
 export default function getPostMetadata(): PostMetadata[] {
@@ -20,7 +21,14 @@ export default function getPostMetadata(): PostMetadata[] {
       date: matterResult.data.date,
       subtitle: matterResult.data.subtitle,
       slug: filename.replace(".md", "").replace("-", " "),
+      content: matterResult.content,
     };
+  });
+
+  posts.sort((a, b) => {
+    const dateA = new Date(a.date);
+    const dateB = new Date(b.date);
+    return dateB.getTime() - dateA.getTime();
   });
 
   return posts;

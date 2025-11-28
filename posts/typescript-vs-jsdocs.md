@@ -1,7 +1,7 @@
 ---
 title: TypeScript vs JSDoc - Type Safety in JavaScript
 subtitle: The Strengths and Weaknesses
-date: 2024-11-02
+date: 2024-11-05
 ---
 
 When beginning a new JavaScript project, type safety always comes up as a critical consideration. The two main contenders - TypeScript and JSDoc - each offer distinct approaches to adding types to JavaScript. Let's dive deep into their tradeoffs and see how they actually work in production.

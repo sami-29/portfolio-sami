@@ -23,28 +23,27 @@ export default function About() {
       <SEO
         title='About'
         description='Learn about Sami Bentaleb, a fullstack web developer with 4 years of experience in building projects and freelancing.'
-        canonical='https://www.samibentaleb.com/about'
-        ogImage='https://www.samibentaleb.com/about-og-image.jpg'
+        path='/about'
       />
       <Box as='main' mb={10}>
         <VStack
           spacing={8}
           align='start'
-          w={["90%", "75%", "50%"]}
+          w={["90%", "75%", "60%"]}
           mx='auto'
           mt={{ base: 8, md: 16 }}>
           <Heading as='h1' fontSize={["4xl", "5xl", "6xl"]} color={textColor}>
             About Me
           </Heading>
           <Text fontSize='lg' color={subTextColor}>
-            I&apos;m Bentaleb Sami, a full stack web developer with more than 5
-            years of experience in creating comprehensive web solutions. My
-            journey in web development has led me to work on a diverse range of
-            projects, honing my skills in both front-end and back-end
-            technologies.
+            I&apos;m Bentaleb Sami, a full-stack web developer with over five
+            years of experience crafting comprehensive and user-centric web
+            solutions. My passion for development has led me to work on a
+            variety of exciting projects, allowing me to build a robust skill
+            set in both front-end and back-end technologies.
             <br />
             <br />
-            Some of the notable projects I&apos;ve worked on include:
+            Some of my recent projects include:
             <br />
             <br />
             <ul
@@ -52,38 +51,39 @@ export default function About() {
                 marginLeft: 32,
               }}>
               <li>
-                A dynamic music platform with user accounts and playlist
-                management
-              </li>{" "}
+                <b>2scl:</b> An in-development platform designed to help cities
+                track and manage their sustainable development goals, featuring
+                AI assistance, budget and resource tracking, and both automated
+                and manual data integration.
+              </li>
               <li>
-                A portfolio website for an architect with an image viewer, 3D
-                viewing capabilities, flipbook integration and a music player
-              </li>{" "}
+                <b>MARE (Maritime Risk Assessment Engine):</b> A sophisticated
+                data visualization tool for the maritime industry, built with
+                Mapbox, Turf, and D3.js.
+              </li>
               <li>
-                {" "}
-                A Maritime Risk Assessment Engine with complex data
-                visualization and filtering • An annotation and text analysis
-                platform for a research institution
+                <b>TrackTalk:</b> A music streaming platform with user accounts
+                and playlist management, developed using Next.js and Supabase.
+              </li>
+              <li>
+                <b>E-TASC:</b> An annotation and text analysis platform for a
+                research institution, featuring NLP capabilities.
               </li>
             </ul>
             <br />
             <br />
-            I approach each project with a focus on creating intuitive user
-            interfaces, efficient backend systems, and seamless integration
-            between the two. My goal is always to deliver web solutions that not
-            only look great but also perform exceptionally well.
+            I thrive on creating intuitive user interfaces, architecting
+            efficient back-end systems, and ensuring seamless integration
+            between them. My goal is to deliver web solutions that are not only
+            visually appealing but also high-performing and scalable. With a
+            solid foundation in Computer Science, I am committed to staying at
+            the forefront of web development trends and best practices.
             <br />
-            <br />
-            With a background in Computer Science, I continually expand my
-            knowledge to stay current with the latest web development trends and
-            best practices. This allows me to provide innovative and efficient
-            solutions to meet diverse client needs.
-            <br />
-            <br />I invite you to explore my portfolio to see examples of my
-            work. Whether you need a new website, want to upgrade an existing
-            one, or have a custom web application in mind, I&apos;m here to help
-            bring your vision to reality. Let&apos;s collaborate and create a
-            standout web presence for your business or project.
+            <br />I invite you to explore my portfolio to see these projects and
+            more. Whether you have an idea for a new website, need to enhance an
+            existing one, or are looking for a custom web application, I&apos;m
+            ready to help bring your vision to life. Let&apos;s collaborate to
+            create a powerful web presence for your business or project.
           </Text>
           <Heading
             as='h2'
@@ -110,13 +110,14 @@ export default function About() {
               src={card.src}
               title={card.title}
               description={card.description}
+              website={card.website}
             />
           ))}
         </SimpleGrid>
         <VStack
           spacing={8}
           align='start'
-          w={["90%", "75%", "50%"]}
+          w={["90%", "75%", "60%"]}
           mx='auto'
           mt={24}>
           <Heading as='h2' fontSize={["3xl", "4xl", "5xl"]} color={textColor}>
@@ -139,6 +140,7 @@ export default function About() {
               src={card.src}
               title={card.title}
               description={card.description}
+              website={card.website}
             />
           ))}
         </SimpleGrid>

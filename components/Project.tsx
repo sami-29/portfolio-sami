@@ -1,6 +1,14 @@
-import { Box, Heading, Text, Image, Flex } from "@chakra-ui/react";
+import {
+  Box,
+  Heading,
+  Text,
+  Image,
+  Flex,
+  useColorModeValue,
+} from "@chakra-ui/react";
 import NextLink from "next/link";
 import type { Project as ProjectType } from "../app/projects/types";
+import { portfolioConfig } from "../utils/config";
 
 type Props = Pick<
   ProjectType,
@@ -14,8 +22,6 @@ export default function Project({
   slug,
   tags,
 }: Props) {
-  const hoverBgColor = "brand.200";
-  const hoverTextColor = "gray.800";
   return (
     <Box
       as={NextLink}
@@ -72,11 +78,7 @@ export default function Project({
                 fontSize='xs'
                 fontWeight='semibold'
                 bg={`${tag.colorScheme}.500`}
-                color='white'
-                _dark={{
-                  bg: `${tag.colorScheme}.200`,
-                  color: "gray.800",
-                }}>
+                color='white'>
                 {tag.label}
               </Box>
             ))}

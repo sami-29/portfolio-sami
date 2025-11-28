@@ -18,6 +18,13 @@ import { Link } from "@chakra-ui/next-js";
 import { Github, Linkedin, Copy } from "lucide-react";
 import SEO from "../components/SEO";
 import { FaDiscord } from "react-icons/fa";
+import { portfolioConfig } from "../utils/config";
+import {
+  CONTENT_WIDTHS,
+  SECTION_SPACING,
+  SOCIAL_LINKS,
+  YEARS_OF_EXPERIENCE,
+} from "../utils/constants";
 
 export default function Home() {
   const textColor = useColorModeValue("gray.800", "white");
@@ -25,7 +32,7 @@ export default function Home() {
   const toast = useToast();
 
   const copyDiscordUsername = () => {
-    navigator.clipboard.writeText("lasang.");
+    navigator.clipboard.writeText(SOCIAL_LINKS.discord);
     toast({
       title: "Discord username copied!",
       status: "success",
@@ -39,14 +46,13 @@ export default function Home() {
       <SEO
         title='Home'
         description='Fullstack web developer creating interactive and responsive websites.'
-        canonical='https://portfolio-sami.vercel.app/favicon.ico'
-        ogImage='https://portfolio-sami.vercel.app/favicon.ico'
+        path='/'
       />
       <Box as='main' mb={10}>
         <VStack
-          w={["90%", "75%", "50%"]}
+          w={["90%", "75%", "60%"]}
           mx='auto'
-          mt={{ base: 6, md: 8 }}
+          mt={{ base: 8, md: 16 }}
           spacing={{ base: 6, md: 8 }}
           align='start'>
           <Heading as='h1' fontSize={["4xl", "5xl", "6xl"]} color={textColor}>
@@ -54,24 +60,28 @@ export default function Home() {
           </Heading>
           <Text fontSize={["md", "lg", "xl"]} color={subTextColor}>
             Welcome to my portfolio. I&apos;m a full-stack web developer with
-            over 5 years of experience in freelancing and personal projects. My
-            expertise lies in creating interactive websites, startups, and web
-            applications. I specialize in both front-end and back-end
-            technologies, as well as general programming skills ensuring
-            efficient and user-friendly digital solutions from concept to
-            deployment.
+            over {YEARS_OF_EXPERIENCE} years of experience in freelancing and
+            personal projects. My expertise lies in creating interactive
+            websites, startups, and web applications. I specialize in both
+            front-end and back-end technologies, as well as general programming
+            skills ensuring efficient and user-friendly digital solutions from
+            concept to deployment.
           </Text>
           <HStack spacing={4} flexWrap='wrap'>
+            {portfolioConfig.social.showGithub && (
+              <Link
+                color={textColor}
+                href={SOCIAL_LINKS.github}
+                isExternal
+                aria-label='Visit my GitHub profile'>
+                <Github size={32} />
+              </Link>
+            )}
             <Link
               color={textColor}
-              href='https://www.github.com/sami-29'
-              isExternal>
-              <Github size={32} />
-            </Link>
-            <Link
-              color={textColor}
-              href='https://www.linkedin.com/in/sami-bentaleb-a96293221/'
-              isExternal>
+              href={SOCIAL_LINKS.linkedin}
+              isExternal
+              aria-label='Connect with me on LinkedIn'>
               <Linkedin size={32} />
             </Link>
             <Tooltip label='Click to copy Discord username' hasArrow>
@@ -86,7 +96,7 @@ export default function Home() {
             <Tooltip label='Click to send an email' hasArrow>
               <Button
                 as={Link}
-                href='mailto:sami.bentaleb.dev@gmail.com'
+                href={`mailto:${SOCIAL_LINKS.email}`}
                 isExternal
                 colorScheme='gray'
                 variant='outline'
@@ -102,23 +112,29 @@ export default function Home() {
         <VStack
           w='full'
           spacing={8}
-          mt={{ base: 6, md: 8 }}
+          mt={{ base: 4, md: 6 }}
           maxW={"container.lg"}
           mx={"auto"}>
           <Heading as='h2' fontSize={["3xl", "4xl"]} color={textColor}>
             Featured Projects
           </Heading>
           <SimpleGrid columns={{ base: 1, md: 2 }} spacing={8} w='full' px={4}>
-            {projectsData.slice(0, 2).map((project, index) => (
-              <Project
-                key={index}
-                images={project.images}
-                title={project.title}
-                description={project.description}
-                slug={project.slug}
-                tags={project.tags}
-              />
-            ))}
+            {projectsData.slice(0, 2).map((project, index) => {
+              const clientFocusedTags = project.tags?.filter(
+                (tag) => !tag.label.toLowerCase().includes("github")
+              );
+
+              return (
+                <Project
+                  key={index}
+                  images={project.images}
+                  title={project.title}
+                  description={project.description}
+                  slug={project.slug}
+                  tags={clientFocusedTags}
+                />
+              );
+            })}
           </SimpleGrid>
           <Button as={Link} href='/projects' size='lg' variant='outline' mt={4}>
             See More Projects

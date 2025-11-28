@@ -1,5 +1,11 @@
 import type { Project } from "./types";
 import { ProjectTags } from "./tags";
+import progres0 from "../../public/assets/projects/progres0.png";
+import progers1 from "../../public/assets/projects/progers1.png";
+import progers2 from "../../public/assets/projects/progers2.png";
+import progers3 from "../../public/assets/projects/progers3.png";
+import progers4 from "../../public/assets/projects/progers4.png";
+import progers5 from "../../public/assets/projects/progers5.png";
 import portal2d from "../../public/assets/projects/portal2d.png";
 import linus1 from "../../public/assets/projects/linus1.webp";
 import rps1 from "../../public/assets/projects/rps1.webp";
@@ -28,8 +34,108 @@ import pharma from "../../public/assets/projects/pharma.png";
 import pharma2 from "../../public/assets/projects/pharma2.png";
 import pharma3 from "../../public/assets/projects/pharma3.png";
 import pharma4 from "../../public/assets/projects/pharma4.png";
+import scl1 from "../../public/assets/projects/2scl1.png";
+import scl2 from "../../public/assets/projects/2scl2.png";
+import scl3 from "../../public/assets/projects/2scl3.png";
+import scl4 from "../../public/assets/projects/2scl4.png";
+import scl5 from "../../public/assets/projects/2scl5.png";
 
 const projectsData: Project[] = [
+  {
+    images: [
+      {
+        src: progres0,
+        alt: "Progres Student Portal Screenshot",
+        isSpecial: false,
+        isCustomStyles: false,
+      },
+      {
+        src: progers1,
+        alt: "Progres Student Portal Screenshot",
+        isSpecial: false,
+        isCustomStyles: false,
+      },
+      {
+        src: progers2,
+        alt: "Progres Student Portal Screenshot",
+        isSpecial: false,
+        isCustomStyles: false,
+      },
+      {
+        src: progers3,
+        alt: "Progres Student Portal Screenshot",
+        isSpecial: false,
+        isCustomStyles: false,
+      },
+      {
+        src: progers4,
+        alt: "Progres Student Portal Screenshot",
+        isSpecial: false,
+        isCustomStyles: false,
+      },
+      {
+        src: progers5,
+        alt: "Progres Student Portal Screenshot",
+        isSpecial: false,
+        isCustomStyles: false,
+      },
+    ],
+    slug: "progres",
+    title: "Progres",
+    tags: [
+      ProjectTags.PERSONAL,
+      ProjectTags.ASTRO,
+      ProjectTags.CLOUDFLARE_WORKERS,
+    ],
+    description:
+      "A separate frontend for the official Algerian university student portal 'Progres'. This web app addresses many bugs of the official portal, offering a significantly improved UI/UX, enhanced privacy, and a better overall student experience. Built with Astro and hosted on Cloudflare Workers, it interfaces directly with the official university API.",
+    siteUrl: null,
+    githubUrl: null,
+  },
+  {
+    images: [
+      {
+        src: scl1,
+        alt: "2scl Platform Screenshot",
+        isSpecial: false,
+        isCustomStyles: false,
+      },
+      {
+        src: scl2,
+        alt: "2scl Platform Screenshot",
+        isSpecial: false,
+        isCustomStyles: false,
+      },
+      {
+        src: scl3,
+        alt: "2scl Platform Screenshot",
+        isSpecial: false,
+        isCustomStyles: false,
+      },
+      {
+        src: scl4,
+        alt: "2scl Platform Screenshot",
+        isSpecial: false,
+        isCustomStyles: false,
+      },
+      {
+        src: scl5,
+        alt: "2scl Platform Screenshot",
+        isSpecial: false,
+        isCustomStyles: false,
+      },
+    ],
+    slug: "2scl",
+    title: "2scl",
+    tags: [
+      { label: "In Development", colorScheme: "purple" },
+      { label: "Client Project", colorScheme: "orange" },
+    ],
+    description:
+      "2scl is a sustainable development goals platform for cities to manage their goals and track their progress/compare it to previous times/years as well as AI integration and assistant. It also features a budget/objectives/alerts/resources tracker, automatic API integration with manual data entry fallback, and calculation of all 17 SDGs indicators. In addition to the platform itself is the presentation site for the project",
+    siteUrl: null,
+    githubUrl: null,
+  },
   {
     images: [
       {

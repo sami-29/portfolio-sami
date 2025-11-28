@@ -18,6 +18,7 @@ const NAV_ITEMS = [
   { label: "About", href: "/about" },
   { label: "Blog", href: "/blog" },
   { label: "Projects", href: "/projects" },
+  // { label: "Labs", href: "/labs" }, // Temporarily disabled - in development
 ];
 
 export default function Navbar() {
@@ -114,10 +115,10 @@ const DesktopNav = ({ currentPath }: { currentPath: string }) => {
   );
 };
 
-const MobileNav = ({ 
-  currentPath, 
-  onToggle 
-}: { 
+const MobileNav = ({
+  currentPath,
+  onToggle,
+}: {
   currentPath: string;
   onToggle: () => void;
 }) => {
@@ -155,18 +156,16 @@ const MobileNavItem = ({
 
   return (
     <Stack spacing={4}>
-      <Flex 
-        py={2} 
-        justify={"space-between"} 
+      <Flex
+        py={2}
+        justify={"space-between"}
         align={"center"}
-        onClick={onToggle}
-      >
-        <Link 
-          href={href} 
-          ml={"auto"} 
+        onClick={onToggle}>
+        <Link
+          href={href}
+          ml={"auto"}
           pr={2}
-          _hover={{ textDecoration: 'none' }}
-        >
+          _hover={{ textDecoration: "none" }}>
           <Text
             fontWeight={600}
             color={isActive ? activeColor : inactiveColor}

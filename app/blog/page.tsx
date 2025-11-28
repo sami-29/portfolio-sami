@@ -10,8 +10,7 @@ export default function Blogs() {
       <SEO
         title='Blog'
         description='Explore thoughts and insights on web development and technology by Sami Bentaleb.'
-        canonical='https://portfolio-sami.vercel.app/blog'
-        ogImage='https://portfolio-sami.vercel.app/og-image.jpg'
+        path='/blog'
       />
       <BlogUI postMetadata={postMetadata} />
     </>

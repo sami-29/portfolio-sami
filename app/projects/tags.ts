@@ -12,5 +12,7 @@ export const ProjectTags = {
   PHP: { label: "PHP", colorScheme: "purple" },
   WORDPRESS: { label: "WordPress", colorScheme: "pink" },
   STATIC: { label: "Static Site", colorScheme: "teal" },
-  NLP: { label: "NLP", colorScheme: "green" }
+  NLP: { label: "NLP", colorScheme: "green" },
+  ASTRO: { label: "Astro", colorScheme: "orange" },
+  CLOUDFLARE_WORKERS: { label: "Cloudflare Workers", colorScheme: "orange" },
 } as const;

@@ -12,38 +12,71 @@ import { PostMetadata } from "../utils/GetPostMetadata";
 const PostPreview = forwardRef<HTMLDivElement, PostMetadata>((props, ref) => {
   const borderColor = useColorModeValue("gray.200", "gray.600");
   const titleColor = useColorModeValue("gray.800", "white");
-  const subtitleColor = useColorModeValue("gray.600", "white");
-  const dateColor = useColorModeValue("gray.500", "gray.300");
-  const bgColor = useColorModeValue("white", "gray.700");
-  const hoverBgColor = "brand.200";
-  const hoverTextColor = "gray.800";
+  const subtitleColor = useColorModeValue("gray.600", "gray.300");
+  const dateColor = useColorModeValue("gray.500", "gray.400");
+  const hoverBorderColor = useColorModeValue("brand.300", "brand.400");
+
+  const formatDate = (dateString: string) => {
+    return new Date(dateString).toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    });
+  };
+
+  const estimateReadingTime = (text: string) => {
+    const wordsPerMinute = 200;
+    const wordCount = text.split(" ").length;
+    return Math.max(1, Math.ceil(wordCount / wordsPerMinute));
+  };
 
   return (
     <Box
-      p={4}
-      borderWidth={1}
+      as={Link}
+      href={`/blog/${props.slug}`}
+      display='block'
+      py={6}
+      borderBottomWidth={1}
       borderColor={borderColor}
-      borderRadius='lg'
-      transition='all 0.2s'
-      _hover={{
-        borderColor: hoverBgColor,
-        color: hoverTextColor,
-        transform: "translateY(-2px)",
-        boxShadow: "lg",
+      position='relative'
+      transition='all 0.2s ease'
+      _after={{
+        content: "''",
+        position: "absolute",
+        width: "100%",
+        transform: "scaleX(0)",
+        height: "2px",
+        bottom: 0,
+        left: 0,
+        backgroundColor: hoverBorderColor,
+        transformOrigin: "bottom right",
+        transition: "transform 0.3s ease-out",
       }}
-      w='full'
-      bg={bgColor}>
-      <Link href={`/blog/${props.slug}`} _hover={{ textDecoration: "none" }}>
-        <VStack align='start' spacing={2}>
-          <Heading as='h2' fontSize='xl' fontWeight='bold' color={titleColor}>
-            {props.title}
-          </Heading>
-          <Text color={subtitleColor}>{props.subtitle}</Text>
-          <Text fontSize='sm' color={dateColor} mt={2}>
-            {new Date(props.date).toDateString()}
-          </Text>
-        </VStack>
-      </Link>
+      _hover={{
+        textDecoration: "none",
+        _after: {
+          transform: "scaleX(1)",
+          transformOrigin: "bottom left",
+        },
+      }}
+      w='full'>
+      <VStack align='start' spacing={3}>
+        <Heading
+          as='h2'
+          fontSize='xl'
+          fontWeight='semibold'
+          color={titleColor}
+          lineHeight='1.4'>
+          {props.title}
+        </Heading>
+        <Text color={subtitleColor} fontSize='md' lineHeight='1.5'>
+          {props.subtitle}
+        </Text>
+        <Text fontSize='sm' color={dateColor}>
+          {formatDate(props.date)} • {estimateReadingTime(props.content)} min
+          read
+        </Text>
+      </VStack>
     </Box>
   );
 });
