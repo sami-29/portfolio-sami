@@ -1,11 +1,11 @@
 import type { Project } from "./types";
 import { ProjectTags } from "./tags";
 import progres0 from "../../public/assets/projects/progres0.png";
-import progers1 from "../../public/assets/projects/progers1.png";
-import progers2 from "../../public/assets/projects/progers2.png";
-import progers3 from "../../public/assets/projects/progers3.png";
-import progers4 from "../../public/assets/projects/progers4.png";
-import progers5 from "../../public/assets/projects/progers5.png";
+import progres1 from "../../public/assets/projects/progres1.png";
+import progres2 from "../../public/assets/projects/progres2.png";
+import progres3 from "../../public/assets/projects/progres3.png";
+import progres4 from "../../public/assets/projects/progres4.png";
+import progres5 from "../../public/assets/projects/progres5.png";
 import portal2d from "../../public/assets/projects/portal2d.png";
 import linus1 from "../../public/assets/projects/linus1.webp";
 import rps1 from "../../public/assets/projects/rps1.webp";
@@ -50,31 +50,31 @@ const projectsData: Project[] = [
         isCustomStyles: false,
       },
       {
-        src: progers1,
+        src: progres1,
         alt: "Progres Student Portal Screenshot",
         isSpecial: false,
         isCustomStyles: false,
       },
       {
-        src: progers2,
+        src: progres2,
         alt: "Progres Student Portal Screenshot",
         isSpecial: false,
         isCustomStyles: false,
       },
       {
-        src: progers3,
+        src: progres3,
         alt: "Progres Student Portal Screenshot",
         isSpecial: false,
         isCustomStyles: false,
       },
       {
-        src: progers4,
+        src: progres4,
         alt: "Progres Student Portal Screenshot",
         isSpecial: false,
         isCustomStyles: false,
       },
       {
-        src: progers5,
+        src: progres5,
         alt: "Progres Student Portal Screenshot",
         isSpecial: false,
         isCustomStyles: false,
