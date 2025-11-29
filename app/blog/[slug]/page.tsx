@@ -21,11 +21,16 @@ export default function Post(props: urlParamType) {
 
   return (
     <>
-      <SEO 
+      <SEO
         title={post.data.title || "Blog Post"}
-        description={post.data.subtitle || "Read this blog post by Sami Bentaleb"}
-        canonical={`https://www.samibentaleb.com/blog/${slug}`}
-        ogImage={post.data.ogImage || "https://www.samibentaleb.com/default-blog-og-image.jpg"}
+        description={
+          post.data.subtitle || "Read this blog post by Sami Bentaleb"
+        }
+        path={`/blog/${slug}`}
+        ogImage={
+          post.data.ogImage ||
+          "https://www.samibentaleb.com/default-blog-og-image.jpg"
+        }
       />
       <BlogPost
         title={post.data.title || ""}
