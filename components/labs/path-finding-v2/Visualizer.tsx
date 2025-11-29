@@ -1,3 +1,5 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+// TODO: Complete this labs component - currently under development
 "use client";
 import React, { useState, useCallback, useRef, useEffect } from "react";
 import { Box, Flex, VStack, useToast } from "@chakra-ui/react";

@@ -1,7 +1,7 @@
 "use client";
 
 import { useParams } from "next/navigation";
-import type { Project } from "../types";
+// import type { Project } from "../types"; // TODO: Use for TypeScript type checking in future enhancements
 import NextLink from "next/link";
 import {
   Box,

@@ -6,10 +6,15 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import { Link } from "@chakra-ui/next-js";
-import { forwardRef } from "react";
 import { PostMetadata } from "../utils/GetPostMetadata";
 
-const PostPreview = forwardRef<HTMLDivElement, PostMetadata>((props, ref) => {
+export default function PostPreview({
+  title,
+  subtitle,
+  date,
+  slug,
+  content,
+}: PostMetadata) {
   const borderColor = useColorModeValue("gray.200", "gray.600");
   const titleColor = useColorModeValue("gray.800", "white");
   const subtitleColor = useColorModeValue("gray.600", "gray.300");
@@ -33,7 +38,7 @@ const PostPreview = forwardRef<HTMLDivElement, PostMetadata>((props, ref) => {
   return (
     <Box
       as={Link}
-      href={`/blog/${props.slug}`}
+      href={`/blog/${slug}`}
       display='block'
       py={6}
       borderBottomWidth={1}
@@ -67,20 +72,15 @@ const PostPreview = forwardRef<HTMLDivElement, PostMetadata>((props, ref) => {
           fontWeight='semibold'
           color={titleColor}
           lineHeight='1.4'>
-          {props.title}
+          {title}
         </Heading>
         <Text color={subtitleColor} fontSize='md' lineHeight='1.5'>
-          {props.subtitle}
+          {subtitle}
         </Text>
         <Text fontSize='sm' color={dateColor}>
-          {formatDate(props.date)} • {estimateReadingTime(props.content)} min
-          read
+          {formatDate(date)} • {estimateReadingTime(content)} min read
         </Text>
       </VStack>
     </Box>
   );
-});
-
-PostPreview.displayName = "PostPreview";
-
-export default PostPreview;
+}

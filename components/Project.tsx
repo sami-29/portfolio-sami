@@ -1,14 +1,7 @@
-import {
-  Box,
-  Heading,
-  Text,
-  Image,
-  Flex,
-  useColorModeValue,
-} from "@chakra-ui/react";
+import { Box, Heading, Text, Image, Flex } from "@chakra-ui/react";
 import NextLink from "next/link";
 import type { Project as ProjectType } from "../app/projects/types";
-import { portfolioConfig } from "../utils/config";
+// import { portfolioConfig } from "../utils/config"; // TODO: Use for portfolio-wide configuration settings
 
 type Props = Pick<
   ProjectType,

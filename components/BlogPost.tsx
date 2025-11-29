@@ -9,8 +9,8 @@ import {
   Code,
   chakra,
   Button,
-  HStack,
-  Flex,
+  // HStack, // TODO: Use for horizontal layouts if needed
+  // Flex, // TODO: Use for flexible layouts if needed
   Grid,
 } from "@chakra-ui/react";
 import { ArrowBackIcon } from "@chakra-ui/icons";

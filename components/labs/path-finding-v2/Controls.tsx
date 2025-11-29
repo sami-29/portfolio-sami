@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars, react/no-unescaped-entities */
+// TODO: Complete this labs component - currently under development
 import React from "react";
 import {
   VStack,

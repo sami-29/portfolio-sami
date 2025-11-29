@@ -20,8 +20,8 @@ import SEO from "../components/SEO";
 import { FaDiscord } from "react-icons/fa";
 import { portfolioConfig } from "../utils/config";
 import {
-  CONTENT_WIDTHS,
-  SECTION_SPACING,
+  // CONTENT_WIDTHS, // TODO: Use for consistent content widths across pages
+  // SECTION_SPACING, // TODO: Use for consistent spacing between sections
   SOCIAL_LINKS,
   YEARS_OF_EXPERIENCE,
 } from "../utils/constants";

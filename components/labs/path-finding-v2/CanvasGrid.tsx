@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+// TODO: Complete this labs component - currently under development
 import React, { useRef, useEffect, useCallback, useState } from "react";
 import { Box } from "@chakra-ui/react";
 import { GridState } from "../../../utils/labs/path-finding/v2/core/types";

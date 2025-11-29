@@ -1,3 +1,6 @@
+/* eslint-disable no-unused-vars, react-hooks/exhaustive-deps, react-hooks/rules-of-hooks */
+// TODO: This labs feature is under development and currently disabled
+// Remove the eslint-disable comment above when ready to complete this feature
 "use client";
 
 import {

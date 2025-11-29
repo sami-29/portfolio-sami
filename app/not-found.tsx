@@ -1,7 +1,6 @@
 "use client";
 
 import {
-  Box,
   Heading,
   Text,
   Button,
@@ -22,7 +21,7 @@ export default function NotFound() {
       <SEO
         title='404 - Page Not Found'
         description="The page you're looking for doesn't exist."
-        canonical='https://portfolio-sami.vercel.app/404'
+        path='/404'
         ogImage='https://portfolio-sami.vercel.app/favicon.ico'
       />
       <Container maxW='container.lg' h='calc(100vh - 100px)'>
