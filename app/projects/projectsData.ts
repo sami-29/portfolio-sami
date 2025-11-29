@@ -44,51 +44,17 @@ const projectsData: Project[] = [
   {
     images: [
       {
-        src: progres0,
-        alt: "Progres Student Portal Screenshot",
-        isSpecial: false,
-        isCustomStyles: false,
-      },
-      {
-        src: progres1,
-        alt: "Progres Student Portal Screenshot",
-        isSpecial: false,
-        isCustomStyles: false,
-      },
-      {
-        src: progres2,
-        alt: "Progres Student Portal Screenshot",
-        isSpecial: false,
-        isCustomStyles: false,
-      },
-      {
-        src: progres3,
-        alt: "Progres Student Portal Screenshot",
-        isSpecial: false,
-        isCustomStyles: false,
-      },
-      {
-        src: progres4,
-        alt: "Progres Student Portal Screenshot",
-        isSpecial: false,
-        isCustomStyles: false,
-      },
-      {
-        src: progres5,
-        alt: "Progres Student Portal Screenshot",
+        src: MARE,
+        alt: "Maritime Risk Assessment Engine Screenshot",
         isSpecial: false,
         isCustomStyles: false,
       },
     ],
-    slug: "progres",
-    title: "Progres",
-    tags: [
-      ProjectTags.PERSONAL,
-      ProjectTags.ASTRO,
-      ProjectTags.CLOUDFLARE_WORKERS,
-    ],
+    slug: "MARE",
+    title: "Maritime Risk Assessment Engine (MARE)",
     description:
-      "A separate frontend for the official Algerian university student portal 'Progres'. This web app addresses many bugs of the official portal, offering a significantly improved UI/UX, enhanced privacy, and a better overall student experience. Built with Astro and hosted on Cloudflare Workers, it interfaces directly with the official university API.",
+      "A project built using Mapbox, Turf, D3.js, and Vanilla Javascript, the rest of the functionality is custom built.",
+    tags: [ProjectTags.PROFESSIONAL, ProjectTags.DATA_VIZ],
     siteUrl: null,
     githubUrl: null,
   },
@@ -139,20 +105,55 @@ const projectsData: Project[] = [
   {
     images: [
       {
-        src: MARE,
-        alt: "Maritime Risk Assessment Engine Screenshot",
+        src: progres1,
+        alt: "Progres Student Portal Screenshot",
+        isSpecial: false,
+        isCustomStyles: false,
+      },
+      {
+        src: progres0,
+        alt: "Progres Student Portal Screenshot",
+        isSpecial: false,
+        isCustomStyles: false,
+      },
+      {
+        src: progres2,
+        alt: "Progres Student Portal Screenshot",
+        isSpecial: false,
+        isCustomStyles: false,
+      },
+      {
+        src: progres3,
+        alt: "Progres Student Portal Screenshot",
+        isSpecial: false,
+        isCustomStyles: false,
+      },
+      {
+        src: progres4,
+        alt: "Progres Student Portal Screenshot",
+        isSpecial: false,
+        isCustomStyles: false,
+      },
+      {
+        src: progres5,
+        alt: "Progres Student Portal Screenshot",
         isSpecial: false,
         isCustomStyles: false,
       },
     ],
-    slug: "MARE",
-    title: "Maritime Risk Assessment Engine (MARE)",
+    slug: "progres",
+    title: "Progres",
+    tags: [
+      ProjectTags.PERSONAL,
+      ProjectTags.ASTRO,
+      ProjectTags.CLOUDFLARE_WORKERS,
+    ],
     description:
-      "A project built using Mapbox, Turf, D3.js, and Vanilla Javascript, the rest of the functionality is custom built.",
-    tags: [ProjectTags.PROFESSIONAL, ProjectTags.DATA_VIZ],
+      "A separate frontend for the official Algerian university student portal 'Progres'. This web app addresses many bugs of the official portal, offering a significantly improved UI/UX, enhanced privacy, and a better overall student experience. Built with Astro and hosted on Cloudflare Workers, it interfaces directly with the official university API.",
     siteUrl: null,
     githubUrl: null,
   },
+
   {
     images: [
       {
