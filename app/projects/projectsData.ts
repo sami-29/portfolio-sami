@@ -39,6 +39,13 @@ import scl2 from "../../public/assets/projects/2scl2.png";
 import scl3 from "../../public/assets/projects/2scl3.png";
 import scl4 from "../../public/assets/projects/2scl4.png";
 import scl5 from "../../public/assets/projects/2scl5.png";
+import CafeTheLuckyBoots1 from "../../public/assets/projects/CafeTheLuckyBoots1.png";
+import CafeTheLuckyBoots2 from "../../public/assets/projects/CafeTheLuckyBoots2.png";
+import CafeTheLuckyBoots3 from "../../public/assets/projects/CafeTheLuckyBoots3.png";
+import CafeTheLuckyBoots4 from "../../public/assets/projects/CafeTheLuckyBoots4.png";
+import CafeTheLuckyBoots5 from "../../public/assets/projects/CafeTheLuckyBoots5.png";
+import CafeTheLuckyBoots6 from "../../public/assets/projects/CafeTheLuckyBoots6.png";
+import CafeTheLuckyBoots7 from "../../public/assets/projects/CafeTheLuckyBoots7.png";
 
 const projectsData: Project[] = [
   {
@@ -105,6 +112,59 @@ const projectsData: Project[] = [
   {
     images: [
       {
+        src: CafeTheLuckyBoots6,
+        alt: "Cafe The Lucky Boots Screenshot",
+        isSpecial: false,
+        isCustomStyles: false,
+      },
+      {
+        src: CafeTheLuckyBoots2,
+        alt: "Cafe The Lucky Boots Screenshot",
+        isSpecial: false,
+        isCustomStyles: false,
+      },
+      {
+        src: CafeTheLuckyBoots3,
+        alt: "Cafe The Lucky Boots Screenshot",
+        isSpecial: false,
+        isCustomStyles: false,
+      },
+      {
+        src: CafeTheLuckyBoots4,
+        alt: "Cafe The Lucky Boots Screenshot",
+        isSpecial: false,
+        isCustomStyles: false,
+      },
+      {
+        src: CafeTheLuckyBoots5,
+        alt: "Cafe The Lucky Boots Screenshot",
+        isSpecial: false,
+        isCustomStyles: false,
+      },
+      {
+        src: CafeTheLuckyBoots1,
+        alt: "Cafe The Lucky Boots Screenshot",
+        isSpecial: false,
+        isCustomStyles: false,
+      },
+      {
+        src: CafeTheLuckyBoots7,
+        alt: "Cafe The Lucky Boots Screenshot",
+        isSpecial: false,
+        isCustomStyles: false,
+      },
+    ],
+    slug: "cafe-the-lucky-boots",
+    title: "Cafe The Lucky Boots",
+    description:
+      "A Japanese website for a cafe called Cafe The Lucky Boots located in Kushiro, Hokkaido. Built with Astro and Tailwind CSS.",
+    tags: [ProjectTags.CLIENT, ProjectTags.ASTRO],
+    siteUrl: "https://japmerican-cafe.sami-bentaleb-dev-d6b.workers.dev/ja",
+    githubUrl: null,
+  },
+  {
+    images: [
+      {
         src: progres1,
         alt: "Progres Student Portal Screenshot",
         isSpecial: false,
@@ -150,7 +210,7 @@ const projectsData: Project[] = [
     ],
     description:
       "A separate frontend for the official Algerian university student portal 'Progres'. This web app addresses many bugs of the official portal, offering a significantly improved UI/UX, enhanced privacy, and a better overall student experience. Built with Astro and hosted on Cloudflare Workers, it interfaces directly with the official university API.",
-    siteUrl: null,
+    siteUrl: "https://progres-web.pages.dev/en/login?test=true",
     githubUrl: null,
   },
 
