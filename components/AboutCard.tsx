@@ -1,7 +1,4 @@
-"use client";
-
 import { Box, VStack, Heading, Text, Image } from "@chakra-ui/react";
-import { useColorModeValue } from "./ui/color-mode";
 import { StaticImageData } from "next/image";
 
 interface Props {
@@ -12,13 +9,6 @@ interface Props {
 }
 
 export default function AboutCard({ src, title, description, website }: Props) {
-  const bgColor = useColorModeValue("white", "gray.800");
-  const borderColor = useColorModeValue("gray.200", "gray.600");
-  const titleColor = useColorModeValue("gray.800", "white");
-  const descriptionColor = useColorModeValue("gray.600", "gray.300");
-  const hoverBorderColor = useColorModeValue("brand.400", "brand.300");
-  const hoverShadow = useColorModeValue("lg", "dark-lg");
-
   const cardContent = (
     <VStack gap={4} p={6} align="center" height="100%">
       <Box position="relative">
@@ -31,12 +21,12 @@ export default function AboutCard({ src, title, description, website }: Props) {
         />
       </Box>
       <VStack gap={2} align="center" flex={1} justify="center">
-        <Heading as="h3" size="sm" color={titleColor} textAlign="center">
+        <Heading as="h3" size="sm" color={{ base: "gray.800", _dark: "white" }} textAlign="center">
           {title}
         </Heading>
         <Text
           fontSize="xs"
-          color={descriptionColor}
+          color={{ base: "gray.600", _dark: "gray.300" }}
           textAlign="center"
           lineHeight="1.4"
           lineClamp={3}>
@@ -47,18 +37,18 @@ export default function AboutCard({ src, title, description, website }: Props) {
   );
 
   const sharedBoxProps = {
-    bg: bgColor,
+    bg: { base: "white", _dark: "gray.800" },
     _hover: {
-      borderColor: hoverBorderColor,
+      borderColor: { base: "brand.400", _dark: "brand.300" },
       transform: "translateY(-4px)",
-      boxShadow: hoverShadow,
+      boxShadow: { base: "lg", _dark: "dark-lg" },
     },
-    borderWidth: 1,
-    borderColor: borderColor,
+    borderWidth: 1 as const,
+    borderColor: { base: "gray.200", _dark: "gray.600" },
     borderRadius: "xl" as const,
     overflow: "hidden" as const,
     transition: "all 0.3s ease",
-    height: "100%",
+    height: "100%" as const,
     position: "relative" as const,
   };
 

@@ -1,7 +1,6 @@
 "use client";
 
 import { Box, SimpleGrid, Heading, Text, Button, Container, Separator } from "@chakra-ui/react";
-import { useColorModeValue } from "../../components/ui/color-mode";
 import { Tooltip } from "../../components/ui/tooltip";
 import { ArrowUp } from "lucide-react";
 import Project from "../../components/Project";
@@ -9,9 +8,6 @@ import projectsData from "./projectsData";
 import { useState, useEffect } from "react";
 
 export default function ProjectsContent() {
-  const textColor = useColorModeValue("gray.900", "white");
-  const subTextColor = useColorModeValue("gray.600", "gray.300");
-  const sectionLabelColor = useColorModeValue("gray.400", "gray.500");
   const [showScrollTopButton, setShowScrollTopButton] = useState(false);
 
   const featuredProjects = projectsData.filter((p) => p.featured);
@@ -33,10 +29,14 @@ export default function ProjectsContent() {
   return (
     <Box as="main" position="relative" pb={16}>
       <Container maxW="7xl" px={{ base: 4, md: 8 }} mt={{ base: 8, md: 16 }}>
-        <Heading as="h1" fontSize={["4xl", "5xl", "6xl"]} color={textColor} mb={3}>
+        <Heading
+          as="h1"
+          fontSize={["4xl", "5xl", "6xl"]}
+          color={{ base: "gray.900", _dark: "white" }}
+          mb={3}>
           Projects
         </Heading>
-        <Text fontSize="lg" color={subTextColor} mb={12}>
+        <Text fontSize="lg" color={{ base: "gray.600", _dark: "gray.300" }} mb={12}>
           Selected work across website development, smart city platforms, pharmacy automation, and
           dashboard tools.
         </Text>
@@ -45,7 +45,7 @@ export default function ProjectsContent() {
         <Text
           fontSize="xs"
           fontWeight="700"
-          color={sectionLabelColor}
+          color={{ base: "gray.400", _dark: "gray.500" }}
           letterSpacing="widest"
           textTransform="uppercase"
           mb={6}>
@@ -72,7 +72,7 @@ export default function ProjectsContent() {
             <Text
               fontSize="xs"
               fontWeight="700"
-              color={sectionLabelColor}
+              color={{ base: "gray.400", _dark: "gray.500" }}
               letterSpacing="widest"
               textTransform="uppercase"
               mb={6}>
@@ -101,13 +101,13 @@ export default function ProjectsContent() {
             <Text
               fontSize="xs"
               fontWeight="700"
-              color={sectionLabelColor}
+              color={{ base: "gray.400", _dark: "gray.500" }}
               letterSpacing="widest"
               textTransform="uppercase"
               mb={2}>
               Client Sites
             </Text>
-            <Text fontSize="sm" color={subTextColor} mb={8}>
+            <Text fontSize="sm" color={{ base: "gray.600", _dark: "gray.300" }} mb={8}>
               Shipped frontend work for real clients.
             </Text>
             <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} gap={{ base: 6, lg: 8 }}>

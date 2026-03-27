@@ -1,7 +1,6 @@
 "use client";
 
 import { Box, VStack, Text, Link as ChakraLink } from "@chakra-ui/react";
-import { useColorModeValue } from "./ui/color-mode";
 
 export interface Heading {
   level: number;
@@ -14,11 +13,6 @@ interface TableOfContentsProps {
 }
 
 const TableOfContents = ({ headings }: TableOfContentsProps) => {
-  const textColor = useColorModeValue("gray.700", "gray.300");
-  const hoverColor = useColorModeValue("brand.500", "brand.300");
-  const borderColor = useColorModeValue("gray.200", "gray.700");
-  const bgColor = useColorModeValue("white", "gray.800");
-
   if (headings.length === 0) {
     return null;
   }
@@ -28,9 +22,9 @@ const TableOfContents = ({ headings }: TableOfContentsProps) => {
       as="nav"
       p={6}
       borderWidth={1}
-      borderColor={borderColor}
+      borderColor={{ base: "gray.200", _dark: "gray.700" }}
       borderRadius="lg"
-      bg={bgColor}
+      bg={{ base: "white", _dark: "gray.800" }}
       boxShadow="sm">
       <Text fontSize="lg" fontWeight="semibold" mb={4}>
         On This Page
@@ -42,11 +36,11 @@ const TableOfContents = ({ headings }: TableOfContentsProps) => {
             key={heading.slug}
             display="block"
             fontSize="sm"
-            color={textColor}
-            fontWeight={"medium"}
+            color={{ base: "gray.700", _dark: "gray.300" }}
+            fontWeight="medium"
             pl={heading.level === 3 ? 4 : 0}
             _hover={{
-              color: hoverColor,
+              color: { base: "brand.500", _dark: "brand.300" },
               textDecoration: "underline",
             }}
             onClick={(e) => {

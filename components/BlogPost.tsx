@@ -1,7 +1,6 @@
 "use client";
 
 import { Box, VStack, Heading, Text, Code, Button, Grid } from "@chakra-ui/react";
-import { useColorModeValue } from "./ui/color-mode";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import Markdown from "markdown-to-jsx";
@@ -26,18 +25,6 @@ const createSlug = (text: string) => {
 };
 
 export default function BlogPost({ title, subtitle, date, content, speeedyUrl }: BlogPostProps) {
-  const textColor = useColorModeValue("gray.800", "gray.200");
-  const subtitleColor = useColorModeValue("gray.600", "gray.400");
-  const dateColor = useColorModeValue("gray.500", "gray.400");
-  const bgColor = useColorModeValue("gray.50", "gray.700");
-  const speeedyBorder = useColorModeValue("purple.200", "purple.700");
-  const speeedyBg = useColorModeValue("purple.50", "purple.900");
-  const speeedyBgHover = useColorModeValue("purple.100", "purple.800");
-  const speeedyBorderHover = useColorModeValue("purple.400", "purple.500");
-  const speeedyHeading = useColorModeValue("purple.700", "purple.300");
-  const speeedySubtext = useColorModeValue("purple.500", "purple.400");
-  const speeedyIcon = useColorModeValue("purple.600", "purple.300");
-
   const headingLines = content.match(/^#{2,3}\s+.+$/gm) || [];
   const headings: HeadingType[] = headingLines.map((line): HeadingType => {
     const isH3 = line.startsWith("###");
@@ -66,13 +53,17 @@ export default function BlogPost({ title, subtitle, date, content, speeedyUrl }:
             </Link>
           </Button>
           <VStack gap={4} align="start" w="full">
-            <Heading as="h1" fontSize={["3xl", "4xl", "5xl"]} color={textColor} lineHeight="1.2">
+            <Heading
+              as="h1"
+              fontSize={["3xl", "4xl", "5xl"]}
+              color={{ base: "gray.800", _dark: "gray.200" }}
+              lineHeight="1.2">
               {title}
             </Heading>
-            <Text fontSize="lg" color={subtitleColor} lineHeight="1.5">
+            <Text fontSize="lg" color={{ base: "gray.600", _dark: "gray.400" }} lineHeight="1.5">
               {subtitle}
             </Text>
-            <Text fontSize="sm" color={dateColor}>
+            <Text fontSize="sm" color={{ base: "gray.500", _dark: "gray.400" }}>
               {formatDate(date)} · {estimateReadingTime(content)} min read
             </Text>
           </VStack>
@@ -88,24 +79,31 @@ export default function BlogPost({ title, subtitle, date, content, speeedyUrl }:
               py={3}
               borderRadius="lg"
               border="1px solid"
-              borderColor={speeedyBorder}
-              bg={speeedyBg}
+              borderColor={{ base: "purple.200", _dark: "purple.700" }}
+              bg={{ base: "purple.50", _dark: "purple.900" }}
               _hover={{
-                bg: speeedyBgHover,
-                borderColor: speeedyBorderHover,
+                bg: { base: "purple.100", _dark: "purple.800" },
+                borderColor: { base: "purple.400", _dark: "purple.500" },
                 textDecoration: "none",
               }}
               transition="all 0.15s ease">
               <a href={speeedyUrl} target="_blank" rel="noopener noreferrer">
                 <Box>
-                  <Text fontSize="sm" fontWeight="semibold" color={speeedyHeading}>
+                  <Text
+                    fontSize="sm"
+                    fontWeight="semibold"
+                    color={{ base: "purple.700", _dark: "purple.300" }}>
                     Read this in Speeedy
                   </Text>
-                  <Text fontSize="xs" color={speeedySubtext} mt={0.5}>
+                  <Text fontSize="xs" color={{ base: "purple.500", _dark: "purple.400" }} mt={0.5}>
                     Speed-read this article in your browser — no account needed
                   </Text>
                 </Box>
-                <Text fontSize="lg" color={speeedyIcon} ml={4} flexShrink={0}>
+                <Text
+                  fontSize="lg"
+                  color={{ base: "purple.600", _dark: "purple.300" }}
+                  ml={4}
+                  flexShrink={0}>
                   ⚡
                 </Text>
               </a>
@@ -121,7 +119,13 @@ export default function BlogPost({ title, subtitle, date, content, speeedyUrl }:
                     const text = children?.toString() || "";
                     const slug = createSlug(text);
                     return (
-                      <Heading as="h2" id={slug} fontSize="2xl" mt={6} mb={3} color={textColor}>
+                      <Heading
+                        as="h2"
+                        id={slug}
+                        fontSize="2xl"
+                        mt={6}
+                        mb={3}
+                        color={{ base: "gray.800", _dark: "gray.200" }}>
                         {children}
                       </Heading>
                     );
@@ -130,23 +134,39 @@ export default function BlogPost({ title, subtitle, date, content, speeedyUrl }:
                     const text = children?.toString() || "";
                     const slug = createSlug(text);
                     return (
-                      <Heading as="h3" id={slug} fontSize="xl" mt={4} mb={2} color={textColor}>
+                      <Heading
+                        as="h3"
+                        id={slug}
+                        fontSize="xl"
+                        mt={4}
+                        mb={2}
+                        color={{ base: "gray.800", _dark: "gray.200" }}>
                         {children}
                       </Heading>
                     );
                   },
                   p: ({ children }: { children?: React.ReactNode }) => (
-                    <Text mb={4} color={textColor} lineHeight="1.7">
+                    <Text mb={4} color={{ base: "gray.800", _dark: "gray.200" }} lineHeight="1.7">
                       {children}
                     </Text>
                   ),
                   ul: ({ children }: React.HTMLAttributes<HTMLUListElement>) => (
-                    <Box as="ul" pl={6} mb={4} color={textColor} listStyleType="disc">
+                    <Box
+                      as="ul"
+                      pl={6}
+                      mb={4}
+                      color={{ base: "gray.800", _dark: "gray.200" }}
+                      listStyleType="disc">
                       {children}
                     </Box>
                   ),
                   ol: ({ children }: React.HTMLAttributes<HTMLOListElement>) => (
-                    <Box as="ol" pl={6} mb={4} color={textColor} listStyleType="decimal">
+                    <Box
+                      as="ol"
+                      pl={6}
+                      mb={4}
+                      color={{ base: "gray.800", _dark: "gray.200" }}
+                      listStyleType="decimal">
                       {children}
                     </Box>
                   ),
@@ -183,7 +203,7 @@ export default function BlogPost({ title, subtitle, date, content, speeedyUrl }:
                         py={1}
                         borderRadius="md"
                         fontSize="0.875em"
-                        bg={bgColor}>
+                        bg={{ base: "gray.50", _dark: "gray.700" }}>
                         {children}
                       </Code>
                     );

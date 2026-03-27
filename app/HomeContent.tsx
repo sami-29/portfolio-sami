@@ -1,7 +1,6 @@
 "use client";
 
 import { Box, Heading, Text, Button, VStack, HStack, SimpleGrid } from "@chakra-ui/react";
-import { useColorModeValue } from "../components/ui/color-mode";
 import { toaster } from "../components/ui/toaster";
 import { Tooltip } from "../components/ui/tooltip";
 import Project from "../components/Project";
@@ -13,10 +12,6 @@ import { portfolioConfig } from "../utils/config";
 import { SOCIAL_LINKS } from "../utils/constants";
 
 export default function HomeContent() {
-  const textColor = useColorModeValue("gray.900", "white");
-  const subTextColor = useColorModeValue("gray.600", "gray.300");
-  const labelColor = useColorModeValue("blue.600", "blue.300");
-
   const copyDiscordUsername = () => {
     try {
       navigator.clipboard.writeText(SOCIAL_LINKS.discord);
@@ -46,17 +41,25 @@ export default function HomeContent() {
         <Text
           fontSize="sm"
           fontWeight="semibold"
-          color={labelColor}
+          color={{ base: "blue.600", _dark: "blue.300" }}
           letterSpacing="widest"
           textTransform="uppercase">
           Full-Stack Engineer
         </Text>
 
-        <Heading as="h1" fontSize={["4xl", "5xl", "6xl"]} color={textColor} lineHeight="shorter">
+        <Heading
+          as="h1"
+          fontSize={["4xl", "5xl", "6xl"]}
+          color={{ base: "gray.900", _dark: "white" }}
+          lineHeight="shorter">
           Sami Bentaleb
         </Heading>
 
-        <Text fontSize={["lg", "xl"]} color={subTextColor} maxW="2xl" lineHeight="tall">
+        <Text
+          fontSize={["lg", "xl"]}
+          color={{ base: "gray.600", _dark: "gray.300" }}
+          maxW="2xl"
+          lineHeight="tall">
           I do website development and web app development: interfaces for complex data and
           dashboards where the data model matters as much as the UI, internal tools with real
           workflows, and platforms that stay usable when data gets messy or large. From website
@@ -104,16 +107,18 @@ export default function HomeContent() {
         mx="auto"
         px={{ base: 4, md: 8 }}>
         <HStack w="full" justify="space-between" align="baseline">
-          <Heading as="h2" fontSize={["2xl", "3xl"]} color={textColor}>
+          <Heading as="h2" fontSize={["2xl", "3xl"]} color={{ base: "gray.900", _dark: "white" }}>
             Featured Projects
           </Heading>
           <Link href="/projects" style={{ fontSize: "0.875rem", fontWeight: 600 }}>
-            <Text color={labelColor} _hover={{ textDecoration: "underline" }}>
+            <Text
+              color={{ base: "blue.600", _dark: "blue.300" }}
+              _hover={{ textDecoration: "underline" }}>
               All projects →
             </Text>
           </Link>
         </HStack>
-        <Text fontSize="md" color={subTextColor} maxW="2xl">
+        <Text fontSize="md" color={{ base: "gray.600", _dark: "gray.300" }} maxW="2xl">
           Smart city platforms, pharmacy automation, dashboards, and web applications.
         </Text>
 

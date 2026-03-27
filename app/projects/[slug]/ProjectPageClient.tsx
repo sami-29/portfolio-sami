@@ -19,7 +19,6 @@ import {
   DialogBody,
   DialogCloseTrigger,
 } from "../../../components/ui/dialog";
-import { useColorModeValue } from "../../../components/ui/color-mode";
 import type { Project } from "../types";
 import { useState } from "react";
 
@@ -30,11 +29,6 @@ interface ProjectPageClientProps {
 export default function ProjectPageClient({ project }: ProjectPageClientProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState("");
-
-  const sectionHeadingColor = useColorModeValue("gray.700", "gray.200");
-  const sectionTextColor = useColorModeValue("gray.600", "gray.300");
-  const sectionBg = useColorModeValue("gray.50", "gray.800");
-  const bulletColor = useColorModeValue("blue.500", "blue.300");
 
   const handleImageClick = (imageSrc: string) => {
     setSelectedImage(imageSrc);
@@ -80,7 +74,7 @@ export default function ProjectPageClient({ project }: ProjectPageClientProps) {
         <Heading as="h1" fontSize="3xl" mb={3} lineHeight="shorter">
           {project.title}
         </Heading>
-        <Text fontSize="xl" color={sectionTextColor} mb={5}>
+        <Text fontSize="xl" color={{ base: "gray.600", _dark: "gray.300" }} mb={5}>
           {project.subtitle}
         </Text>
 
@@ -138,30 +132,30 @@ export default function ProjectPageClient({ project }: ProjectPageClientProps) {
 
       <Separator mb={8} />
 
-      {/* Structured sections for featured projects */}
+      {/* Structured sections */}
       {project.problem && (
         <Box mb={8}>
           <Heading
             as="h2"
             fontSize="sm"
-            color={sectionHeadingColor}
+            color={{ base: "gray.700", _dark: "gray.200" }}
             mb={3}
             textTransform="uppercase"
             letterSpacing="wide">
             The Problem
           </Heading>
-          <Text fontSize="lg" color={sectionTextColor} lineHeight="tall">
+          <Text fontSize="lg" color={{ base: "gray.600", _dark: "gray.300" }} lineHeight="tall">
             {project.problem}
           </Text>
         </Box>
       )}
 
       {project.architecture && project.architecture.length > 0 && (
-        <Box mb={8} bg={sectionBg} p={6} borderRadius="xl">
+        <Box mb={8} bg={{ base: "gray.50", _dark: "gray.800" }} p={6} borderRadius="xl">
           <Heading
             as="h2"
             fontSize="sm"
-            color={sectionHeadingColor}
+            color={{ base: "gray.700", _dark: "gray.200" }}
             mb={4}
             textTransform="uppercase"
             letterSpacing="wide">
@@ -170,10 +164,15 @@ export default function ProjectPageClient({ project }: ProjectPageClientProps) {
           <List.Root gap={3} listStyle="none">
             {project.architecture.map((item, i) => (
               <List.Item key={i} display="flex" alignItems="flex-start" gap={3}>
-                <Box as="span" color={bulletColor} fontWeight="bold" mt={1} flexShrink={0}>
+                <Box
+                  as="span"
+                  color={{ base: "blue.500", _dark: "blue.300" }}
+                  fontWeight="bold"
+                  mt={1}
+                  flexShrink={0}>
                   →
                 </Box>
-                <Text fontSize="md" color={sectionTextColor}>
+                <Text fontSize="md" color={{ base: "gray.600", _dark: "gray.300" }}>
                   {item}
                 </Text>
               </List.Item>
@@ -187,7 +186,7 @@ export default function ProjectPageClient({ project }: ProjectPageClientProps) {
           <Heading
             as="h2"
             fontSize="sm"
-            color={sectionHeadingColor}
+            color={{ base: "gray.700", _dark: "gray.200" }}
             mb={4}
             textTransform="uppercase"
             letterSpacing="wide">
@@ -196,10 +195,15 @@ export default function ProjectPageClient({ project }: ProjectPageClientProps) {
           <List.Root gap={3} listStyle="none">
             {project.challenges.map((item, i) => (
               <List.Item key={i} display="flex" alignItems="flex-start" gap={3}>
-                <Box as="span" color={bulletColor} fontWeight="bold" mt={1} flexShrink={0}>
+                <Box
+                  as="span"
+                  color={{ base: "blue.500", _dark: "blue.300" }}
+                  fontWeight="bold"
+                  mt={1}
+                  flexShrink={0}>
                   →
                 </Box>
-                <Text fontSize="md" color={sectionTextColor}>
+                <Text fontSize="md" color={{ base: "gray.600", _dark: "gray.300" }}>
                   {item}
                 </Text>
               </List.Item>
@@ -209,11 +213,11 @@ export default function ProjectPageClient({ project }: ProjectPageClientProps) {
       )}
 
       {project.results && project.results.length > 0 && (
-        <Box mb={8} bg={sectionBg} p={6} borderRadius="xl">
+        <Box mb={8} bg={{ base: "gray.50", _dark: "gray.800" }} p={6} borderRadius="xl">
           <Heading
             as="h2"
             fontSize="sm"
-            color={sectionHeadingColor}
+            color={{ base: "gray.700", _dark: "gray.200" }}
             mb={4}
             textTransform="uppercase"
             letterSpacing="wide">
@@ -222,10 +226,15 @@ export default function ProjectPageClient({ project }: ProjectPageClientProps) {
           <List.Root gap={3} listStyle="none">
             {project.results.map((item, i) => (
               <List.Item key={i} display="flex" alignItems="flex-start" gap={3}>
-                <Box as="span" color={bulletColor} fontWeight="bold" mt={1} flexShrink={0}>
+                <Box
+                  as="span"
+                  color={{ base: "blue.500", _dark: "blue.300" }}
+                  fontWeight="bold"
+                  mt={1}
+                  flexShrink={0}>
                   ✓
                 </Box>
-                <Text fontSize="md" color={sectionTextColor}>
+                <Text fontSize="md" color={{ base: "gray.600", _dark: "gray.300" }}>
                   {item}
                 </Text>
               </List.Item>
@@ -234,10 +243,9 @@ export default function ProjectPageClient({ project }: ProjectPageClientProps) {
         </Box>
       )}
 
-      {/* Fallback description for non-featured projects */}
       {!project.problem && (
         <Box mb={8}>
-          <Text fontSize="lg" color={sectionTextColor} lineHeight="tall">
+          <Text fontSize="lg" color={{ base: "gray.600", _dark: "gray.300" }} lineHeight="tall">
             {project.description}
           </Text>
         </Box>

@@ -1,7 +1,6 @@
 "use client";
 
 import { Button } from "@chakra-ui/react";
-import { useColorModeValue } from "./ui/color-mode";
 import { useRouter } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
 
@@ -17,8 +16,6 @@ const BackButton = ({
   size = "sm",
 }: BackButtonProps) => {
   const router = useRouter();
-  const buttonBg = useColorModeValue("gray.100", "gray.700");
-  const buttonHoverBg = useColorModeValue("gray.200", "gray.600");
 
   const handleClick = () => {
     if (href) {
@@ -33,8 +30,8 @@ const BackButton = ({
       onClick={handleClick}
       size={size}
       variant="ghost"
-      bg={buttonBg}
-      _hover={{ bg: buttonHoverBg }}
+      bg={{ base: "gray.100", _dark: "gray.700" }}
+      _hover={{ bg: { base: "gray.200", _dark: "gray.600" } }}
       mb={4}>
       <ArrowLeft size={16} />
       {label}

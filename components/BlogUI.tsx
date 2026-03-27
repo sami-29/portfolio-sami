@@ -1,7 +1,6 @@
 "use client";
 
 import { Box, VStack, Heading, Text } from "@chakra-ui/react";
-import { useColorModeValue } from "./ui/color-mode";
 import PostPreview from "./PostPreview";
 import { PostMetadata } from "../utils/postTypes";
 
@@ -10,16 +9,17 @@ interface BlogUIProps {
 }
 
 export default function BlogUI({ postMetadata }: BlogUIProps) {
-  const textColor = useColorModeValue("gray.800", "white");
-  const subTextColor = useColorModeValue("gray.600", "gray.300");
-
   return (
     <Box as="main" mb={10}>
       <VStack gap={8} align="start" w={["90%", "75%", "60%"]} mx="auto" mt={{ base: 8, md: 16 }}>
-        <Heading as="h1" fontSize={["4xl", "5xl", "6xl"]} color={textColor}>
+        <Heading
+          as="h1"
+          fontSize={["4xl", "5xl", "6xl"]}
+          color={{ base: "gray.800", _dark: "white" }}
+          lineHeight="shorter">
           Blog
         </Heading>
-        <Text fontSize="lg" color={subTextColor}>
+        <Text fontSize="lg" color={{ base: "gray.600", _dark: "gray.300" }}>
           Thoughts and insights on website development, website building, web performance, and
           technology.
         </Text>
@@ -32,7 +32,7 @@ export default function BlogUI({ postMetadata }: BlogUIProps) {
           </VStack>
         ) : (
           <VStack gap={4} py={8} align="start" w="full">
-            <Text color={subTextColor}>
+            <Text color={{ base: "gray.600", _dark: "gray.300" }}>
               I&apos;m working on some exciting blog posts. Check back soon!
             </Text>
           </VStack>
