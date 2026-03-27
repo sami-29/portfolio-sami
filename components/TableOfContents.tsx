@@ -18,30 +18,32 @@ const TableOfContents = ({ headings }: TableOfContentsProps) => {
   }
 
   return (
-    <Box
-      as="nav"
-      p={6}
-      borderWidth={1}
-      borderColor={{ base: "gray.200", _dark: "gray.700" }}
-      borderRadius="lg"
-      bg={{ base: "white", _dark: "gray.800" }}
-      boxShadow="sm">
-      <Text fontSize="lg" fontWeight="semibold" mb={4}>
+    <Box as="nav" p={6} borderWidth="1px" borderColor="gray.800" borderRadius="lg" bg="gray.900">
+      <Text
+        fontSize="xs"
+        fontWeight="700"
+        color="brand.400"
+        letterSpacing="widest"
+        textTransform="uppercase"
+        fontFamily="heading"
+        mb={4}>
         On This Page
       </Text>
-      <VStack align="start" gap={3}>
+      <VStack align="start" gap={2.5}>
         {headings.map((heading) => (
           <ChakraLink
             href={`#${heading.slug}`}
             key={heading.slug}
             display="block"
             fontSize="sm"
-            color={{ base: "gray.700", _dark: "gray.300" }}
-            fontWeight="medium"
+            color="gray.500"
+            fontWeight="500"
+            fontFamily="body"
             pl={heading.level === 3 ? 4 : 0}
+            transition="color 0.2s"
             _hover={{
-              color: { base: "brand.500", _dark: "brand.300" },
-              textDecoration: "underline",
+              color: "brand.400",
+              textDecoration: "none",
             }}
             onClick={(e) => {
               e.preventDefault();

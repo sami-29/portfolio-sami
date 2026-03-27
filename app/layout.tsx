@@ -4,9 +4,31 @@ import { Providers } from "../components/Providers";
 import Navbar from "../components/MainNavigation/Navbar";
 
 import { Box } from "@chakra-ui/react";
+import { Space_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
 
 import Script from "next/script";
 import { portfolioConfig } from "../utils/config";
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-heading",
+  display: "swap",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  variable: "--font-body",
+  display: "swap",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  variable: "--font-mono",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(portfolioConfig.seo.baseUrl),
@@ -56,7 +78,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${spaceGrotesk.variable} ${inter.variable} ${jetbrainsMono.variable}`}>
       <Script
         async
         defer
@@ -65,8 +90,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <Providers>
           <Box minHeight="100vh">
+            <a href="#main-content" className="skip-link">
+              Skip to content
+            </a>
             <Navbar />
-            <Box position={"relative"} pt={{ base: 12, md: 16 }}>
+            <Box id="main-content" position={"relative"} pt={{ base: 12, md: 16 }}>
               {children}
             </Box>
           </Box>

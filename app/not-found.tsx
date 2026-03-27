@@ -11,25 +11,34 @@ export default function NotFound() {
         <Heading
           as="h1"
           fontSize={["6xl", "7xl", "8xl"]}
-          color={{ base: "gray.800", _dark: "white" }}
-          fontWeight="bold">
+          color="brand.400"
+          fontWeight="700"
+          letterSpacing="-0.04em"
+          fontFamily="heading">
           404
         </Heading>
         <Heading
           as="h2"
           fontSize={["2xl", "3xl", "4xl"]}
-          color={{ base: "gray.800", _dark: "white" }}
-          mb={2}>
+          color="gray.100"
+          mb={2}
+          fontWeight="700"
+          letterSpacing="-0.02em"
+          fontFamily="heading">
           Page Not Found
         </Heading>
-        <Text
-          fontSize={["md", "lg", "xl"]}
-          color={{ base: "gray.600", _dark: "gray.300" }}
-          maxW="600px">
-          Oops! It seems you&apos;ve ventured into uncharted territory. The page you&apos;re looking
-          for might have moved or doesn&apos;t exist.
+        <Text fontSize={["md", "lg", "xl"]} color="gray.400" maxW="600px" fontFamily="body">
+          This page doesn&apos;t exist or has moved.
         </Text>
-        <Button asChild size="lg" variant="outline" mt={4}>
+        <Button
+          asChild
+          size="lg"
+          variant="outline"
+          mt={4}
+          borderColor="gray.700"
+          color="gray.300"
+          _hover={{ borderColor: "brand.400", color: "brand.400", transform: "translateY(-2px)" }}
+          transition="transform 0.2s var(--ease-out-quart), color 0.2s, border-color 0.2s">
           <Link href="/">
             <Home size={20} />
             Back to Home

@@ -12,43 +12,46 @@ export default function PostPreview({ title, subtitle, date, slug, content }: Po
       display="block"
       py={6}
       borderBottomWidth={1}
-      borderColor={{ base: "gray.200", _dark: "gray.600" }}
+      borderColor="gray.800"
       position="relative"
-      transition="all 0.2s ease"
+      transition="transform 0.2s var(--ease-out-quart)"
       _after={{
         content: "''",
         position: "absolute",
         width: "100%",
         transform: "scaleX(0)",
-        height: "2px",
-        bottom: 0,
+        height: "1px",
+        bottom: "-1px",
         left: 0,
-        backgroundColor: { base: "brand.300", _dark: "brand.400" },
+        backgroundColor: "brand.400",
         transformOrigin: "bottom right",
-        transition: "transform 0.3s ease-out",
+        transition: "transform 0.3s var(--ease-out-quart)",
       }}
       _hover={{
         textDecoration: "none",
+        transform: "translateX(6px)",
         _after: {
           transform: "scaleX(1)",
           transformOrigin: "bottom left",
         },
       }}
       w="full">
-      <Link href={`/blog/${slug}`}>
+      <Link href={`/blog/${slug}`} style={{ viewTransitionName: `blog-post-${slug}` }}>
         <VStack align="start" gap={3}>
           <Heading
             as="h2"
             fontSize="xl"
-            fontWeight="semibold"
-            color={{ base: "gray.800", _dark: "white" }}
-            lineHeight="1.4">
+            fontWeight="600"
+            color="gray.100"
+            lineHeight="1.35"
+            fontFamily="heading"
+            style={{ viewTransitionName: `blog-title-${slug}` }}>
             {title}
           </Heading>
-          <Text color={{ base: "gray.600", _dark: "gray.300" }} fontSize="md" lineHeight="1.5">
+          <Text color="gray.400" fontSize="md" lineHeight="1.6" fontFamily="body">
             {subtitle}
           </Text>
-          <Text fontSize="sm" color={{ base: "gray.500", _dark: "gray.400" }}>
+          <Text fontSize="sm" color="gray.600" fontFamily="body">
             {formatDate(date)} · {estimateReadingTime(content)} min read
           </Text>
         </VStack>

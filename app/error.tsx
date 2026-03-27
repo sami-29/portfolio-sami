@@ -16,19 +16,34 @@ export default function ErrorPage({ reset }: ErrorProps) {
         <Heading
           as="h1"
           fontSize={["4xl", "5xl", "6xl"]}
-          color={{ base: "gray.800", _dark: "white" }}
-          fontWeight="bold">
+          color="gray.100"
+          fontWeight="700"
+          letterSpacing="-0.03em"
+          fontFamily="heading">
           Something went wrong
         </Heading>
-        <Text fontSize={["md", "lg"]} color={{ base: "gray.600", _dark: "gray.300" }} maxW="600px">
+        <Text fontSize={["md", "lg"]} color="gray.400" maxW="600px" fontFamily="body">
           An unexpected error occurred. You can try again or go back to the home page.
         </Text>
         <VStack gap={4}>
-          <Button onClick={reset} size="lg" variant="outline">
+          <Button
+            onClick={reset}
+            size="lg"
+            variant="outline"
+            borderColor="gray.700"
+            color="gray.300"
+            _hover={{ borderColor: "brand.400", color: "brand.400", transform: "translateY(-2px)" }}
+            transition="transform 0.2s var(--ease-out-quart), color 0.2s, border-color 0.2s">
             <RefreshCw size={20} />
             Try Again
           </Button>
-          <Button asChild size="lg" variant="ghost">
+          <Button
+            asChild
+            size="lg"
+            variant="ghost"
+            color="gray.400"
+            _hover={{ color: "brand.400" }}
+            transition="color 0.2s">
             <Link href="/">
               <Home size={20} />
               Back to Home

@@ -30,8 +30,9 @@ const BackButton = ({
       onClick={handleClick}
       size={size}
       variant="ghost"
-      bg={{ base: "gray.100", _dark: "gray.700" }}
-      _hover={{ bg: { base: "gray.200", _dark: "gray.600" } }}
+      color="gray.400"
+      _hover={{ color: "brand.400", bg: "gray.850", transform: "translateX(-2px)" }}
+      transition="color 0.2s, background 0.2s, transform 0.2s var(--ease-out-quart)"
       mb={4}>
       <ArrowLeft size={16} />
       {label}

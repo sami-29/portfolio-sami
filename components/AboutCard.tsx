@@ -1,5 +1,5 @@
-import { Box, VStack, Heading, Text, Image } from "@chakra-ui/react";
-import { StaticImageData } from "next/image";
+import { Box, VStack, Heading, Text } from "@chakra-ui/react";
+import NextImage, { StaticImageData } from "next/image";
 
 interface Props {
   src: StaticImageData;
@@ -11,25 +11,26 @@ interface Props {
 export default function AboutCard({ src, title, description, website }: Props) {
   const cardContent = (
     <VStack gap={4} p={6} align="center" height="100%">
-      <Box position="relative">
-        <Image
-          src={src.src}
+      <Box position="relative" width="80px" height="80px">
+        <NextImage
+          src={src}
           alt={`${title} technology logo`}
-          boxSize="80px"
-          objectFit="contain"
-          filter="drop-shadow(0 2px 4px rgba(0,0,0,0.1))"
+          width={80}
+          height={80}
+          style={{ objectFit: "contain" }}
         />
       </Box>
       <VStack gap={2} align="center" flex={1} justify="center">
-        <Heading as="h3" size="sm" color={{ base: "gray.800", _dark: "white" }} textAlign="center">
+        <Heading as="h3" size="sm" color="gray.100" textAlign="center" fontFamily="heading">
           {title}
         </Heading>
         <Text
           fontSize="xs"
-          color={{ base: "gray.600", _dark: "gray.300" }}
+          color="gray.500"
           textAlign="center"
-          lineHeight="1.4"
-          lineClamp={3}>
+          lineHeight="1.5"
+          lineClamp={3}
+          fontFamily="body">
           {description}
         </Text>
       </VStack>
@@ -37,17 +38,17 @@ export default function AboutCard({ src, title, description, website }: Props) {
   );
 
   const sharedBoxProps = {
-    bg: { base: "white", _dark: "gray.800" },
+    bg: "gray.900",
     _hover: {
-      borderColor: { base: "brand.400", _dark: "brand.300" },
+      borderColor: "brand.400",
       transform: "translateY(-4px)",
-      boxShadow: { base: "lg", _dark: "dark-lg" },
+      boxShadow: "0 12px 40px -8px rgba(255, 179, 0, 0.15)",
     },
-    borderWidth: 1 as const,
-    borderColor: { base: "gray.200", _dark: "gray.600" },
+    borderWidth: "1px" as const,
+    borderColor: "gray.800",
     borderRadius: "xl" as const,
     overflow: "hidden" as const,
-    transition: "all 0.3s ease",
+    transition: "transform 0.25s var(--ease-out-quart), border-color 0.25s, box-shadow 0.25s",
     height: "100%" as const,
     position: "relative" as const,
   };
