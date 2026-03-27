@@ -1,5 +1,5 @@
 export type urlParamType = {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 };

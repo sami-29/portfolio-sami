@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import getPostContent from "../../../utils/GetPostContent";
-import getPostMetadata from "../../../utils/GetPostMetadata";
+import getPostContent from "../../../utils/getPostContent";
+import getPostMetadata from "../../../utils/getPostMetadata";
 import { urlParamType } from "./UrlType";
 import BlogPost from "../../../components/BlogPost";
 import { buildMetadata } from "../../../utils/buildMetadata";
@@ -16,10 +16,8 @@ export const generateStaticParams = async () => {
   }));
 };
 
-export async function generateMetadata(
-  props: urlParamType
-): Promise<Metadata> {
-  const slug = props.params.slug;
+export async function generateMetadata(props: urlParamType): Promise<Metadata> {
+  const { slug } = await props.params;
   const post = getPostContent(slug);
   if (!post) return {};
   const postData = post.data as Partial<PostFrontmatter>;
@@ -35,8 +33,8 @@ export async function generateMetadata(
   });
 }
 
-export default function Post(props: urlParamType) {
-  const slug = props.params.slug;
+export default async function Post(props: urlParamType) {
+  const { slug } = await props.params;
   const post = getPostContent(slug);
 
   if (!post) {
@@ -46,9 +44,9 @@ export default function Post(props: urlParamType) {
   const postData = post.data as Partial<PostFrontmatter>;
   const postUrl = `${portfolioConfig.seo.baseUrl}/blog/${slug}`;
   const postImage = postData.ogImage
-    ? (postData.ogImage.startsWith("http")
+    ? postData.ogImage.startsWith("http")
       ? postData.ogImage
-      : `${portfolioConfig.seo.baseUrl}${postData.ogImage}`)
+      : `${portfolioConfig.seo.baseUrl}${postData.ogImage}`
     : `${portfolioConfig.seo.baseUrl}${portfolioConfig.seo.defaultOgImage}`;
 
   const structuredData = {
@@ -79,6 +77,7 @@ export default function Post(props: urlParamType) {
         subtitle={postData.subtitle || ""}
         date={postData.date || ""}
         content={post.content || ""}
+        speeedyUrl={postData.speeedyUrl}
       />
     </>
   );

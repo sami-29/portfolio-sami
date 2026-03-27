@@ -1,6 +1,7 @@
 "use client";
 
-import { Button, Icon, useColorModeValue } from "@chakra-ui/react";
+import { Button } from "@chakra-ui/react";
+import { useColorModeValue } from "./ui/color-mode";
 import { useRouter } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
 
@@ -11,8 +12,8 @@ interface BackButtonProps {
 }
 
 const BackButton = ({
-  href = "/labs",
-  label = "Back to Labs",
+  href = "/projects",
+  label = "Back to Projects",
   size = "sm",
 }: BackButtonProps) => {
   const router = useRouter();
@@ -29,13 +30,13 @@ const BackButton = ({
 
   return (
     <Button
-      leftIcon={<Icon as={ArrowLeft} />}
       onClick={handleClick}
       size={size}
-      variant='ghost'
+      variant="ghost"
       bg={buttonBg}
       _hover={{ bg: buttonHoverBg }}
       mb={4}>
+      <ArrowLeft size={16} />
       {label}
     </Button>
   );

@@ -1,11 +1,7 @@
-import {
-  Box,
-  VStack,
-  Text,
-  useColorModeValue,
-  Link as ChakraLink,
-} from "@chakra-ui/react";
-import { Link } from "@chakra-ui/next-js";
+"use client";
+
+import { Box, VStack, Text, Link as ChakraLink } from "@chakra-ui/react";
+import { useColorModeValue } from "./ui/color-mode";
 
 export interface Heading {
   level: number;
@@ -29,24 +25,23 @@ const TableOfContents = ({ headings }: TableOfContentsProps) => {
 
   return (
     <Box
-      as='nav'
+      as="nav"
       p={6}
       borderWidth={1}
       borderColor={borderColor}
-      borderRadius='lg'
+      borderRadius="lg"
       bg={bgColor}
-      boxShadow='sm'>
-      <Text fontSize='lg' fontWeight='semibold' mb={4}>
+      boxShadow="sm">
+      <Text fontSize="lg" fontWeight="semibold" mb={4}>
         On This Page
       </Text>
-      <VStack align='start' spacing={3}>
+      <VStack align="start" gap={3}>
         {headings.map((heading) => (
           <ChakraLink
-            as={Link}
             href={`#${heading.slug}`}
             key={heading.slug}
-            display='block'
-            fontSize='sm'
+            display="block"
+            fontSize="sm"
             color={textColor}
             fontWeight={"medium"}
             pl={heading.level === 3 ? 4 : 0}
@@ -60,7 +55,6 @@ const TableOfContents = ({ headings }: TableOfContentsProps) => {
                 behavior: "smooth",
                 block: "center",
               });
-              // Update URL without reloading page
               window.history.pushState(null, "", `#${heading.slug}`);
             }}>
             {heading.text}

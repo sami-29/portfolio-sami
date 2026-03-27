@@ -18,7 +18,8 @@ export interface PrimaryTool {
 export const primaryStack: PrimaryTool[] = [
   {
     title: "TypeScript",
-    context: "Typed throughoutshared interfaces between API and client, catches issues before they ship.",
+    context:
+      "Typed throughout — shared interfaces between API and client, catches issues before they ship.",
     src: typescript,
     website: "https://www.typescriptlang.org",
   },

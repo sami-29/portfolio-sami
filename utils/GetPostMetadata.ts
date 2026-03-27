@@ -21,6 +21,7 @@ export default function getPostMetadata(): PostMetadata[] {
       tags: data.tags ?? [],
       ogImage: data.ogImage,
       author: data.author ?? "Sami Bentaleb",
+      speeedyUrl: data.speeedyUrl,
       slug: filename.replace(".md", ""),
       content: matterResult.content,
     };

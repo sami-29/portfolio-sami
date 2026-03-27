@@ -6,6 +6,7 @@ export interface PostFrontmatter {
   tags?: string[];
   ogImage?: string;
   author?: string;
+  speeedyUrl?: string;
 }
 
 export interface PostMetadata extends PostFrontmatter {

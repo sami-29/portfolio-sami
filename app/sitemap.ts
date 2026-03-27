@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import projectsData from "./projects/projectsData";
-import getPostMetadata from "../utils/GetPostMetadata";
+import getPostMetadata from "../utils/getPostMetadata";
 import { portfolioConfig } from "../utils/config";
 
 export default function sitemap(): MetadataRoute.Sitemap {

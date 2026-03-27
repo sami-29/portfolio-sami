@@ -1,12 +1,31 @@
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 import projectsData from "../projectsData";
 import ProjectPageClient from "./ProjectPageClient";
 import JsonLd from "../../../components/JsonLd";
 import { portfolioConfig } from "../../../utils/config";
+import { buildMetadata } from "../../../utils/buildMetadata";
 
 type Props = {
   params: Promise<{ slug: string }>;
 };
+
+export function generateStaticParams() {
+  return projectsData.map((p) => ({ slug: p.slug }));
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const project = projectsData.find((p) => p.slug === slug);
+  if (!project) return {};
+
+  return buildMetadata({
+    title: project.title,
+    description: project.subtitle || project.description,
+    path: `/projects/${slug}`,
+    keywords: project.keywords ?? [],
+  });
+}
 
 export default async function ProjectPage({ params }: Props) {
   const { slug } = await params;
@@ -40,7 +59,7 @@ export default async function ProjectPage({ params }: Props) {
   return (
     <>
       <JsonLd data={structuredData} />
-      <ProjectPageClient />
+      <ProjectPageClient project={project} />
     </>
   );
 }

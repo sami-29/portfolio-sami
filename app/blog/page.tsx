@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import getPostMetadata from "../../utils/GetPostMetadata";
+import getPostMetadata from "../../utils/getPostMetadata";
 import BlogUI from "../../components/BlogUI";
 import { buildMetadata } from "../../utils/buildMetadata";
 

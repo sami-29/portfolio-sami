@@ -1,0 +1,195 @@
+---
+title: "How I Built Speeedy: A Local-First RSVP Speed Reader from Scratch"
+subtitle: Building a custom RSVP engine, a 12-format document parser, procedural ambient audio, and a full reading analytics stack — all in the browser, no account required
+date: 2026-03-27
+keywords:
+  - speed reading PWA
+  - RSVP reading app
+  - local-first web app
+  - Lit TypeScript project
+  - privacy-first reading tool
+  - Speeedy
+  - RSVP reader
+  - open source speed reader
+tags:
+  - projects
+  - personal
+  - web-audio
+  - pwa
+speeedyUrl: "https://speeedy.pages.dev/#/read/LS0tCgpTcGVlZCByZWFkaW5nIHRvb2xzIGhhdmUgYmVlbiBhcm91bmQgZm9yIGRlY2FkZXMsIGJ1dCB0aGUgZ29vZCBvbmVzIGFsd2F5cyBzZWVtZWQgdG8gY29tZSB3aXRoIGEgY2F0Y2guIEVpdGhlciB0aGV5IHJlcXVpcmVkIGFuIGFjY291bnQuIE9yIHRoZXkgc3RvcmVkIHlvdXIgZG9jdW1lbnRzIG9uIGEgc2VydmVyLiBPciB0aGV5IGhhZCBvbmUga2lsbGVyIGZlYXR1cmUg4oCUIHNwZWVkLCBvciBwcml2YWN5LCBvciBkb2N1bWVudCBmb3JtYXQgc3VwcG9ydCDigJQgYnV0IG5vdGhpbmcgZWxzZS4gSSB3YW50ZWQgdG8gYnVpbGQgdGhlIHZlcnNpb24gb2YgdGhpcyB0b29sIHRoYXQgSSdkIGFjdHVhbGx5IHVzZTogbG9jYWwtZmlyc3QsIG5vIGFjY291bnQsIG5vIHNlcnZlciwgYnV0IHdpdGggZXZlcnl0aGluZyB5b3UnZCB3YW50IGluIGEgc2VyaW91cyByZWFkaW5nIGVudmlyb25tZW50LgoKVGhhdCdzIFNwZWVlZHkuIEl0IHVzZXMgUmFwaWQgU2VyaWFsIFZpc3VhbCBQcmVzZW50YXRpb24gKFJTVlApIOKAlCB0aGUgdGVjaG5pcXVlIHdoZXJlIHdvcmRzIGZsYXNoIG9uZSBhdCBhIHRpbWUgaW4gYSBmaXhlZCBwb3NpdGlvbiDigJQgdG8gZWxpbWluYXRlIHRoZSBleWUgbW92ZW1lbnRzIHRoYXQgc2xvdyBjb252ZW50aW9uYWwgcmVhZGluZyBkb3duLiBJdCB3ZW50IGZyb20gaWRlYSB0byB2MS4wLjAgaW4gb25lIGNsZWFuIHJlbGVhc2UgY3ljbGUuCgotLS0KCiMjIFdoeSBSU1ZQPwoKV2hlbiB5b3UgcmVhZCBhIGxpbmUgb2YgdGV4dCB0aGUgY29udmVudGlvbmFsIHdheSwgeW91ciBleWVzIGRvbid0IGdsaWRlIHNtb290aGx5IGFjcm9zcyBpdC4gVGhleSBqdW1wIGluIHNob3J0IGJ1cnN0cyBjYWxsZWQgc2FjY2FkZXMsIGxhbmQsIHByb2Nlc3MgYSBmZXcgd29yZHMsIHRoZW4ganVtcCBhZ2Fpbi4gVGhvc2UgbW92ZW1lbnRzIGFuZCB0aGUgZml4YXRpb24gcGF1c2VzIGJldHdlZW4gdGhlbSBhY2NvdW50IGZvciBhIHNpZ25pZmljYW50IGNodW5rIG9mIHRvdGFsIHJlYWRpbmcgdGltZS4KClJTVlAgcmVtb3ZlcyB0aGF0IGVudGlyZWx5LiBPbmUgd29yZCBhcHBlYXJzIGF0IHRoZSBjZW50ZXIgb2YgeW91ciBzY3JlZW4uIFRoZSBuZXh0IHdvcmQgcmVwbGFjZXMgaXQuIFlvdXIgZXllcyBkb24ndCBtb3ZlLiBZb3UganVzdCByZWFkLgoKVGhlIHRyaWNreSBwYXJ0IGlzIG1ha2luZyBpdCBmZWVsIG5hdHVyYWwgcmF0aGVyIHRoYW4gbGlrZSBiZWluZyBwZWx0ZWQgd2l0aCB3b3Jkcy4gVGhhdCdzIHdoZXJlIHRoZSBlbmdpbmUgZGVzaWduIG1hdHRlcnMuCgotLS0KCiMjIFRoZSBSU1ZQIEVuZ2luZQoKVGhlIGNvcmUgb2YgU3BlZWVkeSBpcyBhIGN1c3RvbSBwbGF5YmFjayBlbmdpbmUgaW4gYHJzdnAtZW5naW5lLnRzYC4gSSBkaWRuJ3Qgd2FudCB0byByZWx5IG9uIGEgc2ltcGxlIGBzZXRJbnRlcnZhbGAgdG8gZmxhc2ggd29yZHMgYXQgYSBmaXhlZCByYXRlLCBiZWNhdXNlIHRoYXQgaWdub3JlcyBldmVyeXRoaW5nIHRoYXQgbWFrZXMgcmVhZGluZyBmZWVsIGh1bWFuLgoKVGhlIGVuZ2luZSBpcyB0b2tlbi1iYXNlZC4gRXZlcnkgd29yZCBnb2VzIHRocm91Z2ggYW4gT1JQIChPcHRpbWFsIFJlY29nbml0aW9uIFBvaW50KSBjb21wdXRhdGlvbiwgd2hpY2ggc3BsaXRzIGl0IGludG8gdGhyZWUgc2VnbWVudHM6IHRoZSBsZXR0ZXJzIGJlZm9yZSB0aGUgcGl2b3QsIHRoZSBwaXZvdCBsZXR0ZXIgaXRzZWxmLCBhbmQgdGhlIGxldHRlcnMgYWZ0ZXIuIFRoZSBwaXZvdCBhbHdheXMgbGFuZHMgYXQgdGhlIHNhbWUgaG9yaXpvbnRhbCBwb3NpdGlvbiBvbiBzY3JlZW4uIFNvIHlvdXIgZXllIGFscmVhZHkga25vd3Mgd2hlcmUgdG8gZm9jdXMgYmVmb3JlIHRoZSBuZXh0IHdvcmQgYXJyaXZlcyDigJQgdGhlIGJyYWluIGp1c3QgaGFzIHRvIHByb2Nlc3MsIG5vdCBsb2NhdGUuCgpUaW1pbmcgaXMgd2hlcmUgbW9zdCBvZiB0aGUgd29yayBsaXZlcy4gVGhlIGJhc2UgV1BNIGdldHMgYWRqdXN0ZWQgcGVyLXdvcmQgYmFzZWQgb24gc2V2ZXJhbCBzaWduYWxzOgoKLSAqKkNoYXJhY3RlciBsZW5ndGgqKjogbG9uZ2VyIHdvcmRzIGdldCBtb3JlIHRpbWUKLSAqKkludGVybmFsIHB1bmN0dWF0aW9uKio6IGEgd29yZCB3aXRoIGEgZGFzaCBvciBwYXJlbnRoZXNpcyBnZXRzIGEgc21hbGwgcGF1c2UgYWZ0ZXIgaXQKLSAqKlNlbnRlbmNlIGJvdW5kYXJpZXMqKjogYSB3b3JkIHRoYXQgZW5kcyBhIHNlbnRlbmNlIHdhaXRzIGxvbmdlciBiZWZvcmUgdGhlIG5leHQgb25lCi0gKipQYXJhZ3JhcGggYnJlYWtzKio6IHNhbWUsIGJ1dCBiaWdnZXIKLSAqKkNvbW1hIHBhdXNlcyoqOiBjb25maWd1cmFibGUKLSAqKlNwZWVkIHJhbXAqKjogb3B0aW9uYWwgZ3JhZHVhbCBhY2NlbGVyYXRpb24gZnJvbSBhIGxvd2VyIFdQTSB1cCB0byB0aGUgY29uZmlndXJlZCB0YXJnZXQKClRoZSByZXN1bHQgaXMgdGhhdCA0MDAgV1BNIHRocm91Z2ggYSBub3ZlbCBmZWVscyBub3RoaW5nIGxpa2UgNDAwIFdQTSB0aHJvdWdoIGEgdGVjaG5pY2FsIHBhcGVyLCBiZWNhdXNlIHRoZSBlbmdpbmUgaXMgcmVhZGluZyB0aGUgdGV4dCwgbm90IGp1c3QgaXRzIHdvcmQgY291bnQuCgpUaGVyZSdzIGFsc28gbGl2ZSByZXNjaGVkdWxpbmcuIElmIHlvdSBhZGp1c3Qgc3BlZWQgd2l0aCB0aGUgYXJyb3cga2V5cyB3aGlsZSBhIHNlc3Npb24gaXMgcnVubmluZywgdGhlIGVuZ2luZSBjYW5jZWxzIHRoZSBwZW5kaW5nIHRpbWVvdXQgYW5kIHJlc2NoZWR1bGVzIHRoZSBuZXh0IHdvcmQgd2l0aCB0aGUgdXBkYXRlZCB0aW1pbmcgaW1tZWRpYXRlbHkuIE5vIGppdHRlciwgbm8gZHJvcHBlZCB3b3Jkcy4KCi0tLQoKIyMgRG9jdW1lbnQgUGFyc2luZzogVHdlbHZlIEZvcm1hdHMgaW4gdGhlIEJyb3dzZXIKCk9uZSBvZiB0aGUgdGhpbmdzIEkgd2FzIG1vc3QgZGV0ZXJtaW5lZCB0byBnZXQgcmlnaHQgd2FzIGZvcm1hdCBzdXBwb3J0LiBTcGVlZCByZWFkaW5nIGlzIG9ubHkgdXNlZnVsIGlmIHlvdSBjYW4gYWN0dWFsbHkgZ2V0IHlvdXIgY29udGVudCBpbnRvIHRoZSByZWFkZXIuIEkgd2FudGVkIHRvIGhhbmRsZSBldmVyeXRoaW5nIHdpdGhvdXQgZXZlciBzZW5kaW5nIGEgZmlsZSB0byBhIHNlcnZlci4KClRoZSBwYXJzaW5nIHBpcGVsaW5lIGluIGB0ZXh0LXBhcnNlci50c2AgaGFuZGxlczoKCi0gKipQREYqKiB2aWEgYHBkZmpzLWRpc3RgIOKAlCBidXQgbm90IG5haXZlbHkuIFBERnMgZG9uJ3QgaGF2ZSBwYXJhZ3JhcGhzIG9yIGxpbmVzIGF0IHRoZSBmb3JtYXQgbGV2ZWwuIFRoZXkgaGF2ZSBnbHlwaHMgd2l0aCBYL1kgcG9zaXRpb25zIGFuZCBmb250IG1ldHJpY3MuIEkgcmVjb25zdHJ1Y3QgcmVhZGFibGUgcHJvc2UgYnkgZ3JvdXBpbmcgZ2x5cGhzIGludG8gbGluZXMgdXNpbmcgdGhlaXIgdmVydGljYWwgcG9zaXRpb25zLCB0aGVuIGdyb3VwaW5nIGxpbmVzIGludG8gYmxvY2tzIHVzaW5nIHNwYWNpbmcgZ2Fwcy4KLSAqKkRPQ1gqKiB2aWEgYG1hbW1vdGhgIOKAlCBzdHJhaWdodGZvcndhcmQsIGJ1dCBJIGhhbmRsZSB0aGUgbWFtbW90aCB3b3JrZXIgbG9hZGluZyBjYXJlZnVsbHkgdG8gYXZvaWQgYmxvY2tpbmcgdGhlIG1haW4gdGhyZWFkLgotICoqRVBVQioqIHZpYSBganN6aXBgIOKAlCBFUFVCIGZpbGVzIGFyZSBaSVAgYXJjaGl2ZXMgY29udGFpbmluZyBhbiBPUEYgbWFuaWZlc3QgdGhhdCBsaXN0cyBjaGFwdGVycyBpbiBzcGluZSBvcmRlci4gSSBwYXJzZSB0aGUgT1BGLCB3YWxrIHRoZSBzcGluZSwgZXh0cmFjdCBlYWNoIGNoYXB0ZXIncyBIVE1MLCBzdHJpcCB0YWdzLCBhbmQgY29uY2F0ZW5hdGUgdGhlbS4KLSAqKk9EVCoqIOKAlCBhbHNvIGEgWklQLCB3aXRoIGNvbnRlbnQgaW4gYGNvbnRlbnQueG1sYC4KLSAqKlJURioqIOKAlCBjb250cm9sLXdvcmQgc3RyaXBwaW5nLgotICoqSFRNTC9IVE0qKiDigJQgdGFnIHN0cmlwcGluZyB0byBwbGFpbiB0ZXh0LgotICoqQ1NWKiog4oCUIHJvdy9jZWxsIHBhcnNpbmcgd2l0aCBxdW90ZSBoYW5kbGluZy4KLSAqKlRYVCwgTWFya2Rvd24qKiDigJQgZGlyZWN0LgotICoqVW5rbm93biB0ZXh0LWxpa2UgZmlsZXMqKiDigJQgYXR0ZW1wdGVkIGZhbGxiYWNrLgoKVGhlIHBhcnNlciByZXR1cm5zIGEgbm9ybWFsaXplZCBkb2N1bWVudCBvYmplY3Qgd2l0aCBhIHdvcmQgY291bnQsIGEgdGl0bGUgZGVyaXZlZCBmcm9tIHRoZSBmaWxlbmFtZSBvciBlbWJlZGRlZCBzb3VyY2UsIGFuZCBjbGVhbmVkIHRleHQgcmVhZHkgZm9yIHRoZSBlbmdpbmUuIEV2ZXJ5IGZvcm1hdCBnZXRzIHVzZXItZmFjaW5nIGVycm9yIG1lc3NhZ2VzIGZvciBlbmNyeXB0ZWQsIGludmFsaWQsIG9yIHVuc3VwcG9ydGVkIGZpbGVzIHJhdGhlciB0aGFuIHNpbGVudCBmYWlsdXJlcy4KCi0tLQoKIyMgTG9jYWwtRmlyc3QgU3RvcmFnZTogSW5kZXhlZERCIFdpdGhvdXQgdGhlIFBhaW4KClNwZWVlZHkgc3RvcmVzIGV2ZXJ5dGhpbmcgbG9jYWxseS4gTm8gYWNjb3VudC4gTm8gc3luYyBlbmRwb2ludC4gTm8gc2VydmVyLgoKVGhlIHN0b3JhZ2UgbGF5ZXIgdXNlcyBgaWRiYCAoYSB0aGluLCB0eXBlZCBJbmRleGVkREIgd3JhcHBlcikgd2l0aCBhIGRhdGFiYXNlIG5hbWVkIGBzcGVlZWR5LWRiYC4gVGhlcmUgYXJlIHR3byBzdG9yZXM6IG9uZSBmb3IgdGhlIHVzZXIgcHJvZmlsZSAoc2V0dGluZ3MsIHN0YXRzLCBzdHJlYWssIGJlbmNobWFyayByZXN1bHRzKSwgb25lIGZvciB0aGUgZG9jdW1lbnQgbGlicmFyeSAodXAgdG8gMjAgZG9jdW1lbnRzIHdpdGggcHJvZ3Jlc3MgdHJhY2tpbmcpLgoKQSBmZXcgdGhpbmdzIEknbSBnbGFkIEkgZ290IHJpZ2h0IGVhcmx5OgoKKipTSEEtMjU2IGNvbnRlbnQgaGFzaGluZyBmb3IgZGVkdXBsaWNhdGlvbi4qKiBJZiB5b3UgdXBsb2FkIHRoZSBzYW1lIFBERiB0d2ljZSwgdGhlIHNlY29uZCB1cGxvYWQgcmVmcmVzaGVzIHRoZSBzYXZlIHRpbWVzdGFtcCBpbnN0ZWFkIG9mIGR1cGxpY2F0aW5nIHRoZSB0ZXh0LiBUaGUgaGFzaCBpcyBjb21wdXRlZCBpbiB0aGUgYnJvd3NlciB1c2luZyB0aGUgV2ViIENyeXB0byBBUEkuCgoqKlNjaGVtYSB2ZXJzaW9uaW5nIHdpdGggbXVsdGktdGFiIHNhZmV0eS4qKiBJbmRleGVkREIgdXBncmFkZXMgY2FuIGRlYWRsb2NrIGlmIG11bHRpcGxlIHRhYnMgaGF2ZSB0aGUgZGF0YWJhc2Ugb3Blbi4gVGhlIHN0b3JhZ2Ugc2VydmljZSBoYW5kbGVzIHRoZSBgYmxvY2tlZGAgYW5kIGB2ZXJzaW9uY2hhbmdlYCBldmVudHMgc28gdXBncmFkZXMgZG9uJ3QgY29ycnVwdCBkYXRhIHdoZW4gdGhlIHVzZXIgaGFzIFNwZWVlZHkgb3BlbiBpbiBtb3JlIHRoYW4gb25lIHRhYi4KCioqRGVmYXVsdCBwcm9maWxlIGNyZWF0aW9uIG9uIGZpcnN0IGxhdW5jaC4qKiBXaGVuIFNwZWVlZHkgYm9vdHMgZm9yIHRoZSBmaXJzdCB0aW1lLCBpdCBjcmVhdGVzIGEgZGVmYXVsdCBwcm9maWxlIHdpdGggc2Vuc2libGUgc2V0dGluZ3MsIGluaXRpYWxpemVzIGZvbnQgc2l6ZSBiYXNlZCBvbiBzY3JlZW4gc2l6ZSwgYW5kIG1hcmtzIG9uYm9hcmRpbmcgYXMgdW5zZWVuIHNvIHRoZSBmaXJzdC1ydW4gZmxvdyB0cmlnZ2Vycy4KCkRvY3VtZW50cyBzdG9yZSB0aGVpciByZXN1bWUgcG9zaXRpb24gYXMgYSB3b3JkIGluZGV4LiBXaGVuIHlvdSByZW9wZW4gYSBkb2N1bWVudCB5b3UndmUgcmVhZCBwYXJ0d2F5IHRocm91Z2gsIHRoZSByZWFkZXIgYXNrcyBpZiB5b3Ugd2FudCB0byByZXN1bWUgb3Igc3RhcnQgb3ZlciwgdGhlbiByZXdpbmRzIGEgZmV3IHdvcmRzIGJlZm9yZSB0aGUgc2F2ZWQgcG9zaXRpb24gc28geW91IGhhdmUgY29udGV4dC4KCi0tLQoKIyMgQWNjZXNzaWJpbGl0eSBTdGFjawoKVGhpcyB3YXMgaW1wb3J0YW50IHRvIG1lLiBSZWFkaW5nIHRvb2xzIG9mdGVuIGdldCBidWlsdCBmb3IgdGhlIGF2ZXJhZ2UgY2FzZSBhbmQgaWdub3JlIGV2ZXJ5b25lIGVsc2UuIFNwZWVlZHkgaGFzOgoKKipEeXNsZXhpYSBtb2RlKiog4oCUIHN3aXRjaGVzIHRvIE9wZW5EeXNsZXhpYyBzdHlsaW5nIHdpdGggaW5jcmVhc2VkIGxldHRlciBzcGFjaW5nIGFuZCBhZGp1c3RlZCBsaW5lIGhlaWdodC4gVXNhYmxlIGZyb20gdGhlIHNldHRpbmdzIHBhbmVsIG9yIGZyb20gdGhlIGZpcnN0LXJ1biBvbmJvYXJkaW5nIHN0ZXAuCgoqKklybGVuIG92ZXJsYXlzKiog4oCUIGEgY29uZmlndXJhYmxlIGNvbG9yIHRpbnQgb3ZlciB0aGUgcmVhZGluZyBhcmVhLiBJcmxlbiBzeW5kcm9tZSAoYWxzbyBjYWxsZWQgc2NvdG9waWMgc2Vuc2l0aXZpdHkpIGNhdXNlcyBzb21lIHJlYWRlcnMgdG8gZXhwZXJpZW5jZSB2aXN1YWwgc3RyZXNzIG9yIGRpc3RvcnRpb24gd2l0aCBoaWdoLWNvbnRyYXN0IGJsYWNrIHRleHQgb24gd2hpdGUuIEEgY29sb3JlZCBvdmVybGF5IHJlZHVjZXMgdGhhdCBzdHJlc3MuIFRoZSBjb2xvciBpcyB1c2VyLWNvbmZpZ3VyYWJsZS4KCioqQmlvbmljIHJlYWRpbmcqKiDigJQgYm9sZCBhbmNob3JzIG9uIHRoZSBmaXJzdCBoYWxmIG9mIGVhY2ggd29yZCB0byBnaXZlIHRoZSBleWUgYSBsYW5kaW5nIHBvaW50LiBUaGUgImJpb25pYyBmb2N1cyBwb3NpdGlvbiIgKGhvdyBtdWNoIG9mIHRoZSB3b3JkIGdldHMgYm9sZGVkKSBpcyBjb25maWd1cmFibGUuCgoqKk9SUCBndWlkZSBtYXJrZXJzKiog4oCUIHNtYWxsIGZpeGVkIG1hcmtlcnMgb24gc2NyZWVuIHRoYXQgc2hvdyB0aGUgcmVhZGVyIHdoZXJlIHRoZSBwaXZvdCBsZXR0ZXIgd2lsbCBhbHdheXMgYXBwZWFyLCBzbyB0aGVyZSdzIG5vIHZpc3VhbCBzZWFyY2hpbmcgYmV0d2VlbiB3b3Jkcy4KCioqUGVyaXBoZXJhbCBjb250ZXh0Kiog4oCUIGdob3N0IHdvcmRzIGJlZm9yZSBhbmQgYWZ0ZXIgdGhlIGN1cnJlbnQgd29yZCwgd2l0aCBjb25maWd1cmFibGUgY291bnQuIFRoZXNlIGRvbid0IHJlcXVpcmUgZXllIG1vdmVtZW50IHRvIHBlcmNlaXZlLCBidXQgdGhleSBnaXZlIHRoZSBicmFpbiBvcmllbnRpbmcgaW5mb3JtYXRpb24gYWJvdXQgd2hhdCdzIGNvbWluZyBhbmQgd2hhdCBqdXN0IHBhc3NlZC4KCioqUlRMIHN1cHBvcnQqKiDigJQgQXJhYmljIGFuZCBIZWJyZXcgd29yZHMgcmVxdWlyZSBkaWZmZXJlbnQgT1JQIGFsaWdubWVudC4gVGhlIHBpdm90IGNvbXBlbnNhdGlvbiB1c2VzIG1lYXN1cmVkIERPTSBvZmZzZXRzIHJhdGhlciB0aGFuIENTUyB0ZXh0LWFsaWdubWVudCwgYmVjYXVzZSB0aGUgdmlzdWFsIGNlbnRlciBvZiBhIHJpZ2h0LXRvLWxlZnQgd29yZCBpcyBub3QgdGhlIHNhbWUgYXMgaXRzIGxvZ2ljYWwgY2VudGVyLgoKLS0tCgojIyBXZWIgQXVkaW86IEFtYmllbnQgTm9pc2UgYW5kIENsaWNrIFNvdW5kcwoKVGhlIGF1ZGlvIHN5c3RlbSB3YXMgb25lIG9mIHRoZSBtb3N0IHRlY2huaWNhbGx5IGludGVyZXN0aW5nIHBhcnRzIG9mIHRoZSBwcm9qZWN0IHRvIGJ1aWxkLgoKVGhlIGFtYmllbnQgbm9pc2UgZ2VuZXJhdG9yIHByb2R1Y2VzIHdoaXRlLCBwaW5rLCBvciBicm93biBub2lzZSBlbnRpcmVseSBpbiB0aGUgV2ViIEF1ZGlvIEFQSSDigJQgbm8gYXVkaW8gZmlsZXMgYW55d2hlcmUgaW4gdGhlIGNvZGViYXNlLiBUaGUgbm9pc2UgaXMgZ2VuZXJhdGVkIHByb2NlZHVyYWxseSBpbnRvIHByZS1jb21wdXRlZCBBdWRpb0J1ZmZlcnMsIHRoZW4gbG9vcGVkIHdpdGggY3Jvc3NmYWRlIHNtb290aGluZyBhdCB0aGUgbG9vcCBib3VuZGFyaWVzIHRvIHByZXZlbnQgYXVkaWJsZSBjbGlja3Mgd2hlbiB0aGUgYnVmZmVyIHdyYXBzLiBUaGUgY3Jvc3NmYWRlIGlzIHNob3J0IOKAlCBqdXN0IGxvbmcgZW5vdWdoIHRoYXQgdGhlIHNlYW0gaXMgaW52aXNpYmxlLCBldmVuIHdoZW4gdGhlIGJ1ZmZlciBoYXMgYmVlbiBwbGF5aW5nIGZvciBhIGxvbmcgdGltZS4KClBlci13b3JkIGNsaWNrIHNvdW5kcyBhcmUgYWxzbyBwcm9jZWR1cmFsbHkgZ2VuZXJhdGVkLiBUaGUgcGl0Y2ggaXMgY29uZmlndXJhYmxlLCBhbmQgZGlmZmVyZW50IGV2ZW50cyAoc2VudGVuY2UgZW5kaW5ncywgY29tbWFzKSBnZXQgZGlmZmVyZW50IHBpdGNoZXMgc28gcmVhZGluZyBoYXMgYSBzdWJ0bGUgcmh5dGhtaWMgdGV4dHVyZSB0aGF0IGhlbHBzIHdpdGggZm9jdXMgd2l0aG91dCBiZWluZyBkaXN0cmFjdGluZy4KCkF1ZGlvIGNvbnRleHRzIGFyZSBzdXNwZW5kZWQgYXV0b21hdGljYWxseSB3aGVuIHRoZSBicm93c2VyIHRhYiBsb3NlcyBmb2N1cyBhbmQgcmVzdW1lZCBvbiBgdmlzaWJpbGl0eWNoYW5nZWAsIGBwYWdlc2hvd2AsIGFuZCBgZm9jdXNgIGV2ZW50cy4gVGhpcyBtYXR0ZXJzIGJlY2F1c2UgYnJvd3NlcnMgYWdncmVzc2l2ZWx5IHN1c3BlbmQgV2ViIEF1ZGlvIGNvbnRleHRzIHdoZW4gcGFnZXMgYXJlbid0IHZpc2libGUsIGFuZCByZWNvdmVyaW5nIGZyb20gYSBzdXNwZW5kZWQgY29udGV4dCB3aXRob3V0IHVzZXIgaW50ZXJhY3Rpb24gcmVxdWlyZXMgaGFuZGxpbmcgdGhlIHJlc3VtZSBjYXJlZnVsbHkuCgotLS0KCiMjIFN0YXRzLCBCZW5jaG1hcmssIGFuZCBIYWJpdCBUcmFja2luZwoKU3BlZWVkeSBpcyBkZXNpZ25lZCBhcm91bmQgdGhlIGlkZWEgdGhhdCByZWFkaW5nIGlzIGEgc2tpbGwgeW91IGltcHJvdmUgb3ZlciB0aW1lLCBub3QganVzdCBhIHV0aWxpdHkgZm9yIGdldHRpbmcgdGhyb3VnaCBkb2N1bWVudHMuCgpFdmVyeSByZWFkaW5nIHNlc3Npb24gcmVjb3Jkczogd29yZHMgcmVhZCwgZHVyYXRpb24sIFdQTSwgY29tcGxldGlvbiBwZXJjZW50YWdlLCBhbmQgc291cmNlIHRpdGxlLiBUaGlzIGZlZWRzIGludG86CgotICoqQXZlcmFnZSBXUE0qKiBvdmVyIHJlY2VudCBzZXNzaW9ucwotICoqU3RyZWFrIHRyYWNraW5nKiog4oCUIGN1cnJlbnQgc3RyZWFrIGFuZCBiZXN0IHN0cmVhaywgd2l0aCBhIHJlc2V0IGlmIHlvdSBza2lwIGEgZGF5Ci0gKipEYWlseSBnb2FsIHByb2dyZXNzKiog4oCUIGNvbmZpZ3VyYWJsZSB0YXJnZXQgYW5kIGEgcHJvZ3Jlc3MgYmFyIHNob3dpbmcgdG9kYXkncyB3b3JkIGNvdW50Ci0gKipXUE0gdHJlbmQgY2hhcnQqKiDigJQgaW5saW5lIHBvbHlsaW5lIGNoYXJ0IHJlbmRlcmVkIGluIFNWRy9DU1MsIG5vIGNoYXJ0aW5nIGxpYnJhcnkKLSAqKjE0LWRheSB3b3JkcyBiYXIgY2hhcnQqKiDigJQgc2FtZSBhcHByb2FjaAoKVGhlIGJlbmNobWFyayBzeXN0ZW0gZ2l2ZXMgdGhlIHJlYWRpbmcgc3BlZWQgbnVtYmVycyBzb21ldGhpbmcgdG8gYW5jaG9yIGFnYWluc3QuIFlvdSByZWFkIGEgdGltZWQgcGFzc2FnZSBhdCB5b3VyIG93biBwYWNlLCB0aGVuIGFuc3dlciAxMCBjb21wcmVoZW5zaW9uIHF1ZXN0aW9ucy4gVGhlIHJlc3VsdCDigJQgYmFzZWxpbmUgV1BNIGFuZCBjb21wcmVoZW5zaW9uIHBlcmNlbnRhZ2Ug4oCUIGdldHMgc3RvcmVkIGluIHlvdXIgcHJvZmlsZSBhbmQgY2FuIGJlIHVzZWQgdG8gY2FsaWJyYXRlIHRoZSByZWFkZXIncyBzdGFydGluZyBzcGVlZC4gSXQgYWxzbyBzaG93cyB1cCBvbiB0aGUgc3RhdHMgZGFzaGJvYXJkIHNvIHlvdSBjYW4gc2VlIGhvdyB5b3VyIHJlYWRpbmcgc3BlZWQgY29tcGFyZXMgdG8geW91ciBjb21mb3J0YWJsZSBiYXNlbGluZS4KCi0tLQoKIyMgU2hhcmluZyBXaXRob3V0IGEgQmFja2VuZAoKVGhlIHNoYXJlIGZlYXR1cmUgd2FzIGEgY29uc3RyYWludC1sZWQgZGVzaWduOiBubyBiYWNrZW5kLCBubyBkYXRhYmFzZSwgbm8gYWNjb3VudHMsIGJ1dCBzdGlsbCBzaGFyZWFibGUuCgpQcm9maWxlIHNoYXJlIGNhcmRzIGFyZSByZW5kZXJlZCB0byBQTkcgdXNpbmcgYGh0bWwtdG8taW1hZ2VgLCB3aGljaCB3YWxrcyB0aGUgRE9NIGFuZCBnZW5lcmF0ZXMgYSBjYW52YXMgc25hcHNob3QuIFRoZSBQTkcgaXMgZG93bmxvYWRhYmxlLgoKU2hhcmUgVVJMcyBlbmNvZGUgYSBwYXlsb2FkIChkaXNwbGF5IG5hbWUsIFdQTSBzdGF0cywgc3RyZWFrLCBhdmF0YXIpIGFzIFVSTC1zYWZlIGJhc2U2NCBhcHBlbmRlZCB0byB0aGUgaGFzaC4gVGhlIHNoYXJlIHJvdXRlIGRlY29kZXMgdGhlIGhhc2ggY2xpZW50LXNpZGUgYW5kIHJlbmRlcnMgdGhlIHByb2ZpbGUgY2FyZC4gTm8gc2VydmVyIGV2ZXIgc2VlcyB0aGUgZGF0YS4KCi0tLQoKIyMgVGVzdGluZwoKSSBoYXZlIDEzOSB1bml0IHRlc3RzIHBhc3NpbmcgYWNyb3NzIGZvdXIgdGVzdCBmaWxlczoKCi0gKipSU1ZQIGVuZ2luZSoqICg1NCB0ZXN0cyk6IHBsYXliYWNrIGxpZmVjeWNsZSwgT1JQIGNvbXB1dGF0aW9uLCB0aW1pbmcgY2FsY3VsYXRpb25zLCBzZWVrIGJlaGF2aW9yLCBlZGdlIGNhc2VzIGZvciBlbXB0eSBvciBzaW5nbGUtd29yZCBkb2N1bWVudHMKLSAqKlN0YXRzIHNlcnZpY2UqKiAoMzggdGVzdHMpOiBzdHJlYWsgbG9naWMsIGFnZ3JlZ2F0ZSBjYWxjdWxhdGlvbnMsIHNlc3Npb24gcmVjb3JkaW5nIGFuZCByZXRlbnRpb24gY2FwcGluZwotICoqVGV4dCBwYXJzZXIqKiAoMjAgdGVzdHMpOiBmb3JtYXQgZGV0ZWN0aW9uLCBPUlAgc3BsaXR0aW5nLCBiaW9uaWMgdHJhbnNmb3JtYXRpb24sIGNsZWFuLXRleHQgbm9ybWFsaXphdGlvbgotICoqVGV4dCB1dGlsaXRpZXMqKiAoMjcgdGVzdHMpOiB3b3JkIGNvdW50aW5nLCB0aW1lIGZvcm1hdHRpbmcsIG51bWJlciBmb3JtYXR0aW5nLCByZWFkaW5nIHRpbWUgZXN0aW1hdGlvbgoKU2l4IFBsYXl3cmlnaHQgRTJFIHN1aXRlcyBjb3ZlcjogdGhlIG1hcmtldGluZyBsYW5kaW5nIHBhZ2UsIHRoZSBhcHAgaW50YWtlIGZsb3csIHRoZSByZWFkZXIgcGxheWJhY2sgYW5kIGtleWJvYXJkIHNob3J0Y3V0cywgdGhlIGJlbmNobWFyayB0ZXN0LCBzZXR0aW5ncyBwZXJzaXN0ZW5jZSwgYW5kIHRoZSBmdWxsIGtleWJvYXJkIG5hdmlnYXRpb24gbW9kZWwuCgpUaGUgQ0kgcGlwZWxpbmUgb24gR2l0SHViIEFjdGlvbnMgcnVucyBiaW9tZSBsaW50IOKGkiBWaXRlc3QgdW5pdCB0ZXN0cyDihpIgVml0ZSBidWlsZCBvbiBldmVyeSBwdXNoLgoKLS0tCgojIyBUZWNoIFN0YWNrCgotICoqTGl0IDMgKyBUeXBlU2NyaXB0Kio6IGN1c3RvbSBlbGVtZW50cyBmb3IgZXZlcnkgcm91dGUgYW5kIFVJIGNvbXBvbmVudCwgbGlnaHQgRE9NIHJlbmRlcmluZwotICoqVml0ZSA4Kio6IGRldi9idWlsZCB3aXRoIG1hbnVhbCBjaHVuayBzcGxpdHRpbmcgZm9yIGhlYXZ5IHBhcnNlcnMgKFBERiwgRE9DWCwgSlNaaXAsIGh0bWwtdG8taW1hZ2UgZ2V0IHRoZWlyIG93biBjaHVua3MpCi0gKipUYWlsd2luZCBDU1MgdjQgKyBEYWlzeVVJIDUqKjogdXRpbGl0eSBzdHlsaW5nIHdpdGggRGFpc3lVSSB0aGVtZSB0b2tlbnMKLSAqKk1vdGlvbioqOiBzY3JvbGwtZHJpdmVuIGFuZCBob3ZlciBhbmltYXRpb25zIG9uIHRoZSBtYXJrZXRpbmcgYW5kIGxlYXJuIHBhZ2VzCi0gKippZGIqKjogdHlwZWQgSW5kZXhlZERCIHdyYXBwZXIKLSAqKnBkZmpzLWRpc3QsIG1hbW1vdGgsIGpzemlwKio6IGluLWJyb3dzZXIgZG9jdW1lbnQgcGFyc2VycwotICoqaHRtbC10by1pbWFnZSwgcXJjb2RlKio6IHNoYXJlIGNhcmQgZ2VuZXJhdGlvbiBhbmQgZG9uYXRpb24gUVIgY29kZXMKLSAqKlZpdGVzdCArIFBsYXl3cmlnaHQqKjogdW5pdCBhbmQgRTJFIHRlc3RpbmcKLSAqKkJpb21lKio6IGxpbnRpbmcgYW5kIGZvcm1hdHRpbmcKLSAqKkNsb3VkZmxhcmUgUGFnZXMqKjogaG9zdGluZwoKLS0tCgojIyBXaGF0IEknZCBEbyBEaWZmZXJlbnRseQoKVGhlIExpdCBjdXN0b20gZWxlbWVudCBtb2RlbCB3b3JrZWQgd2VsbCBmb3IgdGhpcyBwcm9qZWN0IOKAlCB0aGUgY29tcG9uZW50IGJvdW5kYXJpZXMgYXJlIGNsZWFyLCB0aGUgc2VydmljZSBsYXllciBpcyBjbGVhbiwgYW5kIHRoZSBidWlsZCBvdXRwdXQgaXMgc21hbGwuIEJ1dCBMaXQncyByZWFjdGl2aXR5IG1vZGVsIHJlcXVpcmVzIGNhcmVmdWwgdGhvdWdodCBhYm91dCB3aGVuIHRvIHVzZSBgQHByb3BlcnR5YCB2cyBgQHN0YXRlYCB2cyBhIHNpZ25hbC1saWtlIHBhdHRlcm4gZm9yIGNyb3NzLWNvbXBvbmVudCBzdGF0ZS4gSSBoYWQgYSBmZXcgYnVncyBlYXJseSBvbiB3aGVyZSBwcm9maWxlIHVwZGF0ZXMgaW4gYSBjaGlsZCBjb21wb25lbnQgZGlkbid0IHByb3BhZ2F0ZSBjb3JyZWN0bHkgdG8gc2libGluZyBjb21wb25lbnRzLiBUaGUgc29sdXRpb24gKGN1c3RvbSBldmVudHMgb24gdGhlIGRvY3VtZW50ICsgYSByb290LWxldmVsIGxpc3RlbmVyIGluIHRoZSBhcHAgc2hlbGwpIHdvcmtzLCBidXQgaXQncyBtb3JlIGJvaWxlcnBsYXRlIHRoYW4gSSdkIGxpa2UuCgpUaGUgcGFyc2luZyBsYXllciBjb3VsZCB1c2UgYSB3b3JrZXIgdGhyZWFkIGZvciBsYXJnZSBQREZzLiBDdXJyZW50bHksIHBhcnNpbmcgYSAzMDAtcGFnZSBQREYgYmxvY2tzIHRoZSBtYWluIHRocmVhZCBmb3IgYSBmZXcgaHVuZHJlZCBtaWxsaXNlY29uZHMuIEl0J3Mgbm90IGNhdGFzdHJvcGhpYyDigJQgdGhlcmUncyBhIGxvYWRpbmcgc3RhdGUg4oCUIGJ1dCBtb3ZpbmcgaXQgdG8gYSBXZWIgV29ya2VyIHdvdWxkIG1ha2UgdGhlIGludGFrZSBzY3JlZW4gZmVlbCBtb3JlIHJlc3BvbnNpdmUuCgotLS0KCiMjIFRoZSBSZXN1bHQKClNwZWVlZHkgaXMgbGl2ZSBhdCBbc3BlZWVkeS5wYWdlcy5kZXZdKGh0dHBzOi8vc3BlZWVkeS5wYWdlcy5kZXYpLiB2MS4wLjAgc2hpcHBlZCBvbiAyMDI2LTAzLTI3LiBUaGUgc291cmNlIGlzIG9uIEdpdEh1YiB1bmRlciBNSVQuCgpJdCdzIHRoZSBraW5kIG9mIHRvb2wgSSB3YW50ZWQgdG8gZXhpc3QgYW5kIGNvdWxkbid0IGZpbmQ6IGEgc2VyaW91cyBzcGVlZC1yZWFkaW5nIGVudmlyb25tZW50IHRoYXQgcmVzcGVjdHMgeW91ciBwcml2YWN5LCB3b3JrcyB3aXRoIHRoZSBkb2N1bWVudHMgeW91IGFscmVhZHkgaGF2ZSwgaGVscHMgeW91IHRyYWNrIHlvdXIgcHJvZ3Jlc3Mgb3ZlciB0aW1lLCBhbmQgZ2l2ZXMgeW91IGVub3VnaCBjdXN0b21pemF0aW9uIHRvIGFjdHVhbGx5IG1ha2UgcmVhZGluZyBjb21mb3J0YWJsZSDigJQgd2l0aG91dCBhc2tpbmcgeW91IHRvIGNyZWF0ZSBhbiBhY2NvdW50IGZpcnN0Lg"
+---
+
+Speed reading tools have been around for decades, but the good ones always seemed to come with a catch. Either they required an account. Or they stored your documents on a server. Or they had one killer feature — speed, or privacy, or document format support — but nothing else. I wanted to build the version of this tool that I'd actually use: local-first, no account, no server, but with everything you'd want in a serious reading environment.
+
+That's Speeedy. It uses Rapid Serial Visual Presentation (RSVP) — the technique where words flash one at a time in a fixed position — to eliminate the eye movements that slow conventional reading down. It went from idea to v1.0.0 in one clean release cycle.
+
+---
+
+## Why RSVP?
+
+When you read a line of text the conventional way, your eyes don't glide smoothly across it. They jump in short bursts called saccades, land, process a few words, then jump again. Those movements and the fixation pauses between them account for a significant chunk of total reading time.
+
+RSVP removes that entirely. One word appears at the center of your screen. The next word replaces it. Your eyes don't move. You just read.
+
+The tricky part is making it feel natural rather than like being pelted with words. That's where the engine design matters.
+
+---
+
+## The RSVP Engine
+
+The core of Speeedy is a custom playback engine in `rsvp-engine.ts`. I didn't want to rely on a simple `setInterval` to flash words at a fixed rate, because that ignores everything that makes reading feel human.
+
+The engine is token-based. Every word goes through an ORP (Optimal Recognition Point) computation, which splits it into three segments: the letters before the pivot, the pivot letter itself, and the letters after. The pivot always lands at the same horizontal position on screen. So your eye already knows where to focus before the next word arrives — the brain just has to process, not locate.
+
+Timing is where most of the work lives. The base WPM gets adjusted per-word based on several signals:
+
+- **Character length**: longer words get more time
+- **Internal punctuation**: a word with a dash or parenthesis gets a small pause after it
+- **Sentence boundaries**: a word that ends a sentence waits longer before the next one
+- **Paragraph breaks**: same, but bigger
+- **Comma pauses**: configurable
+- **Speed ramp**: optional gradual acceleration from a lower WPM up to the configured target
+
+The result is that 400 WPM through a novel feels nothing like 400 WPM through a technical paper, because the engine is reading the text, not just its word count.
+
+There's also live rescheduling. If you adjust speed with the arrow keys while a session is running, the engine cancels the pending timeout and reschedules the next word with the updated timing immediately. No jitter, no dropped words.
+
+---
+
+## Document Parsing: Twelve Formats in the Browser
+
+One of the things I was most determined to get right was format support. Speed reading is only useful if you can actually get your content into the reader. I wanted to handle everything without ever sending a file to a server.
+
+The parsing pipeline in `text-parser.ts` handles:
+
+- **PDF** via `pdfjs-dist` — but not naively. PDFs don't have paragraphs or lines at the format level. They have glyphs with X/Y positions and font metrics. I reconstruct readable prose by grouping glyphs into lines using their vertical positions, then grouping lines into blocks using spacing gaps.
+- **DOCX** via `mammoth` — straightforward, but I handle the mammoth worker loading carefully to avoid blocking the main thread.
+- **EPUB** via `jszip` — EPUB files are ZIP archives containing an OPF manifest that lists chapters in spine order. I parse the OPF, walk the spine, extract each chapter's HTML, strip tags, and concatenate them.
+- **ODT** — also a ZIP, with content in `content.xml`.
+- **RTF** — control-word stripping.
+- **HTML/HTM** — tag stripping to plain text.
+- **CSV** — row/cell parsing with quote handling.
+- **TXT, Markdown** — direct.
+- **Unknown text-like files** — attempted fallback.
+
+The parser returns a normalized document object with a word count, a title derived from the filename or embedded source, and cleaned text ready for the engine. Every format gets user-facing error messages for encrypted, invalid, or unsupported files rather than silent failures.
+
+---
+
+## Local-First Storage: IndexedDB Without the Pain
+
+Speeedy stores everything locally. No account. No sync endpoint. No server.
+
+The storage layer uses `idb` (a thin, typed IndexedDB wrapper) with a database named `speeedy-db`. There are two stores: one for the user profile (settings, stats, streak, benchmark results), one for the document library (up to 20 documents with progress tracking).
+
+A few things I'm glad I got right early:
+
+**SHA-256 content hashing for deduplication.** If you upload the same PDF twice, the second upload refreshes the save timestamp instead of duplicating the text. The hash is computed in the browser using the Web Crypto API.
+
+**Schema versioning with multi-tab safety.** IndexedDB upgrades can deadlock if multiple tabs have the database open. The storage service handles the `blocked` and `versionchange` events so upgrades don't corrupt data when the user has Speeedy open in more than one tab.
+
+**Default profile creation on first launch.** When Speeedy boots for the first time, it creates a default profile with sensible settings, initializes font size based on screen size, and marks onboarding as unseen so the first-run flow triggers.
+
+Documents store their resume position as a word index. When you reopen a document you've read partway through, the reader asks if you want to resume or start over, then rewinds a few words before the saved position so you have context.
+
+---
+
+## Accessibility Stack
+
+This was important to me. Reading tools often get built for the average case and ignore everyone else. Speeedy has:
+
+**Dyslexia mode** — switches to OpenDyslexic styling with increased letter spacing and adjusted line height. Usable from the settings panel or from the first-run onboarding step.
+
+**Irlen overlays** — a configurable color tint over the reading area. Irlen syndrome (also called scotopic sensitivity) causes some readers to experience visual stress or distortion with high-contrast black text on white. A colored overlay reduces that stress. The color is user-configurable.
+
+**Bionic reading** — bold anchors on the first half of each word to give the eye a landing point. The "bionic focus position" (how much of the word gets bolded) is configurable.
+
+**ORP guide markers** — small fixed markers on screen that show the reader where the pivot letter will always appear, so there's no visual searching between words.
+
+**Peripheral context** — ghost words before and after the current word, with configurable count. These don't require eye movement to perceive, but they give the brain orienting information about what's coming and what just passed.
+
+**RTL support** — Arabic and Hebrew words require different ORP alignment. The pivot compensation uses measured DOM offsets rather than CSS text-alignment, because the visual center of a right-to-left word is not the same as its logical center.
+
+---
+
+## Web Audio: Ambient Noise and Click Sounds
+
+The audio system was one of the most technically interesting parts of the project to build.
+
+The ambient noise generator produces white, pink, or brown noise entirely in the Web Audio API — no audio files anywhere in the codebase. The noise is generated procedurally into pre-computed AudioBuffers, then looped with crossfade smoothing at the loop boundaries to prevent audible clicks when the buffer wraps. The crossfade is short — just long enough that the seam is invisible, even when the buffer has been playing for a long time.
+
+Per-word click sounds are also procedurally generated. The pitch is configurable, and different events (sentence endings, commas) get different pitches so reading has a subtle rhythmic texture that helps with focus without being distracting.
+
+Audio contexts are suspended automatically when the browser tab loses focus and resumed on `visibilitychange`, `pageshow`, and `focus` events. This matters because browsers aggressively suspend Web Audio contexts when pages aren't visible, and recovering from a suspended context without user interaction requires handling the resume carefully.
+
+---
+
+## Stats, Benchmark, and Habit Tracking
+
+Speeedy is designed around the idea that reading is a skill you improve over time, not just a utility for getting through documents.
+
+Every reading session records: words read, duration, WPM, completion percentage, and source title. This feeds into:
+
+- **Average WPM** over recent sessions
+- **Streak tracking** — current streak and best streak, with a reset if you skip a day
+- **Daily goal progress** — configurable target and a progress bar showing today's word count
+- **WPM trend chart** — inline polyline chart rendered in SVG/CSS, no charting library
+- **14-day words bar chart** — same approach
+
+The benchmark system gives the reading speed numbers something to anchor against. You read a timed passage at your own pace, then answer 10 comprehension questions. The result — baseline WPM and comprehension percentage — gets stored in your profile and can be used to calibrate the reader's starting speed. It also shows up on the stats dashboard so you can see how your reading speed compares to your comfortable baseline.
+
+---
+
+## Sharing Without a Backend
+
+The share feature was a constraint-led design: no backend, no database, no accounts, but still shareable.
+
+Profile share cards are rendered to PNG using `html-to-image`, which walks the DOM and generates a canvas snapshot. The PNG is downloadable.
+
+Share URLs encode a payload (display name, WPM stats, streak, avatar) as URL-safe base64 appended to the hash. The share route decodes the hash client-side and renders the profile card. No server ever sees the data.
+
+---
+
+## Testing
+
+I have 139 unit tests passing across four test files:
+
+- **RSVP engine** (54 tests): playback lifecycle, ORP computation, timing calculations, seek behavior, edge cases for empty or single-word documents
+- **Stats service** (38 tests): streak logic, aggregate calculations, session recording and retention capping
+- **Text parser** (20 tests): format detection, ORP splitting, bionic transformation, clean-text normalization
+- **Text utilities** (27 tests): word counting, time formatting, number formatting, reading time estimation
+
+Six Playwright E2E suites cover: the marketing landing page, the app intake flow, the reader playback and keyboard shortcuts, the benchmark test, settings persistence, and the full keyboard navigation model.
+
+The CI pipeline on GitHub Actions runs biome lint → Vitest unit tests → Vite build on every push.
+
+---
+
+## Tech Stack
+
+- **Lit 3 + TypeScript**: custom elements for every route and UI component, light DOM rendering
+- **Vite 8**: dev/build with manual chunk splitting for heavy parsers (PDF, DOCX, JSZip, html-to-image get their own chunks)
+- **Tailwind CSS v4 + DaisyUI 5**: utility styling with DaisyUI theme tokens
+- **Motion**: scroll-driven and hover animations on the marketing and learn pages
+- **idb**: typed IndexedDB wrapper
+- **pdfjs-dist, mammoth, jszip**: in-browser document parsers
+- **html-to-image, qrcode**: share card generation and donation QR codes
+- **Vitest + Playwright**: unit and E2E testing
+- **Biome**: linting and formatting
+- **Cloudflare Pages**: hosting
+
+---
+
+## What I'd Do Differently
+
+The Lit custom element model worked well for this project — the component boundaries are clear, the service layer is clean, and the build output is small. But Lit's reactivity model requires careful thought about when to use `@property` vs `@state` vs a signal-like pattern for cross-component state. I had a few bugs early on where profile updates in a child component didn't propagate correctly to sibling components. The solution (custom events on the document + a root-level listener in the app shell) works, but it's more boilerplate than I'd like.
+
+The parsing layer could use a worker thread for large PDFs. Currently, parsing a 300-page PDF blocks the main thread for a few hundred milliseconds. It's not catastrophic — there's a loading state — but moving it to a Web Worker would make the intake screen feel more responsive.
+
+---
+
+## The Result
+
+Speeedy is live at [speeedy.pages.dev](https://speeedy.pages.dev). v1.0.0 shipped on 2026-03-27. The source is on GitHub under MIT.
+
+It's the kind of tool I wanted to exist and couldn't find: a serious speed-reading environment that respects your privacy, works with the documents you already have, helps you track your progress over time, and gives you enough customization to actually make reading comfortable — without asking you to create an account first.

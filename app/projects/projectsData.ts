@@ -53,7 +53,12 @@ const projectsData: Project[] = [
   // ─── FEATURED ──────────────────────────────────────────────────────────────
   {
     images: [
-      { src: MARE, alt: "MARE – Maritime Risk Assessment Engine", isSpecial: false, isCustomStyles: false },
+      {
+        src: MARE,
+        alt: "MARE – Maritime Risk Assessment Engine",
+        isSpecial: false,
+        isCustomStyles: false,
+      },
     ],
     slug: "MARE",
     title: "Maritime Risk Assessment Engine",
@@ -91,17 +96,32 @@ const projectsData: Project[] = [
     featured: true,
   },
 
-
   {
     images: [
-      { src: pharma4, alt: "SmartSIG – Pharmacy Dashboard", isSpecial: false, isCustomStyles: false },
-      { src: pharma, alt: "SmartSIG – Manual Review Queue", isSpecial: false, isCustomStyles: false },
-      { src: pharma2, alt: "SmartSIG – Permutations View", isSpecial: false, isCustomStyles: false },
+      {
+        src: pharma4,
+        alt: "SmartSIG – Pharmacy Dashboard",
+        isSpecial: false,
+        isCustomStyles: false,
+      },
+      {
+        src: pharma,
+        alt: "SmartSIG – Manual Review Queue",
+        isSpecial: false,
+        isCustomStyles: false,
+      },
+      {
+        src: pharma2,
+        alt: "SmartSIG – Permutations View",
+        isSpecial: false,
+        isCustomStyles: false,
+      },
       { src: pharma3, alt: "SmartSIG – AI Validation", isSpecial: false, isCustomStyles: false },
     ],
     slug: "pharma",
     title: "SmartSIG",
-    subtitle: "Pharmacy sig management platform: permutation engine, time-travel action log, structured review queue, and AI clinical validation.",
+    subtitle:
+      "Pharmacy sig management platform: permutation engine, time-travel action log, structured review queue, and AI clinical validation.",
     description:
       "Full-stack platform for pharmacies to standardize, review, and validate prescription sigs at scale. Replaces ad-hoc spreadsheet workflows with an audited queue, a canonical deduplication engine, per-field action history, and AI-assisted clinical safety checks.",
     problem:
@@ -157,7 +177,8 @@ const projectsData: Project[] = [
     ],
     slug: "2scl",
     title: "2SCL – Smart City Platform (City SDG)",
-    subtitle: "Smart city platform and city platform for tracking all 17 UN SDG indicators with AI assistance, API ingestion, and year-over-year comparison.",
+    subtitle:
+      "Smart city platform and city platform for tracking all 17 UN SDG indicators with AI assistance, API ingestion, and year-over-year comparison.",
     description:
       "Smart city platform for cities to track, compare, and manage their UN Sustainable Development Goals. This city platform handles data from multiple sources, calculates all 17 SDG indicators, and gives city teams a single place for budgeting, alerts, and progress reporting.",
     problem:
@@ -195,55 +216,70 @@ const projectsData: Project[] = [
     githubUrl: null,
     featured: true,
   },
-    {
-    images: [{ src: speeedy, alt: "Speeedy – RSVP Reader Dashboard", isSpecial: false, isCustomStyles: false }],
+  {
+    images: [
+      {
+        src: speeedy,
+        alt: "Speeedy – RSVP Reader Dashboard",
+        isSpecial: false,
+        isCustomStyles: false,
+      },
+    ],
     videoUrl: "/assets/projects/speeedy.mp4",
     slug: "speeedy",
     title: "Speeedy",
-    subtitle: "A High-Performance, Local-First RSVP Reading Platform.",
+    subtitle:
+      "Local-first RSVP speed-reading PWA with a custom engine, ambient focus audio, accessibility modes, and full reading analytics. No account required.",
     description:
-      "Speeedy is a distraction-free speed reading PWA that consolidates science-backed RSVP mechanics with a privacy-first, zero-server architecture. It solves the fragmentation of current speed-reading tools by combining Optimal Recognition Point (ORP) centering, accessibility modes (Irlen/Dyslexia), and persistent progress tracking into a single, cohesive experience.",
+      "Speeedy is a free, open-source speed-reading web app built as a local-first Progressive Web App. It shows words one at a time aligned to their Optimal Recognition Point, eliminating the eye-tracking fatigue that slows conventional reading. Every feature — document library, stats, benchmarks, profile — lives entirely in the browser via IndexedDB. No account, no server, no tracking of reading content.",
     problem:
-      "Current digital reading experiences are hindered by 'information overload' and physical eye-tracking fatigue (saccades), which accounts for 10% of total reading time waste. Existing RSVP (Rapid Serial Visual Presentation) tools were often fragmented—some focusing on speed, others on privacy, but none offering a holistic environment for long-form consumption and skill-tracking.",
+      "Existing RSVP tools were fragmented: some focused on speed, others on privacy, but none offered a complete environment — accessibility modes for dyslexia and visual stress, long-form library management, measurable skill progression, and a polished reading experience — all without requiring an account or sending data to a server. Eye-tracking fatigue from saccades wastes a measurable portion of reading time, and no existing free tool addressed it holistically.",
     architecture: [
-      "Scientific RSVP Engine: Developed a custom rendering system that aligns every word to its Optimal Recognition Point (ORP). I implemented 'Smart Speed' logic that dynamically adjusts word-timing based on character length and internal punctuation (dashes, quotes, commas) to preserve natural reading cadence at 500+ WPM.",
-      "Local-First Architecture: To ensure absolute privacy, I designed a zero-server storage model using IndexedDB. User libraries, reading streaks, and detailed WPM statistics live entirely in the browser, allowing the app to work offline as a PWA without sacrificing persistent profile features.",
-      "Accessibility-First Design: Integrated specialized modes for visual stress and neurodiversity, including Irlen Overlays (color tints), OpenDyslexic Support, and Bionic reading anchors. I leveraged the Web Audio API to provide subtle auditory pulses that anchor the reader’s rhythm, particularly helpful for focus.",
-      "Internationalization via Intl.Segmenter: Solved the 'fragmented script' problem by moving beyond simple whitespace splitting. Speeedy uses modern browser segmentation APIs to properly tokenize Arabic and CJK scripts, making high-speed reading possible for non-Latin languages.",
-      "Zero-Friction Viral Loops: Built a sharing system using URL-safe base64 encoding, allowing bloggers to embed 'One-Click Read' links that pre-load content into the reader without any account creation or signup walls.",
+      "Custom RSVP engine (rsvp-engine.ts): token-based playback with play/pause/seek, per-word progress events, estimated remaining time, and live timing rescheduling when speed changes mid-session. ORP computation splits every word into before/pivot/after segments so the focal letter always lands on the same screen position.",
+      "Smart Speed adaptive timing: base WPM is adjusted per-word based on character count, internal punctuation (dashes, commas, quotes), sentence and paragraph boundaries, and configurable pause multipliers — preserving natural reading cadence at 500+ WPM.",
+      "Local-first persistence: IndexedDB (via idb) with schema versioning, a profile store, and a document library capped at 20 items with SHA-256 deduplication. Reading progress, session history, streaks, and all settings sync automatically without any backend.",
+      "Document parsing pipeline (text-parser.ts): PDF via pdfjs-dist with X/Y position-based line reconstruction, DOCX via mammoth, EPUB OPF spine parsing via JSZip, plus RTF, HTML, CSV, ODT, TXT, and Markdown. Twelve formats handled in the browser without any upload.",
+      "Web Audio API ambient system (audio-service.ts): procedurally generated white, pink, and brown noise with crossfade loop-boundary smoothing; per-word click sounds with configurable pitch; visibility/focus-based audio context recovery. All generated in-browser, no audio files required.",
+      "Accessibility modes: OpenDyslexic font + increased spacing for dyslexia mode, Irlen-style tinted overlays with color picker, bionic reading bolding, ORP guide markers, peripheral ghost-word context, configurable pivot offset, and RTL/Arabic layout compensation via measured pixel offsets.",
+      "Stats and benchmark system: session recording with crypto.randomUUID IDs, streak calculation, WPM trend and 14-day bar charts rendered in pure SVG/CSS, and a timed benchmark test with a 10-question comprehension quiz that calibrates the reader's starting speed.",
+      "Social sharing without a backend: share payloads are base64-encoded into URL hashes. Profile stat cards are rendered to PNG via html-to-image for download. Public share links decode entirely in the browser on the share route.",
+      "PWA and CI: Workbox static caching via vite-plugin-pwa, Vite chunk splitting for PDF/DOCX/JSZip/html-to-image/Lit, Cloudflare Pages hosting. 139 unit tests (Vitest) and 6 Playwright E2E suites covering the full reading flow, benchmark, keyboard shortcuts, and settings persistence.",
     ],
     challenges: [
-      "Implementing 'Smart Speed' logic to adjust word-timing based on character length and internal punctuation to preserve natural reading rhythm",
-      "Dynamic multi-language support (Arabic, CJK) via Intl.Segmenter browser API",
-      "Robust offline-first architecture with persistent IndexedDB storage in a PWA context",
-      "Developing a high-polish, performance-focused UI with Lit and Vite for instant load times",
+      "Reconstructing readable prose from PDFs using raw X/Y glyph positions and font metrics — PDFs have no concept of 'lines' or 'paragraphs'",
+      "Crossfade-smooth ambient noise loops using the Web Audio API with no audio files, so loop boundaries are imperceptible at any volume",
+      "RTL word display: Arabic pivot letters require measured DOM offsets to land in the correct visual position rather than the CSS text-alignment position",
+      "Schema-versioned IndexedDB with blocked/blocking multi-tab upgrade handling so data never corrupts when the user has the app open in multiple tabs",
+      "Keeping chunk sizes manageable (PDF, DOCX, EPUB parsers are heavy) while keeping initial load instant via Vite manual chunk splitting and lazy loading",
     ],
     results: [
-      "A high-polish, local-first reader that treats speed reading as a persistent skill",
-      "Scientific RSVP engine handling 500+ WPM with natural cadence and ORP centering",
-      "Successfully combined the performance of a native application with the accessibility of the web",
-      "Zero-server architecture ensures absolute privacy and offline accessibility",
+      "Released as v1.0.0 on 2026-03-27. Deployed on Cloudflare Pages at speeedy.pages.dev",
+      "Custom RSVP engine supports 500+ WPM with ORP centering and adaptive Smart Speed pacing across 12 document formats",
+      "Full local-first profile system: library, streaks, WPM history, benchmark baseline, and settings — zero server round-trips",
+      "139 unit tests passing across the RSVP engine, stats service, text parser, and text utilities; 6 Playwright E2E suites covering the end-to-end reading flow",
+      "Procedural Web Audio ambient system and full dyslexia/Irlen accessibility stack with no external dependencies for either",
     ],
     tags: [
       ProjectTags.PERSONAL,
       { label: "Lit", colorScheme: "cyan" },
-      { label: "Vite", colorScheme: "purple" },
+      { label: "TypeScript", colorScheme: "blue" },
       { label: "PWA", colorScheme: "orange" },
       { label: "IndexedDB", colorScheme: "teal" },
     ],
     keywords: [
       "speed reading PWA",
-      "RSVP reading platform",
+      "RSVP reading app",
       "local-first web app",
-      "Lit framework project",
+      "Lit TypeScript project",
       "privacy-first reading tool",
       "Speeedy",
+      "RSVP reader",
+      "open source speed reader",
     ],
     siteUrl: "https://speeedy.pages.dev/",
-    githubUrl: null,
+    githubUrl: "https://github.com/sami-29/speeedy",
     featured: true,
   },
-
 
   {
     images: [
@@ -256,7 +292,8 @@ const projectsData: Project[] = [
     ],
     slug: "progres",
     title: "Progres",
-    subtitle: "A faster, more reliable alternative frontend for the official Algerian university student portalused by real students.",
+    subtitle:
+      "A faster, more reliable alternative frontend for the official Algerian university student portalused by real students.",
     description:
       "Replacement frontend for Algeria's official university student portal. The official site has persistent bugs and slow load times. Progres wraps the same API with a clean interface, better UX, and enhanced privacydeployed at the edge for fast access.",
     problem:
@@ -297,7 +334,8 @@ const projectsData: Project[] = [
     ],
     slug: "tetris-solver",
     title: "Tetris Solver",
-    subtitle: "Adaptive beam-search algorithm that solves Tetris move sequences 80× faster than a fixed-width baselinewith no loss in win rate.",
+    subtitle:
+      "Adaptive beam-search algorithm that solves Tetris move sequences 80× faster than a fixed-width baselinewith no loss in win rate.",
     description:
       "Given a board state and incoming piece sequence, the solver finds the exact move sequence to clear a target number of lines before any piece drops. Uses adaptive beam search to balance speed and solution quality.",
     problem:
@@ -349,7 +387,8 @@ const projectsData: Project[] = [
     ],
     slug: "EasyAi",
     title: "EasyAI",
-    subtitle: "Drag-and-drop AI workflow builder for non-technical users. Next.js, Supabase, OpenAI + ComfyUI.",
+    subtitle:
+      "Drag-and-drop AI workflow builder for non-technical users. Next.js, Supabase, OpenAI + ComfyUI.",
     description:
       "Makes AI workflows accessible without writing code. Users can compose OpenAI and ComfyUI pipelines through a visual interface. Built with Next.js, Chakra UI, and Supabase. In active development.",
     tags: [
@@ -369,17 +408,53 @@ const projectsData: Project[] = [
 
   {
     images: [
-      { src: CafeTheLuckyBoots6, alt: "Cafe The Lucky Boots – Hero", isSpecial: false, isCustomStyles: false },
-      { src: CafeTheLuckyBoots2, alt: "Cafe The Lucky Boots – Menu", isSpecial: false, isCustomStyles: false },
-      { src: CafeTheLuckyBoots3, alt: "Cafe The Lucky Boots – About", isSpecial: false, isCustomStyles: false },
-      { src: CafeTheLuckyBoots4, alt: "Cafe The Lucky Boots – Gallery", isSpecial: false, isCustomStyles: false },
-      { src: CafeTheLuckyBoots5, alt: "Cafe The Lucky Boots – Contact", isSpecial: false, isCustomStyles: false },
-      { src: CafeTheLuckyBoots1, alt: "Cafe The Lucky Boots – Interior", isSpecial: false, isCustomStyles: false },
-      { src: CafeTheLuckyBoots7, alt: "Cafe The Lucky Boots – Mobile", isSpecial: false, isCustomStyles: false },
+      {
+        src: CafeTheLuckyBoots6,
+        alt: "Cafe The Lucky Boots – Hero",
+        isSpecial: false,
+        isCustomStyles: false,
+      },
+      {
+        src: CafeTheLuckyBoots2,
+        alt: "Cafe The Lucky Boots – Menu",
+        isSpecial: false,
+        isCustomStyles: false,
+      },
+      {
+        src: CafeTheLuckyBoots3,
+        alt: "Cafe The Lucky Boots – About",
+        isSpecial: false,
+        isCustomStyles: false,
+      },
+      {
+        src: CafeTheLuckyBoots4,
+        alt: "Cafe The Lucky Boots – Gallery",
+        isSpecial: false,
+        isCustomStyles: false,
+      },
+      {
+        src: CafeTheLuckyBoots5,
+        alt: "Cafe The Lucky Boots – Contact",
+        isSpecial: false,
+        isCustomStyles: false,
+      },
+      {
+        src: CafeTheLuckyBoots1,
+        alt: "Cafe The Lucky Boots – Interior",
+        isSpecial: false,
+        isCustomStyles: false,
+      },
+      {
+        src: CafeTheLuckyBoots7,
+        alt: "Cafe The Lucky Boots – Mobile",
+        isSpecial: false,
+        isCustomStyles: false,
+      },
     ],
     slug: "cafe-the-lucky-boots",
     title: "Cafe The Lucky Boots",
-    subtitle: "Bilingual Japanese cafe site (JA/EN) for a Kushiro, Hokkaido cafe. Astro + Tailwind on Cloudflare Workers.",
+    subtitle:
+      "Bilingual Japanese cafe site (JA/EN) for a Kushiro, Hokkaido cafe. Astro + Tailwind on Cloudflare Workers.",
     description:
       "Client site for a cafe in Kushiro, Hokkaido, Japan. Bilingual (Japanese/English), built with Astro and Tailwind CSS, deployed on Cloudflare Workers for fast load times from Japan.",
     tags: [ProjectTags.CLIENT, ProjectTags.ASTRO],
@@ -397,11 +472,17 @@ const projectsData: Project[] = [
 
   {
     images: [
-      { src: personalFitness, alt: "IC Personal Training – Website", isSpecial: false, isCustomStyles: false },
+      {
+        src: personalFitness,
+        alt: "IC Personal Training – Website",
+        isSpecial: false,
+        isCustomStyles: false,
+      },
     ],
     slug: "personalFitnessWebsite",
     title: "IC Personal Training",
-    subtitle: "Personal trainer marketing site with CMS-driven content, animated sections, and embedded map. Next.js + wispCMS.",
+    subtitle:
+      "Personal trainer marketing site with CMS-driven content, animated sections, and embedded map. Next.js + wispCMS.",
     description:
       "Client site for a personal trainer. Built with Next.js, TypeScript, Tailwind CSS, Framer Motion, and Leaflet for the map. Content managed via wispCMS. Includes Umami for privacy-friendly analytics.",
     tags: [ProjectTags.CLIENT, ProjectTags.NEXTJS],
@@ -419,15 +500,41 @@ const projectsData: Project[] = [
 
   {
     images: [
-      { src: portfolio2, alt: "Architecture Portfolio – Projects Grid", isSpecial: false, isCustomStyles: false },
-      { src: portfolio1, alt: "Architecture Portfolio – Hero", isSpecial: false, isCustomStyles: false },
-      { src: portfolio3, alt: "Architecture Portfolio – Project Detail", isSpecial: false, isCustomStyles: false },
-      { src: portfolio4, alt: "Architecture Portfolio – About", isSpecial: false, isCustomStyles: false },
-      { src: portfolio5, alt: "Architecture Portfolio – Mobile", isSpecial: false, isCustomStyles: false },
+      {
+        src: portfolio2,
+        alt: "Architecture Portfolio – Projects Grid",
+        isSpecial: false,
+        isCustomStyles: false,
+      },
+      {
+        src: portfolio1,
+        alt: "Architecture Portfolio – Hero",
+        isSpecial: false,
+        isCustomStyles: false,
+      },
+      {
+        src: portfolio3,
+        alt: "Architecture Portfolio – Project Detail",
+        isSpecial: false,
+        isCustomStyles: false,
+      },
+      {
+        src: portfolio4,
+        alt: "Architecture Portfolio – About",
+        isSpecial: false,
+        isCustomStyles: false,
+      },
+      {
+        src: portfolio5,
+        alt: "Architecture Portfolio – Mobile",
+        isSpecial: false,
+        isCustomStyles: false,
+      },
     ],
     slug: "architecture-portfolio",
     title: "Architecture Portfolio",
-    subtitle: "Visual portfolio for an architect: masonry gallery, full-screen image viewer, and motion transitions. Vite + React.",
+    subtitle:
+      "Visual portfolio for an architect: masonry gallery, full-screen image viewer, and motion transitions. Vite + React.",
     description:
       "Custom portfolio site for an architect client. Built with Vite, React, React Router, Tailwind CSS, and Framer Motion. Highlights include a masonry project grid, a full-screen image viewer, and a hidden easter egg.",
     tags: [
@@ -448,12 +555,23 @@ const projectsData: Project[] = [
 
   {
     images: [
-      { src: Restaurant_template, alt: "Restaurant Template – Home", isSpecial: false, isCustomStyles: false },
-      { src: Restaurant_template2, alt: "Restaurant Template – Menu", isSpecial: false, isCustomStyles: false },
+      {
+        src: Restaurant_template,
+        alt: "Restaurant Template – Home",
+        isSpecial: false,
+        isCustomStyles: false,
+      },
+      {
+        src: Restaurant_template2,
+        alt: "Restaurant Template – Menu",
+        isSpecial: false,
+        isCustomStyles: false,
+      },
     ],
     slug: "restaurantTemplate",
     title: "Restaurant Template",
-    subtitle: "Customizable restaurant site template with reservations form, Leaflet map, and animated sections. Next.js + Tailwind.",
+    subtitle:
+      "Customizable restaurant site template with reservations form, Leaflet map, and animated sections. Next.js + Tailwind.",
     description:
       "Open template for restaurant businesses. Built with Next.js 13, Tailwind CSS, Framer Motion, Leaflet for the map, and react-hook-form with Yup for the reservations form. Designed to be easy to customize for any venue.",
     tags: [
@@ -474,11 +592,17 @@ const projectsData: Project[] = [
 
   {
     images: [
-      { src: shadow_foundry, alt: "Shadow Foundry.ai – Website", isSpecial: false, isCustomStyles: false },
+      {
+        src: shadow_foundry,
+        alt: "Shadow Foundry.ai – Website",
+        isSpecial: false,
+        isCustomStyles: false,
+      },
     ],
     slug: "shadowFoundryAi",
     title: "Shadow Foundry.ai",
-    subtitle: "Marketing site for an AI company. Custom animations, Splide carousel, self-hosted fonts. HTML + SCSS.",
+    subtitle:
+      "Marketing site for an AI company. Custom animations, Splide carousel, self-hosted fonts. HTML + SCSS.",
     description:
       "Client marketing site for an AI company. Built with HTML, SCSS, and JavaScript. Features a custom Splide carousel, self-hosted fonts, and polished scroll-driven animations — no framework needed.",
     tags: [
@@ -504,7 +628,8 @@ const projectsData: Project[] = [
     ],
     slug: "RuneMatch",
     title: "RuneMatch",
-    subtitle: "RuneScape-themed casino platform: trade in-game gold for credits, play multiple mini-games. Next.js.",
+    subtitle:
+      "RuneScape-themed casino platform: trade in-game gold for credits, play multiple mini-games. Next.js.",
     description:
       "Client project. A casino platform themed around RuneScape. Players trade OSRS in-game gold for platform credits to play multiple RuneScape-themed games. Built with Next.js.",
     tags: [ProjectTags.CLIENT, ProjectTags.NEXTJS],
@@ -528,7 +653,8 @@ const projectsData: Project[] = [
     ],
     slug: "tracktalk",
     title: "TrackTalk",
-    subtitle: "Full-featured music streaming platform with user accounts, playlists, and audio playback. Next.js + Supabase.",
+    subtitle:
+      "Full-featured music streaming platform with user accounts, playlists, and audio playback. Next.js + Supabase.",
     description:
       "Client project. A music streaming platform. Users can create accounts, build playlists, and stream tracks. Built with Next.js, Supabase, and TailwindCSS.",
     tags: [ProjectTags.CLIENT, ProjectTags.NEXTJS],
@@ -549,7 +675,8 @@ const projectsData: Project[] = [
     ],
     slug: "eTasc",
     title: "E-TASC",
-    subtitle: "NLP annotation and text analysis platform for a research institution. Vanilla JS + Stanford CoreNLP.",
+    subtitle:
+      "NLP annotation and text analysis platform for a research institution. Vanilla JS + Stanford CoreNLP.",
     description:
       "Annotation and text analysis platform built for a research institution. Core functionality written from scratch in Vanilla JavaScript, HTML, and CSS. Word category analysis uses the Stanford CoreNLP library.",
     tags: [

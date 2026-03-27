@@ -10,7 +10,10 @@ import { portfolioConfig } from "../utils/config";
 
 export const metadata: Metadata = {
   metadataBase: new URL(portfolioConfig.seo.baseUrl),
-  title: { default: portfolioConfig.seo.siteName, template: `%s | ${portfolioConfig.seo.siteName}` },
+  title: {
+    default: portfolioConfig.seo.siteName,
+    template: `%s | ${portfolioConfig.seo.siteName}`,
+  },
   description: portfolioConfig.seo.siteDescription,
   keywords: [...portfolioConfig.seo.keywords],
   authors: [{ name: portfolioConfig.seo.authorName, url: portfolioConfig.seo.baseUrl }],
@@ -51,21 +54,17 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang='en'>
+    <html lang="en" suppressHydrationWarning>
       <Script
         async
         defer
-        src='https://cloud.umami.is/script.js'
-        data-website-id='a8d67507-76c6-42d2-b099-540de21a96af'></Script>
+        src="https://cloud.umami.is/script.js"
+        data-website-id="a8d67507-76c6-42d2-b099-540de21a96af"></Script>
       <body>
         <Providers>
-          <Box minHeight='100vh'>
+          <Box minHeight="100vh">
             <Navbar />
             <Box position={"relative"} pt={{ base: 12, md: 16 }}>
               {children}
