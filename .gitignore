@@ -34,7 +34,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# AI helpers
+.kilo
 .aider*
+.impeccable.md
 
 # other
 repo_context.txt

@@ -74,8 +74,7 @@ export default function ProjectsContent() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.55, ease: easing.outQuart, delay: 0.12 }}>
           <Text fontSize="lg" color="gray.400" mb={12} fontFamily="body">
-            Selected work across website development, smart city platforms, pharmacy automation, and
-            dashboard tools.
+            Client platforms, personal tools, and a few things built to solve specific problems.
           </Text>
         </motion.div>
 

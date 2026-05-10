@@ -48,8 +48,7 @@ export default function BlogUI({ postMetadata }: BlogUIProps) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.55, ease: easing.outQuart, delay: 0.15 }}>
           <Text fontSize="lg" color="gray.400" fontFamily="body">
-            Thoughts and insights on website development, website building, web performance, and
-            technology.
+            Articles on website development, web performance, and projects I&apos;ve built.
           </Text>
         </motion.div>
 

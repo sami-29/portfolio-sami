@@ -1,6 +1,6 @@
 ---
 title: "How I Built Speeedy: A Local-First RSVP Speed Reader from Scratch"
-subtitle: Building a custom RSVP engine, a 12-format document parser, procedural ambient audio, and a full reading analytics stack — all in the browser, no account required
+subtitle: Building a custom RSVP engine, 12-format document parser, procedural ambient audio, and reading analytics. All in the browser, no account required.
 date: 2026-03-27
 keywords:
   - speed reading PWA

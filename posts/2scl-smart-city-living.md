@@ -1,6 +1,6 @@
 ---
 title: 2SCL - Building a Smart City Platform That Never Launched
-subtitle: What it was like building a city management SaaS around the UN's Sustainable Development Goals, and watching it get abandoned before it could ship
+subtitle: What it was like to build a city SaaS around the UN SDGs, and watch it get shelved before it shipped
 date: 2026-03-04
 keywords:
   - smart city platform

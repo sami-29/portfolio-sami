@@ -1,6 +1,6 @@
 ---
 title: "How I Built SmartSIG: Saving a Pharmacy Hours Every Week"
-subtitle: Automating prescription sig management with AI, permutations, and a multi-role review workflow
+subtitle: Building a permutation engine, field-level audit trail, and AI validation layer to automate prescription sig management
 date: 2026-03-04
 keywords:
   - pharmacy automation
@@ -64,6 +64,7 @@ The three tabs (Parsed, Approved, Skipped) each show live counts and support sea
 There's also an undo system. If a reviewer accidentally approves or skips something, they have a short window to undo the action through a drawer that tracks their recent decisions, fully reversing the state server-side.
 
 The role system adds another layer of control:
+
 - **Admin**: full access, user management, config
 - **Normal**: full review capabilities
 - **Junior**: review with oversight

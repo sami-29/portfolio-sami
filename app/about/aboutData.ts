@@ -61,7 +61,7 @@ export const primaryStack: PrimaryTool[] = [
   },
   {
     title: "Git",
-    context: "Version control and collaborative workflows.",
+    context: "Feature branches, pull requests, and clean commit history. Used on every project.",
     src: git,
     website: "https://git-scm.com",
   },

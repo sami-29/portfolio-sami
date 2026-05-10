@@ -66,11 +66,10 @@ export default function AboutContent() {
             lineHeight="1.75"
             maxW="2xl"
             fontFamily="body">
-            I do full-stack website development and web app development. Most of my work sits in the
-            space where the data model and the UI both matter: dashboards that represent real
-            workflows, internal tools where interaction design is as hard as the backend, and
-            platforms where messy or large data has to stay usable without hiding what&apos;s
-            actually going on. I work with React, TypeScript, and Next.js.
+            I do full-stack web development. Most of what I work on involves both the data model and
+            the UI: dashboards that mirror real workflows, internal tools where interaction design
+            is as hard as the backend, and platforms where messy data has to stay legible. React,
+            TypeScript, and Next.js are my main tools.
           </Text>
         </motion.div>
 
@@ -84,11 +83,11 @@ export default function AboutContent() {
             lineHeight="1.75"
             maxW="2xl"
             fontFamily="body">
-            That tends to mean strong frontend work—complex forms, data-dense views,
-            performance-sensitive rendering—plus enough backend depth to model things right from the
-            start. I&apos;ve shipped a smart city platform (2SCL), pharmacy automation and sig
-            management systems, maritime data visualization tools, and client projects across
-            website building and custom web applications.
+            In practice that means frontend-heavy work: complex forms, data-dense views,
+            performance-sensitive rendering. Plus enough backend depth to model things right from
+            the start. I&apos;ve shipped 2SCL (a smart city platform), SmartSIG (pharmacy sig
+            management), MARE (maritime risk visualization), and a range of client websites and web
+            apps.
           </Text>
         </motion.div>
       </VStack>
@@ -125,7 +124,7 @@ export default function AboutContent() {
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.5, ease: easing.outQuart, delay: 0.08 }}>
           <Text fontSize="md" color="gray.500" fontFamily="body">
-            What I reach for on every serious project and why:
+            What I use on every serious project:
           </Text>
         </motion.div>
       </VStack>

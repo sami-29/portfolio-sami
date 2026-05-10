@@ -145,9 +145,9 @@ export default function HomeContent() {
                 maxW="2xl"
                 lineHeight="1.75"
                 fontFamily="body">
-                I do website development and web app development: interfaces for complex data and
-                dashboards where the data model matters as much as the UI, internal tools with real
-                workflows, and platforms that stay usable when data gets messy or large.
+                I build websites and web apps. Most of what I work on is data-heavy: dashboards
+                where the data model matters as much as the interface, internal tools with real
+                workflows, and platforms that stay usable when the data gets large.
               </Text>
             </motion.div>
 
@@ -288,7 +288,7 @@ export default function HomeContent() {
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.55, ease: easing.outQuart, delay: 0.08 }}>
           <Text fontSize="md" color="gray.500" maxW="2xl">
-            Smart city platforms, pharmacy automation, dashboards, and web applications.
+            Maritime risk analysis, pharmacy automation, a city data platform, and personal tools.
           </Text>
         </motion.div>
 

@@ -66,7 +66,7 @@ const projectsData: Project[] = [
     description:
       "Interactive risk assessment tool for the maritime industry. Processes large geospatial datasets and renders risk heatmaps with smooth pan/zoom over dense map layers.",
     problem:
-      "Maritime operators needed to analyze vessel collision risk across busy shipping lanes in real time, over datasets with millions of geospatial points. Without the UI freezing or rendering lag making the tool unusable.",
+      "Maritime operators needed to analyze vessel collision risk across busy shipping lanes in real time, over datasets with millions of geospatial points, without the UI locking up or rendering lag making the tool unusable.",
     architecture: [
       "Mapbox GL JS for base map and performant layer rendering",
       "Turf.js for geospatial operations: buffers, intersections, point aggregation",
@@ -129,16 +129,16 @@ const projectsData: Project[] = [
     architecture: [
       "Next.js App Router + tRPC (end-to-end typed API) + Prisma + PostgreSQL",
       "Manual review queue: parsed/approved/skipped tabs, reviewer claim-locking (prevents two people editing the same sig simultaneously), timed undo drawer that reverses actions server-side",
-      "Action log: every field change, approval, skip, and return writes an Action record with a full diffwho changed what, from what value, to what value, and when. Viewable inline per sig and on a dedicated history page",
-      "Permutation engine: a canonical hash is computed from each sig's structured field values (not its name). Sigs that share a hash are grouped into a Permutationthe deduplicated canonical form. Makes 'how many ways are we writing this instruction?' a searchable dashboard instead of an unanswerable question",
-      "Upstream Vite/React preprocessing tool for Epic EHR CSV exportsparses free-text ENTERED_SIG fields against clinical dictionaries (frequency codes, route codes, dose units), assigns a confidence score per mapping, surfaces low-confidence cases for manual correction before they enter the review queue",
+      "Action log: every field change, approval, skip, and return writes an Action record with a full diff (who changed what, from what value, to what value, and when). Viewable inline per sig and on a dedicated history page",
+      "Permutation engine: a canonical hash is computed from each sig's structured field values (not its name). Sigs that share a hash are grouped into a Permutation, the deduplicated canonical form. Makes 'how many ways are we writing this instruction?' a searchable dashboard instead of an unanswerable question",
+      "Upstream Vite/React preprocessing tool for Epic EHR CSV exports: parses free-text ENTERED_SIG fields against clinical dictionaries (frequency codes, route codes, dose units), assigns a confidence score per mapping, and surfaces low-confidence cases for manual correction before they enter the review queue",
       "Multi-step sig support: tapering dose schedules modeled as ordered stages; field values across steps stored as pipe-delimited strings (e.g. 'Once Daily|Twice Daily'); reviewers confirm which fields were inferred vs explicitly stated before approval",
       "AI validation layer (BAML typed LLM function signatures): ValidateSigBatch for batch post-approval safety checks, AnalyzeUnapprovedSig for pre-approval deep analysis, conversational Q&A on validation results with real-time streaming",
-      "Role system: Admin / Normal / Junior / Onboardingnew users land on a waiting page until approved by an admin. NextAuth + OTP passwordless auth, Playwright E2E tests, Sentry error monitoring, GitHub Actions daily DB backups",
+      "Role system: Admin / Normal / Junior / Onboarding. New users land on a waiting page until approved by an admin. NextAuth + OTP passwordless auth, Playwright E2E tests, Sentry error monitoring, GitHub Actions daily DB backups",
     ],
     challenges: [
       "Parsing messy free-text EHR sigs ('0.1 mg q6h PRN HTN' and '0.1 mg every 6 hours if needed for high blood pressure' mean the same thing) into normalized structured fields without losing clinical intent",
-      "Modeling multi-step sigs where each stage has independent field valuesand preserving the full sequence in a single DB record without losing per-step granularity",
+      "Modeling multi-step sigs where each stage has independent field values, and preserving the full sequence in a single DB record without losing per-step granularity",
       "Designing the permutation hash so it captures semantic equivalence across different surface representations, not just exact string matches",
       "Building claim-locking that handles concurrent reviewers without deadlocks or a reviewer silently overwriting another's work",
       "Integrating AI validation as a safety net that flags issues without blocking the pharmacist's workflow or creating alert fatigue",
@@ -178,9 +178,9 @@ const projectsData: Project[] = [
     slug: "2scl",
     title: "2SCL – Smart City Platform (City SDG)",
     subtitle:
-      "Smart city platform and city platform for tracking all 17 UN SDG indicators with AI assistance, API ingestion, and year-over-year comparison.",
+      "City platform for tracking all 17 UN SDG indicators, with API data ingestion, AI assistance, and year-over-year comparison.",
     description:
-      "Smart city platform for cities to track, compare, and manage their UN Sustainable Development Goals. This city platform handles data from multiple sources, calculates all 17 SDG indicators, and gives city teams a single place for budgeting, alerts, and progress reporting.",
+      "Platform for cities to track, compare, and report on their UN Sustainable Development Goals. Pulls from multiple data sources, calculates all 17 SDG indicators, and gives city teams one place for budgeting, alerts, and progress reports.",
     problem:
       "City governments had no unified tool to track SDG progress across departments. Data lived in disconnected spreadsheets and external APIs with no way to compare year-over-year or see budget and resource allocation alongside indicator performance.",
     architecture: [
@@ -293,9 +293,9 @@ const projectsData: Project[] = [
     slug: "progres",
     title: "Progres",
     subtitle:
-      "A faster, more reliable alternative frontend for the official Algerian university student portalused by real students.",
+      "A faster, more reliable frontend for the official Algerian university student portal. Used by real students.",
     description:
-      "Replacement frontend for Algeria's official university student portal. The official site has persistent bugs and slow load times. Progres wraps the same API with a clean interface, better UX, and enhanced privacydeployed at the edge for fast access.",
+      "Replacement frontend for Algeria's official university student portal. The official site has persistent bugs and slow load times. Progres wraps the same API with a clean interface and better UX, deployed at the edge for fast access.",
     problem:
       "Algeria's official student portal (used by hundreds of thousands of university students) is plagued with UI bugs, crashes during exam season, and a confusing interface. Students needed a reliable way to check grades and administrative data without the friction.",
     architecture: [
@@ -305,7 +305,7 @@ const projectsData: Project[] = [
       "Client-side session handling with privacy-first design",
     ],
     challenges: [
-      "The official API is completely undocumentedrequired reverse-engineering from the official app",
+      "The official API is completely undocumented, so it required reverse-engineering from the official app",
       "API is brittle and changes without notice, requiring ongoing maintenance",
       "Handling auth flows that the official portal gets wrong (broken session handling, bad redirects)",
     ],
@@ -335,13 +335,13 @@ const projectsData: Project[] = [
     slug: "tetris-solver",
     title: "Tetris Solver",
     subtitle:
-      "Adaptive beam-search algorithm that solves Tetris move sequences 80× faster than a fixed-width baselinewith no loss in win rate.",
+      "Adaptive beam-search algorithm that solves Tetris move sequences 80× faster than a fixed-width baseline, with no loss in win rate.",
     description:
       "Given a board state and incoming piece sequence, the solver finds the exact move sequence to clear a target number of lines before any piece drops. Uses adaptive beam search to balance speed and solution quality.",
     problem:
-      "Solving Tetris optimally is NP-hardthe state space explodes exponentially with lookahead depth. A fixed-width beam search wide enough to solve hard games was far too slow on easy ones. The challenge: make it fast on average without failing on hard cases.",
+      "Solving Tetris optimally is NP-hard. The state space explodes exponentially with lookahead depth. A fixed-width beam search wide enough to solve hard games was far too slow on easy ones. The challenge: make it fast on average without failing on hard cases.",
     architecture: [
-      "Decoupled engine layer: drop, place, clear, scoreno solver logic in the game simulation",
+      "Decoupled engine layer: drop, place, clear, score (no solver logic in the game simulation)",
       "Adaptive (progressive) beam search: tries widths 1 → 5 → 20 → 100, stops the moment a solution is found",
       "Heuristic scoring: lines cleared (+1000/line), column height (−51), holes (−35), bumpiness (−18)",
       "Piece sequences follow the official Tetris 7-bag system; all 7 tetrominoes with valid rotations pre-loaded",
@@ -390,7 +390,7 @@ const projectsData: Project[] = [
     subtitle:
       "Drag-and-drop AI workflow builder for non-technical users. Next.js, Supabase, OpenAI + ComfyUI.",
     description:
-      "Makes AI workflows accessible without writing code. Users can compose OpenAI and ComfyUI pipelines through a visual interface. Built with Next.js, Chakra UI, and Supabase. In active development.",
+      "Visual AI workflow builder. Users compose OpenAI and ComfyUI pipelines through a drag-and-drop interface. Built with Next.js, Chakra UI, and Supabase. Still in development.",
     tags: [
       { label: "Personal Project", colorScheme: "blue" },
       { label: "In Development", colorScheme: "purple" },
@@ -536,7 +536,7 @@ const projectsData: Project[] = [
     subtitle:
       "Visual portfolio for an architect: masonry gallery, full-screen image viewer, and motion transitions. Vite + React.",
     description:
-      "Custom portfolio site for an architect client. Built with Vite, React, React Router, Tailwind CSS, and Framer Motion. Highlights include a masonry project grid, a full-screen image viewer, and a hidden easter egg.",
+      "Custom portfolio for an architect. Vite, React, React Router, Tailwind, and Framer Motion. Has a masonry project grid, a full-screen image viewer, and a hidden easter egg.",
     tags: [
       { label: "Client Project", colorScheme: "orange" },
       { label: "React", colorScheme: "cyan" },
@@ -573,7 +573,7 @@ const projectsData: Project[] = [
     subtitle:
       "Customizable restaurant site template with reservations form, Leaflet map, and animated sections. Next.js + Tailwind.",
     description:
-      "Open template for restaurant businesses. Built with Next.js 13, Tailwind CSS, Framer Motion, Leaflet for the map, and react-hook-form with Yup for the reservations form. Designed to be easy to customize for any venue.",
+      "Open template for restaurant businesses. Next.js 13, Tailwind, Framer Motion, Leaflet for the map, and react-hook-form for the reservations. Easy to customize for any venue.",
     tags: [
       { label: "Client Project", colorScheme: "orange" },
       { label: "Next.js", colorScheme: "gray" },
@@ -604,7 +604,7 @@ const projectsData: Project[] = [
     subtitle:
       "Marketing site for an AI company. Custom animations, Splide carousel, self-hosted fonts. HTML + SCSS.",
     description:
-      "Client marketing site for an AI company. Built with HTML, SCSS, and JavaScript. Features a custom Splide carousel, self-hosted fonts, and polished scroll-driven animations — no framework needed.",
+      "Client marketing site for an AI company. HTML, SCSS, and JavaScript. Custom Splide carousel, self-hosted fonts, and scroll-driven animations. No framework.",
     tags: [
       { label: "Client Project", colorScheme: "orange" },
       { label: "Static Site", colorScheme: "teal" },
