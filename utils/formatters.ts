@@ -1,3 +1,14 @@
+export function getAge(birthDate: Date, referenceDate = new Date()): number {
+  let age = referenceDate.getFullYear() - birthDate.getFullYear();
+  const hadBirthdayThisYear =
+    referenceDate.getMonth() > birthDate.getMonth() ||
+    (referenceDate.getMonth() === birthDate.getMonth() &&
+      referenceDate.getDate() >= birthDate.getDate());
+
+  if (!hadBirthdayThisYear) age--;
+  return age;
+}
+
 export function formatDate(dateString: string): string {
   return new Date(dateString).toLocaleDateString("en-US", {
     year: "numeric",

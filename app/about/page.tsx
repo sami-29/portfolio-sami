@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { buildMetadata } from "../../utils/buildMetadata";
+import { BIRTH_DATE } from "../../utils/constants";
+import { getAge } from "../../utils/formatters";
 import AboutContent from "./AboutContent";
 
 export const metadata: Metadata = buildMetadata({
   title: "About",
-  description:
-    "About Sami Bentaleb, a full-stack developer focused on React, Next.js, TypeScript, website development, and data-heavy product interfaces for businesses and client projects.",
+  description: `About Sami Bentaleb, a ${getAge(BIRTH_DATE)}-year-old full-stack developer from Algeria. CS graduate of Badji Mokhtar University, building data-heavy web apps with React, Next.js, and TypeScript.`,
   path: "/about",
   keywords: [
     "full-stack developer portfolio",

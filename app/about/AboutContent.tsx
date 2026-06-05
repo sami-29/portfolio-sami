@@ -4,6 +4,8 @@ import { Box, VStack, Heading, Text, SimpleGrid, Flex, Separator } from "@chakra
 import { motion } from "motion/react";
 import AboutCard from "../../components/AboutCard";
 import { primaryStack, otherTools } from "./aboutData";
+import { BIRTH_DATE } from "../../utils/constants";
+import { getAge } from "../../utils/formatters";
 import { easing, stagger } from "../../utils/motion";
 
 const cardContainer = {
@@ -21,6 +23,8 @@ const cardItem = {
 };
 
 export default function AboutContent() {
+  const age = getAge(BIRTH_DATE);
+
   return (
     <Box as="main" id="main-content" mb={16}>
       {/* ── Header ── */}
@@ -66,10 +70,10 @@ export default function AboutContent() {
             lineHeight="1.75"
             maxW="2xl"
             fontFamily="body">
-            I do full-stack web development. Most of what I work on involves both the data model and
-            the UI: dashboards that mirror real workflows, internal tools where interaction design
-            is as hard as the backend, and platforms where messy data has to stay legible. React,
-            TypeScript, and Next.js are my main tools.
+            I&apos;m Sami, {age}, from Algeria. Computer science bachelor&apos;s from Badji Mokhtar
+            University. I do full-stack web development with React, TypeScript, and Next.js, usually
+            on projects where the UI carries real work: branching forms, dense tables, maps with
+            more points than you want to render the naive way.
           </Text>
         </motion.div>
 
@@ -83,11 +87,26 @@ export default function AboutContent() {
             lineHeight="1.75"
             maxW="2xl"
             fontFamily="body">
-            In practice that means frontend-heavy work: complex forms, data-dense views,
-            performance-sensitive rendering. Plus enough backend depth to model things right from
-            the start. I&apos;ve shipped 2SCL (a smart city platform), SmartSIG (pharmacy sig
-            management), MARE (maritime risk visualization), and a range of client websites and web
-            apps.
+            More frontend than backend day to day, but I still want the data model sorted before the
+            screens multiply. Shipped 2SCL (smart city platform), SmartSIG (pharmacy sig
+            management), MARE (maritime risk visualization), plus client sites and smaller apps
+            along the way.
+          </Text>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: easing.outQuart, delay: 0.4 }}>
+          <Text
+            fontSize={["lg", "xl"]}
+            color="gray.400"
+            lineHeight="1.75"
+            maxW="2xl"
+            fontFamily="body">
+            Off the clock I&apos;m usually in MTGA or Hearthstone, both of which I&apos;ve played
+            competitively. I also play league of legends. Age of Empires when I want something
+            slower.
           </Text>
         </motion.div>
       </VStack>
@@ -124,7 +143,7 @@ export default function AboutContent() {
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.5, ease: easing.outQuart, delay: 0.08 }}>
           <Text fontSize="md" color="gray.500" fontFamily="body">
-            What I use on every serious project:
+            What I reach for on most projects:
           </Text>
         </motion.div>
       </VStack>

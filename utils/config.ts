@@ -11,7 +11,7 @@ export const portfolioConfig = {
     siteName: "Sami Bentaleb Portfolio",
     authorName: "Sami Bentaleb",
     siteDescription:
-      "Full-stack engineer offering website development, web app development, dashboard development, and complex data-driven interfaces with React, Next.js, and TypeScript.",
+      "Sami Bentaleb is a full-stack engineer from Algeria building websites, web apps, and data-heavy dashboards with React, Next.js, and TypeScript.",
     keywords: [
       "Sami Bentaleb",
       "full-stack engineer",

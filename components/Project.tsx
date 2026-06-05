@@ -3,9 +3,14 @@ import NextLink from "next/link";
 import Image from "next/image";
 import type { Project as ProjectType } from "../app/projects/types";
 
-type Props = Pick<ProjectType, "images" | "title" | "subtitle" | "description" | "slug" | "tags">;
+type Props = Pick<
+  ProjectType,
+  "images" | "title" | "subtitle" | "description" | "slug" | "tags"
+> & {
+  priority?: boolean;
+};
 
-export default function Project({ images, title, subtitle, slug, tags }: Props) {
+export default function Project({ images, title, subtitle, slug, tags, priority = false }: Props) {
   if (!images || images.length === 0) return null;
 
   return (
@@ -36,6 +41,7 @@ export default function Project({ images, title, subtitle, slug, tags }: Props) 
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             style={{ objectFit: "cover" }}
+            priority={priority}
           />
         </Box>
         <Box

@@ -25,3 +25,5 @@ export const SOCIAL_LINKS = {
 
 // Experience constants
 export const YEARS_OF_EXPERIENCE = new Date().getFullYear() - 2020;
+
+export const BIRTH_DATE = new Date(2002, 2, 27);

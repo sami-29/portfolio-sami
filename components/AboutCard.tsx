@@ -17,7 +17,7 @@ export default function AboutCard({ src, title, description, website }: Props) {
           alt={`${title} technology logo`}
           width={80}
           height={80}
-          style={{ objectFit: "contain" }}
+          style={{ objectFit: "contain", width: "80px", height: "auto" }}
         />
       </Box>
       <VStack gap={2} align="center" flex={1} justify="center">

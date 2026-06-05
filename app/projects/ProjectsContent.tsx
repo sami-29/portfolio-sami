@@ -98,7 +98,7 @@ export default function ProjectsContent() {
           whileInView="whileInView"
           viewport={{ once: true, margin: "-60px" }}>
           <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} gap={{ base: 6, lg: 8 }} mb={16}>
-            {featuredProjects.map((project) => (
+            {featuredProjects.map((project, index) => (
               <motion.div key={project.slug} variants={cardItem}>
                 <Project
                   images={project.images}
@@ -107,6 +107,7 @@ export default function ProjectsContent() {
                   description={project.description}
                   slug={project.slug}
                   tags={project.tags}
+                  priority={index < 3}
                 />
               </motion.div>
             ))}

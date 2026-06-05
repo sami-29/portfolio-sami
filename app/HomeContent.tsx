@@ -113,7 +113,7 @@ export default function HomeContent() {
                 letterSpacing="widest"
                 textTransform="uppercase"
                 fontFamily="heading">
-                Full-Stack Engineer
+                Full-Stack Engineer · Algeria
               </Text>
             </motion.div>
 
@@ -145,9 +145,9 @@ export default function HomeContent() {
                 maxW="2xl"
                 lineHeight="1.75"
                 fontFamily="body">
-                I build websites and web apps. Most of what I work on is data-heavy: dashboards
-                where the data model matters as much as the interface, internal tools with real
-                workflows, and platforms that stay usable when the data gets large.
+                I build websites and web apps. Usually the data-heavy kind: dashboards, internal
+                tools, platforms where people spend their day in tables and forms. The UI has to
+                hold up when the dataset is large and the workflow gets messy.
               </Text>
             </motion.div>
 
@@ -246,13 +246,7 @@ export default function HomeContent() {
       </Box>
 
       {/* ── Featured Projects ── */}
-      <VStack
-        w="full"
-        gap={8}
-        mt={{ base: 20, md: 32 }}
-        maxW="container.xl"
-        mx="auto"
-        px={{ base: 4, md: 8 }}>
+      <VStack w={["90%", "75%", "60%"]} gap={8} mt={{ base: 20, md: 32 }} mx="auto">
         {/* Section header */}
         <motion.div
           style={{ width: "100%" }}
@@ -288,7 +282,8 @@ export default function HomeContent() {
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.55, ease: easing.outQuart, delay: 0.08 }}>
           <Text fontSize="md" color="gray.500" maxW="2xl">
-            Maritime risk analysis, pharmacy automation, a city data platform, and personal tools.
+            A few recent builds: maritime risk maps, pharmacy workflow software, a city data
+            platform, and some side projects.
           </Text>
         </motion.div>
 
@@ -299,8 +294,8 @@ export default function HomeContent() {
           initial="initial"
           whileInView="whileInView"
           viewport={{ once: true, margin: "-60px" }}>
-          <SimpleGrid columns={{ base: 1, md: 2 }} gap={6} w="full">
-            {featuredProjects.slice(0, 4).map((project) => (
+          <SimpleGrid columns={{ base: 1, md: 2 }} gap={6}>
+            {featuredProjects.slice(0, 4).map((project, index) => (
               <motion.div key={project.slug} variants={cardItem}>
                 <Project
                   images={project.images}
@@ -309,6 +304,7 @@ export default function HomeContent() {
                   description={project.description}
                   slug={project.slug}
                   tags={project.tags}
+                  priority={index < 2}
                 />
               </motion.div>
             ))}
