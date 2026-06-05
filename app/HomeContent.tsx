@@ -139,21 +139,15 @@ export default function HomeContent() {
               variants={heroItem}
               transition={heroItemTransition}
               style={{ width: "100%" }}>
-              <VStack gap={4} align="start" maxW="2xl">
-                <Text fontSize={["lg", "xl"]} color="gray.400" lineHeight="1.75" fontFamily="body">
-                  I build web apps. Dashboards, internal tools, client sites. React, TypeScript,
-                  Next.js.
-                </Text>
-                <Text fontSize={["lg", "xl"]} color="gray.400" lineHeight="1.75" fontFamily="body">
-                  I&apos;m based in Algeria. A lot of what I ship is frontend-heavy work on messy
-                  data: dashboards people actually use, forms with too many branches, maps that need
-                  to stay smooth when there&apos;s a stupid amount of points on screen.
-                </Text>
-                <Text fontSize={["lg", "xl"]} color="gray.400" lineHeight="1.75" fontFamily="body">
-                  Featured work is below. If you want the full backstory, education, stack, and what
-                  I do when I&apos;m not coding, that&apos;s on the about page.
-                </Text>
-              </VStack>
+              <Text
+                fontSize={["lg", "xl"]}
+                color="gray.400"
+                maxW="2xl"
+                lineHeight="1.75"
+                fontFamily="body">
+                Full-stack engineer shipping production web apps in React, TypeScript, and Next.js.
+                UI, API, data layer. I build and ship the whole stack.
+              </Text>
             </motion.div>
 
             {/* Social links */}
@@ -286,9 +280,8 @@ export default function HomeContent() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.55, ease: easing.outQuart, delay: 0.08 }}>
-          <Text fontSize="md" color="gray.500" maxW="2xl" lineHeight="1.7">
-            MARE plots collision risk across shipping lanes. SmartSIG runs pharmacy sig workflows.
-            2SCL is a smart city data platform.
+          <Text fontSize="md" color="gray.500" maxW="2xl">
+            Maritime risk maps, pharmacy workflow software, and a city data platform.
           </Text>
         </motion.div>
 
