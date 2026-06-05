@@ -8,7 +8,7 @@ import { SOCIAL_LINKS } from "../utils/constants";
 export const metadata: Metadata = buildMetadata({
   title: "Home",
   description:
-    "Full-stack engineer building websites, web apps, and data-heavy dashboards with React, Next.js, and TypeScript.",
+    "Sami Bentaleb builds web apps, dashboards, and client sites from Algeria. React, Next.js, TypeScript.",
   path: "/",
   keywords: [
     "website development",

@@ -70,10 +70,8 @@ export default function AboutContent() {
             lineHeight="1.75"
             maxW="2xl"
             fontFamily="body">
-            I&apos;m Sami, {age}, from Algeria. Computer science bachelor&apos;s from Badji Mokhtar
-            University. I do full-stack web development with React, TypeScript, and Next.js, usually
-            on projects where the UI carries real work: branching forms, dense tables, maps with
-            more points than you want to render the naive way.
+            I&apos;m Sami, {age}, from Algeria. I got my computer science bachelor&apos;s from Badji
+            Mokhtar University and have been building web stuff since around 2020.
           </Text>
         </motion.div>
 
@@ -87,10 +85,10 @@ export default function AboutContent() {
             lineHeight="1.75"
             maxW="2xl"
             fontFamily="body">
-            More frontend than backend day to day, but I still want the data model sorted before the
-            screens multiply. Shipped 2SCL (smart city platform), SmartSIG (pharmacy sig
-            management), MARE (maritime risk visualization), plus client sites and smaller apps
-            along the way.
+            I work full-stack with React, TypeScript, and Next.js. The projects I enjoy most are the
+            ones where the UI has to do actual work. Not a brochure site. A dashboard someone opens
+            every morning, or a workflow with enough edge cases that you stop trusting the happy
+            path.
           </Text>
         </motion.div>
 
@@ -104,9 +102,57 @@ export default function AboutContent() {
             lineHeight="1.75"
             maxW="2xl"
             fontFamily="body">
-            Off the clock I&apos;m usually in MTGA or Hearthstone, both of which I&apos;ve played
-            competitively. I also play league of legends. Age of Empires when I want something
-            slower.
+            I do more frontend than backend day to day, but I still want the database shape sorted
+            early. Bad schema decisions always show up in the UI eventually, usually right before a
+            deadline.
+          </Text>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: easing.outQuart, delay: 0.5 }}>
+          <Text
+            fontSize={["lg", "xl"]}
+            color="gray.400"
+            lineHeight="1.75"
+            maxW="2xl"
+            fontFamily="body">
+            Things I&apos;ve shipped: 2SCL, a smart city platform. SmartSIG, pharmacy sig
+            management. MARE, maritime risk visualization on a map. Plus client websites and smaller
+            apps that needed to go live without turning into a six-month saga.
+          </Text>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: easing.outQuart, delay: 0.6 }}>
+          <Text
+            fontSize={["lg", "xl"]}
+            color="gray.400"
+            lineHeight="1.75"
+            maxW="2xl"
+            fontFamily="body">
+            Off the clock I&apos;m usually in MTGA or Hearthstone. I played both competitively for a
+            while. League of Legends too, peaked Diamond. Age of Empires when I want something
+            slower and don&apos;t feel like queueing.
+          </Text>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: easing.outQuart, delay: 0.7 }}>
+          <Text
+            fontSize={["lg", "xl"]}
+            color="gray.400"
+            lineHeight="1.75"
+            maxW="2xl"
+            fontFamily="body">
+            I like building things people can use, and I like games where you have to read the
+            system. Probably why both stuck. If you want to talk work, send an email or find me on
+            LinkedIn.
           </Text>
         </motion.div>
       </VStack>
@@ -142,8 +188,9 @@ export default function AboutContent() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.5, ease: easing.outQuart, delay: 0.08 }}>
-          <Text fontSize="md" color="gray.500" fontFamily="body">
-            What I reach for on most projects:
+          <Text fontSize="md" color="gray.500" fontFamily="body" maxW="2xl" lineHeight="1.7">
+            The tools I actually reach for when a project gets serious. Not everything I&apos;ve
+            touched, just the stuff that shows up again and again.
           </Text>
         </motion.div>
       </VStack>
@@ -190,6 +237,16 @@ export default function AboutContent() {
             textTransform="uppercase"
             fontFamily="heading">
             Also Worked With
+          </Text>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-40px" }}
+          transition={{ duration: 0.5, ease: easing.outQuart, delay: 0.08 }}>
+          <Text fontSize="md" color="gray.500" fontFamily="body" maxW="2xl" lineHeight="1.7">
+            Other languages and libraries I&apos;ve used on real projects. Some more than others.
           </Text>
         </motion.div>
 

@@ -6,7 +6,7 @@ import AboutContent from "./AboutContent";
 
 export const metadata: Metadata = buildMetadata({
   title: "About",
-  description: `About Sami Bentaleb, a ${getAge(BIRTH_DATE)}-year-old full-stack developer from Algeria. CS graduate of Badji Mokhtar University, building data-heavy web apps with React, Next.js, and TypeScript.`,
+  description: `About Sami Bentaleb, ${getAge(BIRTH_DATE)}, from Algeria. CS grad from Badji Mokhtar University. Full-stack developer working in React, Next.js, and TypeScript.`,
   path: "/about",
   keywords: [
     "full-stack developer portfolio",
