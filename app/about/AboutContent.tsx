@@ -100,8 +100,8 @@ export default function AboutContent() {
             lineHeight="1.75"
             maxW="2xl"
             fontFamily="body">
-            Off the clock: MTGA and Hearthstone (played both competitively), League of Legends
-            (peaked Diamond), Age of Empiresm and also enjoy playing soulslike games.
+            For fun, I play MTG Arena and Hearthstone, League of Legends, Age of Empires 2 and
+            soulslike games.
           </Text>
         </motion.div>
       </VStack>
@@ -208,7 +208,7 @@ export default function AboutContent() {
                 fontWeight="500"
                 fontFamily="body"
                 transition="border-color 0.2s, color 0.2s"
-                _hover={{ borderColor: "brand.400", color: "brand.400" }}>
+                _hover={{ bg: "gray.800" }}>
                 {name}
               </Box>
             ))}

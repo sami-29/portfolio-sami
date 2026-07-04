@@ -11,13 +11,22 @@ interface Props {
 export default function AboutCard({ src, title, description, website }: Props) {
   const cardContent = (
     <VStack gap={4} p={6} align="center" height="100%">
-      <Box position="relative" width="80px" height="80px">
+      <Box
+        position="relative"
+        width="80px"
+        height="80px"
+        bg={title === "Next.js" ? "white" : "transparent"}
+        borderRadius={title === "Next.js" ? "full" : "none"}
+        p={title === "Next.js" ? 2 : 0}
+        display="flex"
+        alignItems="center"
+        justifyContent="center">
         <NextImage
           src={src}
           alt={`${title} technology logo`}
           width={80}
           height={80}
-          style={{ objectFit: "contain", width: "80px", height: "auto" }}
+          style={{ objectFit: "contain", width: "100%", height: "auto" }}
         />
       </Box>
       <VStack gap={2} align="center" flex={1} justify="center">
@@ -40,15 +49,14 @@ export default function AboutCard({ src, title, description, website }: Props) {
   const sharedBoxProps = {
     bg: "gray.900",
     _hover: {
-      borderColor: "brand.400",
       transform: "translateY(-4px)",
-      boxShadow: "0 12px 40px -8px rgba(255, 179, 0, 0.15)",
+      boxShadow: "0 12px 40px -8px rgba(0, 0, 0, 0.4)",
     },
     borderWidth: "1px" as const,
     borderColor: "gray.800",
     borderRadius: "xl" as const,
     overflow: "hidden" as const,
-    transition: "transform 0.25s var(--ease-out-quart), border-color 0.25s, box-shadow 0.25s",
+    transition: "transform 0.25s var(--ease-out-quart), box-shadow 0.25s",
     height: "100%" as const,
     position: "relative" as const,
   };
